@@ -21,3 +21,13 @@ We welcome contributions to the MenuBar Apps website! If you have any suggestion
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Prettier](https://prettier.io/)
+
+## License
+
+- [MIT](LICENSE.md)
+
+&nbsp;
+
+&nbsp;
+
+[**Go To Top &nbsp; ⬆️**](#menubar-apps)
