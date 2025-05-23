@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+@theme {
+  --breakpoint-5xs: 12rem; /* 192px */
+  --breakpoint-4xs: 16rem; /* 256px */
+  --breakpoint-3xs: 20rem; /* 320px */
+  --breakpoint-2xs: 23rem; /* 368px */
+  --breakpoint-xs: 28rem; /* 448px */
+  /* --breakpoint-sm: 40rem; 640px */
+  /* --breakpoint-md: 48rem; 768px */
+  /* --breakpoint-lg: 64rem; 1024px */
+  /* --breakpoint-xl: 80rem; 1280px */
+  /* --breakpoint-2xl: 96rem; 1536px */
+  --breakpoint-3xl: 120rem; /* 1920px */
+  --breakpoint-4xl: 160rem; /* 2560px */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -21,8 +36,9 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  font-family:
+    -apple-system, 'Helvetica Neue', Helvetica, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
