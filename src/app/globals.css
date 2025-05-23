@@ -69,6 +69,7 @@
   }
 
   /* Skeleton */
+  /* TIP: Add the `animate-skeleton` class to skeleton elements inside a Suspense fallback or loading component and a `animate-fadeInFromSkeleton` class to their respective real elements  */
   --skeleton-speed: 1.5s;
   --skeleton-ease: ease-in-out;
 
@@ -92,6 +93,18 @@
     }
     50% {
       opacity: 0.2;
+    }
+  }
+
+  /* fadeInFromSkeleton */
+  --animate-fadeInFromSkeleton: fadeInFromSkeleton 200ms ease-in;
+
+  @keyframes fadeInFromSkeleton {
+    from {
+      opacity: 0.4; /* ? 0.4 to match the skeleton opacity */
+    }
+    to {
+      opacity: 1;
     }
   }
 }
