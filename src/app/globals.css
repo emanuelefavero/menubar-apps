@@ -15,21 +15,22 @@
   --breakpoint-3xl: 120rem; /* 1920px */
   --breakpoint-4xl: 160rem; /* 2560px */
 
-  /* Animations */
-  --animation-speed: 300ms;
-  --animation-ease: ease-in-out; /* try also cubic-bezier(0.16, 1, 0.3, 1) */
-  --animation-slide-distance: 100%;
-  --animation-slide-distance-negative: -100%;
+  /* ANIMATIONS */
+  /* Slide */
+  --slide-speed: 300ms;
+  --slide-ease: ease-in-out; /* try also cubic-bezier(0.16, 1, 0.3, 1) */
+  --slide-distance: 100%;
+  --slide-distance-negative: -100%;
 
-  --animate-slideDown: slideDown var(--animation-speed) var(--animation-ease);
-  --animate-slideLeft: slideLeft var(--animation-speed) var(--animation-ease);
-  --animate-slideUp: slideUp var(--animation-speed) var(--animation-ease);
-  --animate-slideRight: slideRight var(--animation-speed) var(--animation-ease);
+  --animate-slideDown: slideDown var(--slide-speed) var(--slide-ease);
+  --animate-slideLeft: slideLeft var(--slide-speed) var(--slide-ease);
+  --animate-slideUp: slideUp var(--slide-speed) var(--slide-ease);
+  --animate-slideRight: slideRight var(--slide-speed) var(--slide-ease);
 
   @keyframes slideDown {
     from {
       opacity: 0;
-      transform: translateY(var(--animation-slide-distance-negative));
+      transform: translateY(var(--slide-distance-negative));
     }
     to {
       opacity: 1;
@@ -39,7 +40,7 @@
   @keyframes slideLeft {
     from {
       opacity: 0;
-      transform: translateX(var(--animation-slide-distance));
+      transform: translateX(var(--slide-distance));
     }
     to {
       opacity: 1;
@@ -49,7 +50,7 @@
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(var(--animation-slide-distance));
+      transform: translateY(var(--slide-distance));
     }
     to {
       opacity: 1;
@@ -59,50 +60,97 @@
   @keyframes slideRight {
     from {
       opacity: 0;
-      transform: translateX(var(--animation-slide-distance-negative));
+      transform: translateX(var(--slide-distance-negative));
     }
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
-}
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Skeleton */
+  --skeleton-speed: 1.5s;
+  --skeleton-ease: ease-in-out;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-skeleton: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease);
+  --animate-skeleton-200: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease) 200ms;
+  --animate-skeleton-400: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease) 400ms;
+  --animate-skeleton-600: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease) 600ms;
+  --animate-skeleton-800: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease) 800ms;
+  --animate-skeleton-1000: skeleton var(--skeleton-speed) infinite
+    var(--skeleton-ease) 1000ms;
+
+  @keyframes skeleton {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.2;
+    }
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+@layer base {
+  /* Variables */
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family:
-    -apple-system, 'Helvetica Neue', Helvetica, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Dark Variables */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  /* Default Styling */
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family:
+      -apple-system, 'Helvetica Neue', Helvetica, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  input {
+    border: 1px solid var(--foreground);
+  }
+
+  /* Dark Theme Utility */
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
   }
 }
