@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  /* Breakpoints */
   --breakpoint-5xs: 12rem; /* 192px */
   --breakpoint-4xs: 16rem; /* 256px */
   --breakpoint-3xs: 20rem; /* 320px */
@@ -13,6 +14,58 @@
   /* --breakpoint-2xl: 96rem; 1536px */
   --breakpoint-3xl: 120rem; /* 1920px */
   --breakpoint-4xl: 160rem; /* 2560px */
+
+  /* Animations */
+  --animation-speed: 300ms;
+  --animation-ease: ease-in-out; /* try also cubic-bezier(0.16, 1, 0.3, 1) */
+  --animation-slide-distance: 100%;
+  --animation-slide-distance-negative: -100%;
+
+  --animate-slideDown: slideDown var(--animation-speed) var(--animation-ease);
+  --animate-slideLeft: slideLeft var(--animation-speed) var(--animation-ease);
+  --animate-slideUp: slideUp var(--animation-speed) var(--animation-ease);
+  --animate-slideRight: slideRight var(--animation-speed) var(--animation-ease);
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(var(--animation-slide-distance-negative));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(var(--animation-slide-distance));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(var(--animation-slide-distance));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(var(--animation-slide-distance-negative));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 :root {
@@ -41,12 +94,6 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
