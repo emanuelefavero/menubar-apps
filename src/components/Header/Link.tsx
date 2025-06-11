@@ -17,7 +17,7 @@ export default function Component({ href, children, className = '' }: Props) {
   return (
     <Link
       href={href}
-      className={`rounded-full px-3 py-1 text-[var(--foreground)] no-underline active:bg-gray-800/10 dark:active:bg-white/20 ${
+      className={`rounded-full px-3 py-1 text-[var(--foreground)] no-underline hover:bg-gray-800/10 dark:hover:bg-white/20 ${
         isActive && 'bg-gray-800/10 dark:bg-white/20'
       } ${className}`}
     >
