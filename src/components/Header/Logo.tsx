@@ -1,8 +1,16 @@
+'use client'
+
 import { title } from '@/config/metadata'
+import { useIsHome } from '@/hooks/useIsHome'
 
 export default function Component() {
+  const isHome = useIsHome()
   return (
-    <div className='flex items-center space-x-1 rounded-full bg-white/20 px-3 font-semibold select-none'>
+    <div
+      className={`rounded-full px-3 font-semibold select-none ${
+        isHome && 'bg-gray-800/10 dark:bg-white/20'
+      }`}
+    >
       {title}
     </div>
   )

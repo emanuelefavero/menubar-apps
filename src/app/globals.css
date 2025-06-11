@@ -119,9 +119,7 @@
   /* Dark Variables */
   @media (prefers-color-scheme: dark) {
     :root {
-      /* --background: #0a0a0a; */
-      /* TODO change background back to black */
-      --background: rgb(70, 150, 204);
+      --background: #0a0a0a;
       --foreground: #ededed;
     }
   }
