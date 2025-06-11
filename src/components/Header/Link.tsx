@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 
 interface Props {
@@ -8,10 +11,15 @@ interface Props {
 }
 
 export default function Component({ href, children, className = '' }: Props) {
+  const pathname = usePathname()
+  const isActive = pathname === href
+
   return (
     <Link
       href={href}
-      className={`text-[var(--foreground)] no-underline hover:underline ${className}`}
+      className={`rounded-full px-3 py-1 text-[var(--foreground)] no-underline active:bg-gray-800/10 dark:active:bg-white/20 ${
+        isActive && 'bg-gray-800/10 dark:bg-white/20'
+      } ${className}`}
     >
       {children}
     </Link>
