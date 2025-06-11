@@ -7,12 +7,18 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     environment: 'jsdom',
+    exclude: [
+      '**/node_modules/**',
+
+      // Exclude Playwright tests
+      '**/tests/**',
+    ],
   },
   resolve: {
     alias: [
       {
         find: '@',
-        replacement: resolve(__dirname, './'),
+        replacement: resolve(__dirname, './src'),
       },
     ],
   },

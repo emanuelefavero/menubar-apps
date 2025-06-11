@@ -1,7 +1,9 @@
+import { title } from '@/config/metadata'
+
 export default function Home() {
   return (
     <>
-      <h1 className='text-4xl'>Hello</h1>
+      <h1 className='text-4xl'>{title}</h1>
     </>
   )
 }
