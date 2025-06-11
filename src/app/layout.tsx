@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -13,8 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-// TODO Change title (create a global title variable in a file)
-
 export const metadata: Metadata = {
   title: title,
   description: description,
@@ -28,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   )
