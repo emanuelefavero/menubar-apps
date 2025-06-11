@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "e2e": "npx playwright test",
+    "e2e:ui": "npx playwright test --ui",
+    "e2e:chromium": "npx playwright test --project=chromium",
+    "e2e:debug": "npx playwright test --debug",
+    "e2e:codegen": "npx playwright codegen",
+    "e2e:report": "npx playwright show-report e2e-report"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.7",
@@ -19,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.53.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
     "@types/node": "^20",
