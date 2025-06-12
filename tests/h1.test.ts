@@ -6,7 +6,6 @@ test('has one h1', async ({ page }) => {
   await page.goto('/')
 
   const h1s = page.locator('h1')
-
   await expect(h1s).toHaveCount(1)
 })
 
@@ -15,6 +14,5 @@ test('h1 has correct text', async ({ page }) => {
   await page.goto('/')
 
   const h1 = page.locator('h1')
-
   await expect(h1).toHaveText(new RegExp(heroAppName, 'i'))
 })

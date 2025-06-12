@@ -11,6 +11,7 @@ test('has title', async ({ page }) => {
 // Check that the page has a description meta tag
 test('has description meta tag', async ({ page }) => {
   await page.goto('/')
+
   const descriptionMeta = page.locator('meta[name="description"]')
   await expect(descriptionMeta).toHaveAttribute(
     'content',
