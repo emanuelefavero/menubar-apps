@@ -176,7 +176,6 @@
 }
 
 /* =================== */
-/* TODO Move following classes in Card component */
 /* TODO Remove body background image and put it in the Hero component */
 
 .card {
@@ -189,8 +188,8 @@
 
   position: relative;
   width: 100%;
-  height: 375px; /* TODO Adjust height as needed or simply remove it */
-  /* TODO set max width */
+  min-height: 480px; /* TODO remove this? */
+  max-width: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
