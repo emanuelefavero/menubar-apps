@@ -9,6 +9,15 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(new RegExp(title, 'i'))
 })
 
+// Check that the page has a header
+test('has header', async ({ page }) => {
+  await page.goto('/')
+
+  const header = page.locator('header')
+
+  await expect(header).toBeVisible()
+})
+
 // Check that the h1 has the correct text
 test('h1 has correct text', async ({ page }) => {
   await page.goto('/')
