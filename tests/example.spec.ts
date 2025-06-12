@@ -44,3 +44,12 @@ test('has header element', async ({ page }) => {
 
   await expect(header).toBeVisible()
 })
+
+// Check that the page has a main element
+test('has main element', async ({ page }) => {
+  await page.goto('/')
+
+  const main = page.locator('main')
+
+  await expect(main).toBeVisible()
+})
