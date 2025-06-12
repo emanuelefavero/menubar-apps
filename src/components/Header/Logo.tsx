@@ -9,8 +9,8 @@ export default function Component() {
   return (
     <Link
       href='/'
-      className={`rounded-full px-3 py-0.5 font-semibold no-underline select-none hover:bg-gray-800/10 dark:hover:bg-white/20 ${
-        isHome && 'bg-gray-800/10 dark:bg-white/20'
+      className={`rounded-full px-3 py-0.5 font-semibold text-gray-700 no-underline select-none hover:bg-white/20 ${
+        isHome && 'bg-white/20'
       }`}
     >
       {title}
