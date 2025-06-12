@@ -35,3 +35,12 @@ test('h1 has correct text', async ({ page }) => {
 
   await expect(h1).toHaveText(new RegExp(heroAppName, 'i'))
 })
+
+// Check that the page has an header element
+test('has header element', async ({ page }) => {
+  await page.goto('/')
+
+  const header = page.locator('header')
+
+  await expect(header).toBeVisible()
+})
