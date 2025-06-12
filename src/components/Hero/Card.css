@@ -4,7 +4,7 @@
     2px 5px 5px 0 rgba(2, 3, 5, 0.15),
     5px 3px 3px -5px rgba(223, 223, 247, 0.8) inset,
     0px 0px 0px 1px rgba(47, 59, 71, 0.18);
-  --card-border: 1px solid rgba(190, 194, 213, 0.44);
+  --card-border: 1px solid rgba(190, 194, 213, 0.1);
 
   position: relative;
   width: 100%;
@@ -21,4 +21,38 @@
   backdrop-filter: blur(6px);
   background: var(--card-background);
   box-shadow: var(--card-shadow);
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2.5rem;
+  pointer-events: none;
+  z-index: 100;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  padding: 1px; /* Border thickness */
+  box-sizing: border-box;
+}
+
+.card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(190, 194, 213, 0.44) 0%,
+    rgba(255, 255, 255, 0) 40%
+  );
+}
+
+.card::after {
+  background: linear-gradient(
+    135deg,
+    rgba(190, 194, 213, 0.44) 0%,
+    rgba(0, 0, 0, 0) 40%
+  );
+  transform: rotate(180deg);
 }
