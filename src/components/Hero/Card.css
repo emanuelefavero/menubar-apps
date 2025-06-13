@@ -5,23 +5,12 @@
     5px 3px 4px -5px rgba(223, 223, 247, 0.8) inset,
     -5px -3px 8px -5px rgba(223, 223, 247, 0.2) inset,
     0px 0px 0px 1px rgba(47, 59, 71, 0.18);
-  --card-border: 1px solid rgba(190, 194, 213, 0.4);
-
-  position: relative;
-  width: 100%;
-  min-height: 480px; /* TODO remove this? */
-  max-width: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  user-select: none;
-
-  /* border: var(--card-border); */
-  border-radius: 2.5rem;
-  backdrop-filter: blur(6px);
-  background: var(--card-background);
-  box-shadow: var(--card-shadow);
+  --card-border-top: linear-gradient(
+    135deg,
+    rgba(190, 194, 213, 0.44) 0%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  --card-border-bottom: var(--card-border-top);
 }
 
 .card::before,
@@ -42,18 +31,10 @@
 }
 
 .card::before {
-  background: linear-gradient(
-    135deg,
-    rgba(190, 194, 213, 0.44) 0%,
-    rgba(255, 255, 255, 0) 40%
-  );
+  background: var(--card-border-top);
 }
 
 .card::after {
-  background: linear-gradient(
-    135deg,
-    rgba(190, 194, 213, 0.44) 0%,
-    rgba(0, 0, 0, 0) 40%
-  );
+  background: var(--card-border-bottom);
   transform: rotate(180deg);
 }
