@@ -1,4 +1,4 @@
-/* Hero Image */
+/* Hero Background Image */
 .hero::before {
   content: '';
   position: absolute;

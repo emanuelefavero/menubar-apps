@@ -3,7 +3,7 @@ import './not-found.css'
 
 export default function NotFound() {
   return (
-    <div className='not-found'>
+    <div className='not-found relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-12 text-center'>
       <h1 className='flex flex-col items-center'>
         <span>404</span>
         Page Not Found

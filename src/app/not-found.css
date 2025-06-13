@@ -1,15 +1,4 @@
-.not-found {
-  position: relative;
-  min-height: 100vh;
-  padding-top: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Background image wrapper */
+/* NotFound Background Image */
 .not-found::before {
   content: '';
   position: absolute;
