@@ -109,7 +109,6 @@
   }
 
   /* SHADOWS */
-  
 }
 
 @layer base {
@@ -170,6 +169,3 @@
     }
   }
 }
-
-/* =================== */
-/* TODO Remove body background image and put it in the Hero component */
