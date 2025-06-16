@@ -107,8 +107,6 @@
       opacity: 1;
     }
   }
-
-  /* SHADOWS */
 }
 
 @layer base {
@@ -118,7 +116,6 @@
     --foreground: #171717;
     --primary: rgba(48, 111, 219, 0.9);
     --primary-hover: rgb(61, 122, 229, 0.9);
-    --button-inset-shadow: inset 1px 2px 1px 0 rgba(220, 226, 232, 0.23);
   }
 
   /* Dark Variables */
