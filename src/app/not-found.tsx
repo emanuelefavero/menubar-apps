@@ -1,4 +1,5 @@
 import BackgroundImage from '@/components/shared/BackgroundImage'
+import BackgroundShadow from '@/components/shared/BackgroundShadow'
 import LinkButton from '@/components/shared/LinkButton'
 
 export default function NotFound() {
@@ -11,16 +12,23 @@ export default function NotFound() {
         priority
       />
 
-      <h1 className='flex flex-col items-center gap-4 text-4xl font-bold text-shadow-(--text-shadow-lg)'>
-        <span className='text-4xl font-medium'>404</span>
-        Page Not Found
-      </h1>
+      <div className='relative'>
+        <BackgroundShadow bgColor='bg-gray-900/20' blur='blur-3xl' />
 
-      <p className='text-lg text-shadow-(--text-shadow-sm)'>
-        Sorry, the page you are looking for does not exist.
-      </p>
+        <div className='relative z-10 flex flex-col items-center gap-4 text-center'>
+          <span className='text-4xl font-medium'>404</span>
 
-      <LinkButton>← Go back to Home</LinkButton>
+          <h1 className='text-4xl font-bold text-shadow-[var(--text-shadow-lg)]'>
+            Page Not Found
+          </h1>
+
+          <p className='text-lg text-shadow-[var(--text-shadow-sm)]'>
+            Sorry, the page you are looking for does not exist.
+          </p>
+
+          <LinkButton>← Go back to Home</LinkButton>
+        </div>
+      </div>
     </div>
   )
 }
