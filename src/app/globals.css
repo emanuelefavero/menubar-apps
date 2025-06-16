@@ -115,7 +115,7 @@
     --background: #ffffff;
     --foreground: #171717;
     --primary: rgba(48, 111, 219, 0.9);
-    --primary-hover: rgb(61, 122, 229, 0.9);
+    --primary-hover: rgba(39, 101, 208, 0.9);
     --text-shadow-lg: 2px 2px 0.5px rgba(0, 0, 0, 0.25);
     --text-shadow-sm: 1px 1px 0.5px rgba(0, 0, 0, 0.25);
   }
