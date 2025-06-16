@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
+import './LinkButton.css'
 
 interface Props {
   children?: ReactNode
@@ -10,7 +11,7 @@ export default function Component({ children, className }: Props) {
   return (
     <Link
       href='/'
-      className={`inline-block rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600 ${className}`}
+      className={`rounded-full border border-black/25 bg-[var(--primary)] px-3 py-1.5 text-white no-underline shadow-[var(--button-inset-shadow)] transition-all duration-200 hover:bg-[var(--primary-hover)] active:scale-95 ${className}`}
     >
       {children}
     </Link>
