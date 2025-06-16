@@ -4,7 +4,7 @@ import LinkButton from '@/components/shared/LinkButton'
 
 export default function NotFound() {
   return (
-    <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden pt-12 text-center text-white'>
+    <div className='relative -z-10 flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden bg-black pt-12 text-center text-white'>
       <BackgroundImage
         src='/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
