@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import LinkButton from '@/components/shared/LinkButton'
 import './not-found.css'
 
 export default function NotFound() {
@@ -11,7 +11,7 @@ export default function NotFound() {
       <p className='text-lg'>
         Sorry, the page you are looking for does not exist.
       </p>
-      <Link href='/'>← Go back to Home</Link>
+      <LinkButton>← Go back to Home</LinkButton>
     </div>
   )
 }
