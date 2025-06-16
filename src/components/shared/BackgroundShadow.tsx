@@ -13,7 +13,7 @@ export default function Component({
 }: Props) {
   return (
     <div
-      className={`absolute inset-0 m-auto h-full w-full rounded-full ${bgColor} ${blur} ${className}`}
+      className={`absolute inset-0 -z-10 m-auto h-full w-full rounded-full ${bgColor} ${blur} ${className}`}
     ></div>
   )
 }
