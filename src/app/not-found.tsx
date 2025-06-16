@@ -1,13 +1,12 @@
+import BackgroundImage from '@/components/shared/BackgroundImage'
 import LinkButton from '@/components/shared/LinkButton'
-import Image from 'next/image'
 
 export default function NotFound() {
   return (
     <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden pt-12 text-center text-white'>
-      <Image
+      <BackgroundImage
         src='/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
-        fill
         className='-z-10 object-cover object-center'
         priority
       />
