@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden pt-12 text-center text-white'>
       <BackgroundImage
-        src='/paul-pastourmatzis-unsplash.jpg'
+        src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
         className='-z-10 object-cover object-center'
         priority

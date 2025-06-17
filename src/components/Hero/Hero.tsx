@@ -7,7 +7,7 @@ export default function Component() {
   return (
     <section className='relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-12'>
       <BackgroundImage
-        src='/paul-pastourmatzis-unsplash.jpg'
+        src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
         className='-z-10 object-cover object-center'
         priority
