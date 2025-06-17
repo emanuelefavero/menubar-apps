@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import { ReactNode } from 'react'
 
 interface Props {
-  children?: ReactNode
+  children?: React.ReactNode
   className?: string
 }
 

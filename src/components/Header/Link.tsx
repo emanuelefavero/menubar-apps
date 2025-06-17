@@ -2,11 +2,10 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ReactNode } from 'react'
 
 interface Props {
   href: string
-  children: ReactNode
+  children: React.ReactNode
   className?: string
 }
 

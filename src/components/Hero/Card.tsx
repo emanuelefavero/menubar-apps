@@ -1,9 +1,8 @@
-import { ReactNode } from 'react'
 import './Card.css'
 
 interface Props {
   className?: string
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export default function Component({ className = '', children }: Props) {
