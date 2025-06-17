@@ -1,6 +1,7 @@
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import LinkAttribution from '@/components/shared/LinkAttribution'
 import { heroAppName } from '@/config/hero'
+import Image from 'next/image'
 import Card from './Card'
 
 export default function Component() {
@@ -14,7 +15,16 @@ export default function Component() {
       />
 
       <Card>
-        <h1 className='text-4xl'>{heroAppName}</h1>
+        <Image
+          src='/images/menubar-tasks.png'
+          alt='Logo'
+          width={124}
+          height={124}
+          className='mb-12'
+          priority
+        />
+
+        <h1 className='text-3xl font-medium'>{heroAppName}</h1>
       </Card>
 
       <LinkAttribution

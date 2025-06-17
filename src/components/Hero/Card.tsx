@@ -8,7 +8,7 @@ interface Props {
 export default function Component({ className = '', children }: Props) {
   return (
     <div
-      className={`card relative z-10 flex min-h-[480px] w-full max-w-[440px] items-center justify-center rounded-[2.5rem] bg-(--card-background) text-center text-white shadow-(--card-shadow) backdrop-blur-[6px] select-none ${className}`}
+      className={`card relative z-10 flex w-full max-w-[440px] flex-col items-center justify-center rounded-[2.5rem] bg-(--card-background) pt-18 pb-2 text-center text-white shadow-(--card-shadow) backdrop-blur-[6px] select-none ${className}`}
     >
       {children}
     </div>
