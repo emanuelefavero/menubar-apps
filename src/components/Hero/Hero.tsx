@@ -21,11 +21,16 @@ export default function Component() {
           alt='Logo'
           width={124}
           height={124}
+          className='rounded-4xl shadow-md shadow-black/15'
           priority
         />
 
-        <h1 className='mt-12 text-3xl font-medium'>{heroAppName}</h1>
-        <p className='mt-2.5 text-lg'>Your Tasks, Always Within Reach</p>
+        <h1 className='mt-12 text-3xl font-medium text-shadow-(--text-shadow-lg)'>
+          {heroAppName}
+        </h1>
+        <p className='mt-2.5 text-lg text-shadow-(--text-shadow-sm)'>
+          Your Tasks, Always Within Reach
+        </p>
 
         {/* Line */}
         <div className='mt-2.5 h-[1px] w-full bg-white/20'></div>
