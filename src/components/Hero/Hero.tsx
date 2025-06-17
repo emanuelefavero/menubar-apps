@@ -1,4 +1,5 @@
 import BackgroundImage from '@/components/shared/BackgroundImage'
+import { heroAppName } from '@/config/hero'
 import Card from './Card'
 
 export default function Component() {
@@ -10,7 +11,9 @@ export default function Component() {
         className='-z-10 object-cover object-center'
         priority
       />
-      <Card />
+      <Card>
+        <h1 className='text-4xl'>{heroAppName}</h1>
+      </Card>
     </section>
   )
 }
