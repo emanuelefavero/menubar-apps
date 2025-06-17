@@ -1,5 +1,6 @@
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
+import LinkAttribution from '@/components/shared/LinkAttribution'
 import LinkButton from '@/components/shared/LinkButton'
 
 export default function NotFound() {
@@ -29,6 +30,11 @@ export default function NotFound() {
           <LinkButton>← Go back to Home</LinkButton>
         </div>
       </div>
+
+      <LinkAttribution
+        name='Paul Pastourmatzis'
+        href='https://unsplash.com/photos/silhouette-of-trees-covered-by-fog-KT3WlrL_bsg'
+      />
     </div>
   )
 }
