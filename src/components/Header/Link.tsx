@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { AnchorHTMLAttributes } from 'react'
@@ -19,10 +20,28 @@ export default function Component({
   const pathname = usePathname()
   const isActive = pathname === href
 
+  const baseStyles =
+    'rounded-full px-3 py-1 text-gray-700 no-underline select-none hover:bg-white/30'
+
+  const groupStyles =
+    'group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
+
+  const activeStyles =
+    'bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'
+
+  const activeGroupStyles =
+    'group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'
+
   return (
     <Link
       href={href}
-      className={`rounded-full px-3 py-1 text-gray-700 no-underline select-none hover:bg-white/30 ${isActive && 'bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'} group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none ${isActive && 'group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'} ${className} `}
+      className={clsx(
+        baseStyles,
+        groupStyles,
+        isActive && activeStyles,
+        isActive && activeGroupStyles,
+        className,
+      )}
       {...props}
     >
       {children}
