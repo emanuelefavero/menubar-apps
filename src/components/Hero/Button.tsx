@@ -18,10 +18,10 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
-  const baseClasses =
+  const baseStyles =
     'inline-block w-full rounded-full px-4 py-2 text-lg font-medium no-underline transition duration-250 active:scale-[97%]'
 
-  const variantClasses: Record<Variant, string> = {
+  const variantStyles: Record<Variant, string> = {
     primary:
       'bg-white/80 text-gray-800 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white hover:bg-white',
     secondary:
@@ -31,7 +31,7 @@ export default function Component({
   return (
     <Link
       href={href}
-      className={clsx(baseClasses, variantClasses[variant], className)}
+      className={clsx(baseStyles, variantStyles[variant], className)}
       {...props}
     >
       {children}
