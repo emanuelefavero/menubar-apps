@@ -2,14 +2,20 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { AnchorHTMLAttributes } from 'react'
 
-interface Props {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   children: React.ReactNode
   className?: string
 }
 
-export default function Component({ href, children, className = '' }: Props) {
+export default function Component({
+  href,
+  children,
+  className = '',
+  ...props
+}: Props) {
   const pathname = usePathname()
   const isActive = pathname === href
 
@@ -17,6 +23,7 @@ export default function Component({ href, children, className = '' }: Props) {
     <Link
       href={href}
       className={`rounded-full px-3 py-1 text-gray-700 no-underline select-none hover:bg-white/30 ${isActive && 'bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'} group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none ${isActive && 'group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'} ${className} `}
+      {...props}
     >
       {children}
     </Link>
