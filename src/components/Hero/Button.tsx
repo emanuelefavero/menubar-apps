@@ -2,11 +2,9 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
 
-type Variant = 'primary' | 'secondary'
-
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
-  variant?: Variant
+  variant?: 'primary' | 'secondary'
   children: React.ReactNode
   className?: string
 }
@@ -21,7 +19,7 @@ export default function Component({
   const baseStyles =
     'inline-block w-full rounded-full px-4 py-2 text-lg font-medium no-underline transition duration-250 active:scale-[97%]'
 
-  const variantStyles: Record<Variant, string> = {
+  const variantStyles = {
     primary:
       'bg-white/80 text-gray-800 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white hover:bg-white',
     secondary:
