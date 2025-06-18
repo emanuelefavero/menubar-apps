@@ -43,7 +43,8 @@ export default function Component() {
           aria-label='Download Menubar Tasks App'
           title='Download Menubar Tasks App'
         >
-          Download Now - 100% Free
+          Download Now{' '}
+          <span className='hidden xs:inline-block'>- 100% Free</span>
         </Link>
 
         {/* Support button */}
