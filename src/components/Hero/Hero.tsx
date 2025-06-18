@@ -7,7 +7,7 @@ import Card from './Card'
 
 export default function Component() {
   return (
-    <section className='relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-12'>
+    <section className='relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-12'>
       <BackgroundImage
         src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
