@@ -38,7 +38,7 @@ export default function Component() {
         {/* Download button */}
         <Link
           href='/images/menubar-tasks.png'
-          className='mt-4 inline-block w-full rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md transition hover:bg-gray-100'
+          className='mt-4 inline-block w-full rounded-full bg-white px-10 py-2 text-lg font-medium text-black shadow-md transition hover:bg-gray-100'
           download
           aria-label='Download Menubar Tasks App'
           title='Download Menubar Tasks App'
@@ -49,7 +49,7 @@ export default function Component() {
         {/* Support button */}
         <Link
           href='https://buymeacoffee.com/emanuelefavero'
-          className='mt-2.5 inline-block w-full rounded-full bg-gray-800 px-4 py-2 text-sm font-medium text-white shadow-md transition hover:bg-gray-700'
+          className='mt-2.5 inline-block w-full rounded-full bg-gray-800 px-10 py-2 text-lg font-medium text-white shadow-md transition hover:bg-gray-700'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='Support on Buy Me a Coffee'
