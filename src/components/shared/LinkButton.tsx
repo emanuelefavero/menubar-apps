@@ -8,20 +8,10 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export default function Component({ children, className, ...props }: Props) {
-  const insetShadow = 'inset-shadow-[1px_2px_1px_0_rgba(220,226,232,0.23)]'
-
-  const baseStyles = `rounded-full border border-black/25 bg-(--primary) px-3 py-1.5 text-white no-underline ${insetShadow} transition-all duration-200 select-none text-shadow-(--text-shadow-sm)`
-
-  const hoverStyles = 'hover:bg-(--primary-hover)'
-
-  const activeStyles = 'active:scale-95'
+  const baseStyles = `inline-block rounded-full border-b-2 border-black/15 bg-white/80 px-3 py-1.5 font-medium text-gray-800 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white no-underline transition duration-250 select-none hover:bg-white active:scale-[97%]`
 
   return (
-    <Link
-      href='/'
-      className={clsx(baseStyles, hoverStyles, activeStyles, className)}
-      {...props}
-    >
+    <Link href='/' className={clsx(baseStyles, className)} {...props}>
       {children}
     </Link>
   )
