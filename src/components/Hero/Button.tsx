@@ -4,7 +4,7 @@ import { AnchorHTMLAttributes } from 'react'
 
 type Variant = 'primary' | 'secondary'
 
-type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   variant?: Variant
   children: React.ReactNode
