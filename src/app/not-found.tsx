@@ -27,7 +27,7 @@ export default function NotFound() {
             Sorry, the page you are looking for does not exist.
           </p>
 
-          <LinkButton>← Go back to Home</LinkButton>
+          <LinkButton className='mt-1'>← Go back to Home</LinkButton>
         </div>
       </div>
 
