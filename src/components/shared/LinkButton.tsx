@@ -5,7 +5,7 @@ import { AnchorHTMLAttributes } from 'react'
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string
   variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'lg'
+  size?: 'none' | 'sm' | 'base' | 'lg'
   children: React.ReactNode
   className?: string
 }
@@ -13,7 +13,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 export default function LinkButton({
   href = '/',
   variant = 'primary',
-  size = 'sm',
+  size = 'none',
   children,
   className = '',
   ...props
@@ -22,7 +22,9 @@ export default function LinkButton({
     'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[97%] select-none backdrop-blur-xs'
 
   const sizeStyles = {
-    sm: 'px-3 py-1.5 text-base',
+    none: 'px-3 py-1.5',
+    sm: 'px-3 py-1.5 text-sm',
+    base: 'px-3 py-1.5 text-base',
     lg: 'w-full px-4 py-2 text-lg',
   }
 
