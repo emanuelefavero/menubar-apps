@@ -21,16 +21,16 @@ export default function Component({
   const isActive = pathname === href
 
   const baseStyles =
-    'rounded-full px-3 py-1 text-gray-700 no-underline select-none hover:bg-white/30'
+    'rounded-full px-3 py-0.5 text-gray-700 no-underline select-none hover:bg-white/30 transition duration-250'
 
   const groupStyles =
-    'group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
+    'group-has-[:hover]:border-[rgba(0,0,0,0)] group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
 
   const activeStyles =
-    'bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'
+    'border-b-2 border-black/15 bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:border-black/15 hover:bg-white/80'
 
   const activeGroupStyles =
-    'group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'
+    'group-has-[:hover]:hover:border-black/15 group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'
 
   return (
     <Link
