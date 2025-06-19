@@ -24,7 +24,7 @@ export default function Component({
     'rounded-full px-3 py-0.5 text-gray-700 no-underline select-none hover:bg-white/30 transition duration-250'
 
   const groupStyles =
-    'group-has-[:hover]:border-[rgba(0,0,0,0)] group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
+    'group-has-[:hover]:border-transparent group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
 
   const activeStyles =
     'border-b-2 border-black/15 bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:border-black/15 hover:bg-white/80'
