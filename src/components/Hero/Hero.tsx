@@ -1,8 +1,8 @@
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import LinkAttribution from '@/components/shared/LinkAttribution'
+import LinkButton from '@/components/shared/LinkButton'
 import { heroAppName } from '@/config/hero'
 import Image from 'next/image'
-import Button from './Button'
 import Card from './Card'
 
 export default function Component() {
@@ -38,19 +38,20 @@ export default function Component() {
         <div className='mt-2.5 h-[1px] w-full bg-white/20'></div>
 
         {/* Download button */}
-        <Button
+        <LinkButton
           href='/images/menubar-tasks.png'
           className='mt-4'
           download
           aria-label='Download Menubar Tasks App'
           title='Download Menubar Tasks App'
+          size='lg'
         >
           Download Now{' '}
           <span className='hidden 2xs:inline-block'>- 100% Free</span>
-        </Button>
+        </LinkButton>
 
         {/* Support button */}
-        <Button
+        <LinkButton
           href='https://buymeacoffee.com/emanuelefavero'
           variant='secondary'
           className='mt-2.5'
@@ -58,9 +59,10 @@ export default function Component() {
           rel='noopener noreferrer'
           aria-label='Support on Buy Me a Coffee'
           title='Support on Buy Me a Coffee'
+          size='lg'
         >
           Support the App <span aria-hidden='true'>☕</span>
-        </Button>
+        </LinkButton>
       </Card>
 
       <LinkAttribution

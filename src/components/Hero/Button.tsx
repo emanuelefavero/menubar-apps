@@ -1,3 +1,6 @@
+// This file is now merged into shared/LinkButton.tsx
+// You can safely delete this file.
+
 import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
