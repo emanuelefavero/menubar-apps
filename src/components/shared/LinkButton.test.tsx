@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
-import LinkButton, { type Variant } from './LinkButton'
+import LinkButton, { type Size, type Variant } from './LinkButton'
 
 describe('LinkButton', () => {
   afterEach(() => {
@@ -47,6 +47,22 @@ describe('LinkButton', () => {
       render(<LinkButton variant={variant}>{variant} Link</LinkButton>)
 
       const linkButton = screen.getByRole('link', { name: `${variant} Link` })
+      expect(linkButton.getAttribute('class')).toContain(className)
+    })
+  })
+
+  test('renders with custom size', () => {
+    const sizes: [Size, string][] = [
+      ['none', 'px-3 py-1.5'],
+      ['sm', 'text-sm'],
+      ['base', 'text-base'],
+      ['lg', 'text-lg'],
+    ]
+
+    sizes.forEach(([size, className]) => {
+      render(<LinkButton size={size}>{size} Link</LinkButton>)
+
+      const linkButton = screen.getByRole('link', { name: `${size} Link` })
       expect(linkButton.getAttribute('class')).toContain(className)
     })
   })

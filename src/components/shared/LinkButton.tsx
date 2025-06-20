@@ -3,11 +3,12 @@ import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
 
 export type Variant = 'primary' | 'secondary'
+export type Size = 'none' | 'sm' | 'base' | 'lg'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string
   variant?: Variant
-  size?: 'none' | 'sm' | 'base' | 'lg'
+  size?: Size
   children: React.ReactNode
   className?: string
 }
