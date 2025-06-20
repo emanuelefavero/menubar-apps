@@ -29,4 +29,11 @@ describe('LinkButton', () => {
       /text-base|text-sm|text-lg/,
     )
   })
+
+  test('renders with custom href', () => {
+    render(<LinkButton href='/custom'>Custom Link</LinkButton>)
+
+    const linkButton = screen.getByRole('link', { name: 'Custom Link' })
+    expect(linkButton.getAttribute('href')).toBe('/custom')
+  })
 })
