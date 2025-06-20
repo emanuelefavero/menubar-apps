@@ -75,4 +75,11 @@ describe('LinkButton', () => {
     })
     expect(linkButton.getAttribute('class')).toContain('custom-class')
   })
+
+  test('applies additional link attributes', () => {
+    render(<LinkButton target='_blank'>Link Attribute Link</LinkButton>)
+
+    const linkButton = screen.getByRole('link', { name: 'Link Attribute Link' })
+    expect(linkButton.getAttribute('target')).toBe('_blank')
+  })
 })
