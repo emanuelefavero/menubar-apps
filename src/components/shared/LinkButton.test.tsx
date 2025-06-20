@@ -1,20 +1,32 @@
-import { render, screen } from '@testing-library/react'
-import { expect, test } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, test } from 'vitest'
 import LinkButton from './LinkButton'
 
-test('renders LinkButton with no props', () => {
-  render(<LinkButton>Click Me</LinkButton>)
+describe('LinkButton', () => {
+  afterEach(() => {
+    cleanup()
+  })
 
-  const linkButton = screen.getByRole('link', { name: 'Click Me' })
+  test('renders with no props', () => {
+    render(<LinkButton>Click Me</LinkButton>)
 
-  // href defaults to '/'
-  expect(linkButton.getAttribute('href')).toBe('/')
+    const linkButton = screen.getByRole('link', { name: 'Click Me' })
 
-  // Default variant is 'primary'
-  expect(linkButton.getAttribute('class')).toContain('bg-white/80')
+    // Ensure the it is rendered
+    expect(linkButton).toBeDefined()
 
-  // Default size is 'none'
-  expect(linkButton.getAttribute('class')).not.toMatch(
-    /text-base|text-sm|text-lg/,
-  )
+    // Ensure it has the correct children
+    expect(linkButton.textContent).toBe('Click Me')
+
+    // href defaults to '/'
+    expect(linkButton.getAttribute('href')).toBe('/')
+
+    // Default variant is 'primary'
+    expect(linkButton.getAttribute('class')).toContain('bg-white/80')
+
+    // Default size is 'none'
+    expect(linkButton.getAttribute('class')).not.toMatch(
+      /text-base|text-sm|text-lg/,
+    )
+  })
 })
