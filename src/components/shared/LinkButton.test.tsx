@@ -66,4 +66,13 @@ describe('LinkButton', () => {
       expect(linkButton.getAttribute('class')).toContain(className)
     })
   })
+
+  test('applies additional className', () => {
+    render(<LinkButton className='custom-class'>Custom Class Link</LinkButton>)
+
+    const linkButton = screen.getByRole('link', {
+      name: 'Custom Class Link',
+    })
+    expect(linkButton.getAttribute('class')).toContain('custom-class')
+  })
 })
