@@ -2,9 +2,11 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
 
+export type Variant = 'primary' | 'secondary'
+
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string
-  variant?: 'primary' | 'secondary'
+  variant?: Variant
   size?: 'none' | 'sm' | 'base' | 'lg'
   children: React.ReactNode
   className?: string

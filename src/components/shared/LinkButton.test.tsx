@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, test } from 'vitest'
-import LinkButton from './LinkButton'
+import LinkButton, { type Variant } from './LinkButton'
 
 describe('LinkButton', () => {
   afterEach(() => {
@@ -35,5 +35,19 @@ describe('LinkButton', () => {
 
     const linkButton = screen.getByRole('link', { name: 'Custom Link' })
     expect(linkButton.getAttribute('href')).toBe('/custom')
+  })
+
+  test('renders with custom variant', () => {
+    const variants: [Variant, string][] = [
+      ['primary', 'bg-white/80'],
+      ['secondary', 'bg-black/10'],
+    ]
+
+    variants.forEach(([variant, className]) => {
+      render(<LinkButton variant={variant}>{variant} Link</LinkButton>)
+
+      const linkButton = screen.getByRole('link', { name: `${variant} Link` })
+      expect(linkButton.getAttribute('class')).toContain(className)
+    })
   })
 })
