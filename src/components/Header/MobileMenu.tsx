@@ -13,12 +13,24 @@ export default function Component() {
       <button
         className='block p-2 xs:hidden'
         aria-label='Open menu'
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen((prev) => !prev)}
       >
-        {/* Hamburger button lines */}
-        <span className='mb-1 block h-0.5 w-6 bg-black'></span>
-        <span className='mb-1 block h-0.5 w-6 bg-black'></span>
-        <span className='block h-0.5 w-6 bg-black'></span>
+        {/* Hamburger button lines as X when open */}
+        <span
+          className={`mb-1 block h-0.5 w-6 bg-black transition-transform duration-300 ${
+            open ? 'translate-y-1.5 rotate-45' : ''
+          }`}
+        ></span>
+        <span
+          className={`mb-1 block h-0.5 w-6 bg-black transition-opacity duration-300 ${
+            open ? 'opacity-0' : ''
+          }`}
+        ></span>
+        <span
+          className={`block h-0.5 w-6 bg-black transition-transform duration-300 ${
+            open ? '-translate-y-1.5 -rotate-45' : ''
+          }`}
+        ></span>
       </button>
 
       {/* Hamburger Menu */}
