@@ -1,3 +1,4 @@
+import { headerLinks } from '@/data/headerLinks'
 import DesktopLink from './DesktopLink'
 
 interface Props {
@@ -7,8 +8,11 @@ interface Props {
 export default function Component({ className = '' }: Props) {
   return (
     <nav className={`group hidden -space-x-2 select-none xs:flex ${className}`}>
-      <DesktopLink href='/about-us'>About Us</DesktopLink>
-      <DesktopLink href='/support'>Support</DesktopLink>
+      {headerLinks.map((link, index) => (
+        <DesktopLink key={`${index}-${link.href}`} href={link.href}>
+          {link.label}
+        </DesktopLink>
+      ))}
     </nav>
   )
 }
