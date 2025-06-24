@@ -107,6 +107,27 @@
       opacity: 1;
     }
   }
+
+  /* Appear */
+  --animate-appear: appear 250ms ease-in;
+
+  @keyframes appear {
+    from {
+      /* transform-origin: top; */
+      transform: translateY(-33px);
+      opacity: 0;
+    }
+    to {
+      /* transform-origin: top; */
+      transform: translateY(0);
+      opacity: 1;
+    }
+    30% {
+      /* transform-origin: top; */
+      transform: translateY(-33px);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {

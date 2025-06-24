@@ -15,7 +15,7 @@ export default function Component() {
         priority
       />
 
-      <Card>
+      <Card className='animate-appear'>
         {/* Icon */}
         <Image
           src='/images/menubar-tasks.png'
