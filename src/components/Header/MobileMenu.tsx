@@ -17,17 +17,17 @@ export default function Component() {
       >
         {/* Hamburger button lines as X when open */}
         <span
-          className={`mb-1 block h-0.5 w-6 bg-black transition-transform duration-300 ${
+          className={`mb-1 block h-0.5 w-6 rounded-full bg-gray-700 transition-transform duration-300 ${
             open ? 'translate-y-1.5 rotate-45' : ''
           }`}
         ></span>
         <span
-          className={`mb-1 block h-0.5 w-6 bg-black transition-opacity duration-300 ${
+          className={`mb-1 block h-0.5 w-6 rounded-full bg-gray-700 transition-opacity duration-300 ${
             open ? 'opacity-0' : ''
           }`}
         ></span>
         <span
-          className={`block h-0.5 w-6 bg-black transition-transform duration-300 ${
+          className={`block h-0.5 w-6 rounded-full bg-gray-700 transition-transform duration-300 ${
             open ? '-translate-y-1.5 -rotate-45' : ''
           }`}
         ></span>
