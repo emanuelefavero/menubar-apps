@@ -10,8 +10,8 @@ export default function Component() {
 
   return (
     <nav>
-      <HamburgerButton open={open} setOpen={setOpen} />
-      <HamburgerMenu open={open} setOpen={setOpen} />
+      <HamburgerButton open={open} onClick={() => setOpen((prev) => !prev)} />
+      <HamburgerMenu open={open} onClick={() => setOpen(false)} />
     </nav>
   )
 }
@@ -20,16 +20,16 @@ export default function Component() {
 
 interface HamburgerButtonProps {
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  onClick?: () => void
 }
 
-function HamburgerButton({ open, setOpen }: HamburgerButtonProps) {
+function HamburgerButton({ open, onClick }: HamburgerButtonProps) {
   return (
     <button
       className='block cursor-pointer p-1 xs:hidden'
       aria-label='Open menu'
       title='Open menu'
-      onClick={() => setOpen((prev) => !prev)}
+      onClick={onClick} // Toggle menu on click
     >
       <span
         className={clsx(
@@ -57,10 +57,10 @@ function HamburgerButton({ open, setOpen }: HamburgerButtonProps) {
 
 interface HamburgerMenuProps {
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  onClick?: () => void
 }
 
-function HamburgerMenu({ open, setOpen }: HamburgerMenuProps) {
+function HamburgerMenu({ open, onClick }: HamburgerMenuProps) {
   return (
     <div
       className={clsx(
@@ -75,7 +75,7 @@ function HamburgerMenu({ open, setOpen }: HamburgerMenuProps) {
           <HamburgerLink
             href='/'
             label='Home'
-            onClick={() => setOpen(false)} // Close menu on link click
+            onClick={onClick} // Close menu on link click
           />
         </li>
 
@@ -85,7 +85,7 @@ function HamburgerMenu({ open, setOpen }: HamburgerMenuProps) {
             <HamburgerLink
               href={link.href}
               label={link.label}
-              onClick={() => setOpen(false)} // Close menu on link click
+              onClick={onClick}
             />
           </li>
         ))}
