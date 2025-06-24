@@ -70,18 +70,46 @@ function HamburgerMenu({ open, setOpen }: HamburgerMenuProps) {
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
+        {/* Home Link */}
+        <li>
+          <HamburgerLink
+            href='/'
+            label='Home'
+            onClick={() => setOpen(false)} // Close menu on link click
+          />
+        </li>
+
+        {/* Header Links */}
         {headerLinks.map((link) => (
           <li key={link.href}>
-            <Link
+            <HamburgerLink
               href={link.href}
-              className='text-lg font-medium text-black hover:text-gray-700'
+              label={link.label}
               onClick={() => setOpen(false)} // Close menu on link click
-            >
-              {link.label}
-            </Link>
+            />
           </li>
         ))}
       </ul>
     </div>
+  )
+}
+
+interface HamburgerLinkProps {
+  href: string
+  label: string
+  onClick?: () => void
+}
+
+function HamburgerLink({ href, label, onClick }: HamburgerLinkProps) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className='text-lg font-medium text-black hover:text-gray-700'
+        onClick={onClick} // Close menu on link click
+      >
+        {label}
+      </Link>
+    </li>
   )
 }
