@@ -66,7 +66,7 @@ function HamburgerMenu({ open, onClick }: HamburgerMenuProps) {
       className={clsx(
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 right-0 z-50 mr-2 rounded-2xl bg-white/20 p-4 shadow-sm backdrop-blur-lg xs:hidden',
+        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-2xl bg-[rgba(107,118,130,0.2)] p-4 shadow-sm backdrop-blur-sm xs:hidden',
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
