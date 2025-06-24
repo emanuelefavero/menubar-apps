@@ -1,6 +1,6 @@
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
+import DesktopMenu from './DesktopMenu'
 import Logo from './Logo'
-import Menu from './Menu'
 
 export default function Component() {
   return (
@@ -8,7 +8,7 @@ export default function Component() {
       <div className='relative flex items-center justify-between px-2 py-[0.2rem] backdrop-blur-xl'>
         <BackgroundShadow bgColor='bg-white/30' blur='blur-xl' />
         <Logo />
-        <Menu />
+        <DesktopMenu />
       </div>
     </header>
   )
