@@ -102,14 +102,12 @@ interface HamburgerLinkProps {
 
 function HamburgerLink({ href, label, onClick }: HamburgerLinkProps) {
   return (
-    <li>
-      <Link
-        href={href}
-        className='text-lg font-medium text-black hover:text-gray-700'
-        onClick={onClick} // Close menu on link click
-      >
-        {label}
-      </Link>
-    </li>
+    <Link
+      href={href}
+      className='text-lg font-medium text-black hover:text-gray-700'
+      onClick={onClick} // Close menu on link click
+    >
+      {label}
+    </Link>
   )
 }
