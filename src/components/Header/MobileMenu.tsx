@@ -11,7 +11,7 @@ export default function Component() {
     <nav>
       {/* Hamburger button */}
       <button
-        className='block p-2 xs:hidden'
+        className='block cursor-pointer p-2 xs:hidden'
         aria-label='Open menu'
         onClick={() => setOpen((prev) => !prev)}
       >
@@ -22,7 +22,7 @@ export default function Component() {
           }`}
         ></span>
         <span
-          className={`mb-1 block h-0.5 w-6 rounded-full bg-gray-700 transition-opacity duration-300 ${
+          className={`mb-1 block h-0.5 w-6 rounded-full bg-gray-700 transition-opacity duration-150 ${
             open ? 'opacity-0' : ''
           }`}
         ></span>
