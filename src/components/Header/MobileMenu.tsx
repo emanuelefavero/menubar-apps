@@ -66,12 +66,12 @@ function HamburgerMenu({ open, setOpen }: HamburgerMenuProps) {
       className={clsx(
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 left-0 w-full bg-white/90 shadow-md backdrop-blur-lg xs:hidden',
+        'absolute top-12 right-0 z-50 mr-2 rounded-2xl bg-white/20 p-4 shadow-sm backdrop-blur-lg xs:hidden',
       )}
     >
-      <ul className='flex flex-col items-center p-4'>
+      <ul className='flex flex-col items-center gap-2'>
         {headerLinks.map((link) => (
-          <li key={link.href} className='mb-2'>
+          <li key={link.href}>
             <Link
               href={link.href}
               className='text-lg font-medium text-black hover:text-gray-700'
