@@ -1,6 +1,7 @@
 'use client'
 
 import { headerLinks } from '@/data/headerLinks'
+import '@/styles/Card.css' // for hamburger menu ↓
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -64,9 +65,10 @@ function HamburgerMenu({ open, onClick }: HamburgerMenuProps) {
   return (
     <div
       className={clsx(
+        'card',
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-2xl bg-[rgba(107,118,130,0.2)] p-4 shadow-sm backdrop-blur-sm xs:hidden',
+        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.75rem] bg-(--card-background) p-4 shadow-(--card-shadow) backdrop-blur-[6px] xs:hidden',
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
