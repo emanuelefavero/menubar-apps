@@ -1,5 +1,5 @@
 import { headerLinks } from '@/data/headerLinks'
-import DesktopLink from './DesktopLink'
+import DesktopLink from './Link'
 
 interface Props {
   className?: string

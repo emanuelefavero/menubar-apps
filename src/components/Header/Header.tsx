@@ -1,7 +1,7 @@
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
-import DesktopMenu from './DesktopMenu'
 import Logo from './Logo'
-import MobileMenu from './MobileMenu'
+import DesktopMenu from './Menu/Desktop/Menu'
+import MobileMenu from './Menu/Mobile/Menu'
 
 export default function Component() {
   // TIP: We need to add `backdrop-blur` in the `before` pseudo element because the `MobileMenu` will also have a `backdrop-blur` effect, and nested backdrop-blur effects are not supported in CSS. @see https://github.com/tailwindlabs/tailwindcss/discussions/15103
