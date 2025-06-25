@@ -1,0 +1,43 @@
+@layer components {
+  .hamburger-menu {
+    --hamburger-menu-background: oklch(0.91 0.0119 239.92 / 0.2);
+    --hamburger-menu-shadow:
+      1px 3px 3px 0 rgba(2, 3, 5, 0.16),
+      5px 3px 4px -5px rgba(237, 237, 251, 0.8) inset,
+      -3px -1px 4px -3px rgba(223, 223, 247, 0.2) inset,
+      0px 0px 0px 1px rgba(47, 59, 71, 0.18);
+    --hamburger-menu-border-top: linear-gradient(
+      135deg,
+      rgba(242, 244, 249, 0.769) 0%,
+      rgba(255, 255, 255, 0) 40%
+    );
+    --hamburger-menu-border-bottom: var(--hamburger-menu-border-top);
+    --hamburger-menu-mask:
+      linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+  }
+
+  /* Card Gradient Borders */
+  .hamburger-menu::before,
+  .hamburger-menu::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.45rem;
+    pointer-events: none;
+    z-index: 100;
+    mask: var(--hamburger-menu-mask);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    padding: 1px; /* Border thickness */
+    box-sizing: border-box;
+  }
+
+  .hamburger-menu::before {
+    background: var(--hamburger-menu-border-top);
+  }
+
+  .hamburger-menu::after {
+    background: var(--hamburger-menu-border-bottom);
+    transform: rotate(180deg);
+  }
+}

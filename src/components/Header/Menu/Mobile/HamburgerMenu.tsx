@@ -1,6 +1,6 @@
 import { headerLinks } from '@/data/headerLinks'
 import clsx from 'clsx'
-import './Card.css'
+import './HamburgerMenu.css'
 import HamburgerLink from './Link'
 
 interface Props {
@@ -12,10 +12,10 @@ export default function Component({ open, onClick }: Props) {
   return (
     <div
       className={clsx(
-        'card',
+        'hamburger-menu',
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.75rem] bg-(--card-background) p-4 shadow-(--card-shadow) backdrop-blur-[6px] xs:hidden',
+        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] bg-(--hamburger-menu-background) p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
       )}
     >
       <ul className='flex flex-col items-center gap-2'>

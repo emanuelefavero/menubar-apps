@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Card from './Card'
+import Card from './HamburgerMenu'
 import HamburgerButton from './HamburgerButton'
 
 export default function Component() {
