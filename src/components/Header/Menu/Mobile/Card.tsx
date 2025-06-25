@@ -1,6 +1,6 @@
 import { headerLinks } from '@/data/headerLinks'
-import '@/styles/Card.css'
 import clsx from 'clsx'
+import './Card.css'
 import HamburgerLink from './Link'
 
 interface Props {
