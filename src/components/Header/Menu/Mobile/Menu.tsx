@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import HamburgerButton from './HamburgerButton'
-import Card from './HamburgerMenu'
+import HamburgerMenu from './HamburgerMenu'
 
 export default function Component() {
   const [open, setOpen] = useState(false)
@@ -10,7 +10,7 @@ export default function Component() {
   return (
     <nav>
       <HamburgerButton open={open} onClick={() => setOpen((prev) => !prev)} />
-      <Card open={open} onClick={() => setOpen(false)} />
+      <HamburgerMenu open={open} onClick={() => setOpen(false)} />
     </nav>
   )
 }
