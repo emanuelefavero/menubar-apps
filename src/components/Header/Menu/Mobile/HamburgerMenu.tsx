@@ -1,4 +1,5 @@
 import { headerLinks } from '@/data/headerLinks'
+import { useIsHome } from '@/hooks/useIsHome'
 import clsx from 'clsx'
 import { Ref } from 'react'
 import './HamburgerMenu.css'
@@ -11,6 +12,8 @@ interface Props {
 }
 
 export default function Component({ open, onClick, ref }: Props) {
+  const isHome = useIsHome()
+
   return (
     <div
       ref={ref}
@@ -22,14 +25,16 @@ export default function Component({ open, onClick, ref }: Props) {
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
-        {/* Home Link */}
-        <li>
-          <HamburgerLink
-            href='/'
-            label='Home'
-            onClick={onClick} // Close menu on link click
-          />
-        </li>
+        {/* Home Link (shown when not home) */}
+        {!isHome && (
+          <li>
+            <HamburgerLink
+              href='/'
+              label='Home'
+              onClick={onClick} // Close menu on link click
+            />
+          </li>
+        )}
 
         {/* Header Links */}
         {headerLinks.map((link) => (
