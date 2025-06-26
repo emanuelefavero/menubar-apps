@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Card from './HamburgerMenu'
 import HamburgerButton from './HamburgerButton'
+import Card from './HamburgerMenu'
 
 export default function Component() {
   const [open, setOpen] = useState(false)
