@@ -1,16 +1,19 @@
 import { headerLinks } from '@/data/headerLinks'
 import clsx from 'clsx'
+import { Ref } from 'react'
 import './HamburgerMenu.css'
 import HamburgerLink from './Link'
 
 interface Props {
   open: boolean
   onClick?: () => void
+  ref?: Ref<HTMLDivElement>
 }
 
-export default function Component({ open, onClick }: Props) {
+export default function Component({ open, onClick, ref }: Props) {
   return (
     <div
+      ref={ref}
       className={clsx(
         'hamburger-menu',
         open && 'block',

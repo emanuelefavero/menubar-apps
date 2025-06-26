@@ -11,6 +11,8 @@ export default function Component() {
 
   useEffect(() => {
     if (!open) return
+
+    // Close the menu when clicking outside of it
     function handleClickOutside(event: MouseEvent) {
       if (
         menuRef.current &&
@@ -21,7 +23,11 @@ export default function Component() {
         setOpen(false)
       }
     }
+
+    // Add event listener to handle clicks outside the menu
     document.addEventListener('mousedown', handleClickOutside)
+
+    // Cleanup
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
@@ -34,9 +40,7 @@ export default function Component() {
         open={open}
         onClick={() => setOpen((prev) => !prev)}
       />
-      <div ref={menuRef}>
-        <HamburgerMenu open={open} onClick={() => setOpen(false)} />
-      </div>
+      <HamburgerMenu ref={menuRef} open={open} onClick={() => setOpen(false)} />
     </nav>
   )
 }
