@@ -45,7 +45,7 @@ export default function Component({ open, onClick, ref }: Props) {
         {/* Header Links */}
         {headerLinks.map((link) => (
           <li
-            key={link.href}
+            key={`hamburger-link-${link.href}`}
             className='transition-transform duration-250 active:scale-[97%]'
           >
             <HamburgerLink
