@@ -17,17 +17,11 @@ export default function Component({ open, onClick, ref }: Props) {
   return (
     <div
       ref={ref}
-      // className={clsx(
-      //   'hamburger-menu',
-      //   open && 'block',
-      //   !open && 'hidden',
-      //   'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] bg-(--hamburger-menu-background) p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
-      // )}
       className={clsx(
         'hamburger-menu',
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] bg-(--hamburger-menu-background) p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px]',
+        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] bg-(--hamburger-menu-background) p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
