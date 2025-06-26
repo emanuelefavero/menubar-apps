@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import { useRef, useState } from 'react'
 import HamburgerButton from './HamburgerButton'
 import HamburgerMenu from './HamburgerMenu'
 
@@ -9,29 +10,16 @@ export default function Component() {
   const menuRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  useEffect(() => {
-    if (!open) return
-
-    // Close the menu when clicking outside of it
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false)
-      }
-    }
-
-    // Add event listener to handle clicks outside the menu
-    document.addEventListener('mousedown', handleClickOutside)
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [open])
+  // Close the menu when clicking outside of it or the button
+  useOnClickOutside(
+    [
+      menuRef as React.RefObject<HTMLElement>,
+      buttonRef as React.RefObject<HTMLElement>,
+    ],
+    () => {
+      if (open) setOpen(false)
+    },
+  )
 
   return (
     <nav>
