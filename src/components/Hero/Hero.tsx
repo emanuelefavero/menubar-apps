@@ -1,12 +1,11 @@
 'use client'
 
 import BackgroundImage from '@/components/shared/BackgroundImage'
-import { DraggableWithinViewport } from '@/components/shared/DraggableWithinViewport'
 import LinkAttribution from '@/components/shared/LinkAttribution'
 import LinkButton from '@/components/shared/LinkButton'
 import { heroAppName } from '@/config/hero'
+import { motion } from 'motion/react'
 import Image from 'next/image'
-import React from 'react'
 import Card from './Card'
 
 export default function Component() {
@@ -19,7 +18,14 @@ export default function Component() {
         priority
       />
 
-      <DraggableWithinViewport className='w-full max-w-[400px]'>
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        whileDrag={{ scale: 0.97, rotate: 2 }}
+        drag
+        dragSnapToOrigin
+        dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+        className='flex w-full max-w-[400px] items-center justify-center'
+      >
         <Card className='animate-appear'>
           {/* Icon */}
           <Image
@@ -70,7 +76,7 @@ export default function Component() {
             Support the App <span aria-hidden='true'>☕</span>
           </LinkButton>
         </Card>
-      </DraggableWithinViewport>
+      </motion.div>
 
       <LinkAttribution
         name='Paul Pastourmatzis'
