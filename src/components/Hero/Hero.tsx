@@ -1,12 +1,13 @@
 'use client'
 
-import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
+// import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import LinkAttribution from '@/components/shared/LinkAttribution'
 import LinkButton from '@/components/shared/LinkButton'
 import { heroAppName } from '@/config/hero'
 import Image from 'next/image'
 import Card from './Card'
+import EasterEgg from './EasterEgg'
 
 export default function Component() {
   return (
@@ -18,10 +19,7 @@ export default function Component() {
         priority
       />
 
-      <DraggableSnapBack
-        className='z-10 flex w-full max-w-[400px] items-center justify-center'
-        parentClassName='max-w-[400px] w-full'
-      >
+      <EasterEgg>
         <Card className='animate-appear'>
           {/* Icon */}
           <Image
@@ -74,7 +72,7 @@ export default function Component() {
             Support the App <span aria-hidden='true'>☕</span>
           </LinkButton>
         </Card>
-      </DraggableSnapBack>
+      </EasterEgg>
 
       <LinkAttribution
         name='Paul Pastourmatzis'
