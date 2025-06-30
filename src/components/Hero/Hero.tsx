@@ -44,12 +44,13 @@ export default function Component() {
 
           {/* Download button */}
           <LinkButton
+            size='lg'
             href='/images/menubar-tasks.png'
             className='mt-4'
             download
             aria-label='Download Menubar Tasks App'
             title='Download Menubar Tasks App'
-            size='lg'
+            draggable={false}
           >
             Download Now{' '}
             <span className='hidden 2xs:inline-block'>- 100% Free</span>
@@ -57,6 +58,7 @@ export default function Component() {
 
           {/* Support button */}
           <LinkButton
+            size='lg'
             href='https://buymeacoffee.com/emanuelefavero'
             variant='secondary'
             className='mt-2.5'
@@ -64,7 +66,7 @@ export default function Component() {
             rel='noopener noreferrer'
             aria-label='Support on Buy Me a Coffee'
             title='Support on Buy Me a Coffee'
-            size='lg'
+            draggable={false}
           >
             Support the App <span aria-hidden='true'>☕</span>
           </LinkButton>
