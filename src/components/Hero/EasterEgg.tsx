@@ -4,12 +4,12 @@ import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
 import clsx from 'clsx'
 import { useState } from 'react'
 
+// TIP: This component contains an ASCII art Easter egg that appears when the user drags the DraggableSnapBack component
+
 interface Props {
   className?: string
   children: React.ReactNode
 }
-
-// TIP: This component contains an ASCII art Easter egg that appears when the user drags the DraggableSnapBack component
 
 export default function Component({ className = '', children }: Props) {
   const [isDragging, setIsDragging] = useState(false)
