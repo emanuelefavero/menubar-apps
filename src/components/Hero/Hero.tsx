@@ -18,7 +18,10 @@ export default function Component() {
         priority
       />
 
-      <DraggableSnapBack className='z-10 flex w-full max-w-[400px] items-center justify-center'>
+      <DraggableSnapBack
+        className='z-10 flex w-full max-w-[400px] items-center justify-center'
+        parentClassName='max-w-[400px] w-full'
+      >
         <Card className='animate-appear'>
           {/* Icon */}
           <Image
