@@ -14,6 +14,7 @@ export default function Component({ className = '', children }: Props) {
       drag
       dragSnapToOrigin
       dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+      dragConstraints={{ top: -100, left: -100, right: 100, bottom: 100 }}
       className={clsx(className)}
     >
       {children}
