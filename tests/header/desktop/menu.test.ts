@@ -7,9 +7,7 @@ test.describe('Desktop Menu', () => {
     await page.goto('/')
   })
 
-  test('hamburger button is visible and menu opens/closes', async ({
-    page,
-  }) => {
+  test('desktop menu is visible', async ({ page }) => {
     // Menu should be visible
     const menu = page.getByTestId('desktop-menu')
     await expect(menu).toBeVisible()
