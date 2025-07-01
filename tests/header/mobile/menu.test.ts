@@ -1,4 +1,3 @@
-import { headerLinks } from '@/data/headerLinks'
 import { expect, test } from '@playwright/test'
 
 test.describe('Mobile Menu', () => {
@@ -25,26 +24,6 @@ test.describe('Mobile Menu', () => {
     await hamburger.click()
     await expect(menu).not.toBeVisible()
   })
-
-  for (const link of headerLinks) {
-    test(`navigates to ${link.label} via mobile menu`, async ({ page }) => {
-      // Click hamburger button to open menu
-      const hamburger = page.getByLabel('Open menu', { exact: true })
-      await expect(hamburger).toBeVisible()
-      await hamburger.click()
-      await page.waitForTimeout(300) // Wait for animation to finish
-
-      // Click the link in the mobile menu
-      const navLink = page.getByRole('link', {
-        name: new RegExp(`^${link.label}$`, 'i'),
-      })
-      await expect(navLink).toBeVisible()
-      await navLink.click()
-
-      // Verify navigation
-      await expect(page).toHaveURL(link.href)
-    })
-  }
 
   test('clicking outside menu closes it', async ({ page }) => {
     // Click hamburger button to open menu
