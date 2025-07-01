@@ -46,13 +46,19 @@ test.describe('Mobile Menu', () => {
     })
   }
 
-  // test('clicking outside menu closes it', async ({ page }) => {
-  //   const hamburger = page.getByRole('button', { name: /menu|open/i })
-  //   await hamburger.click()
-  //   const menu = page.locator('nav[role="menu"], [data-testid="mobile-menu"]')
-  //   await expect(menu).toBeVisible()
-  //   // Click outside (top left corner)
-  //   await page.mouse.click(10, 10)
-  //   await expect(menu).not.toBeVisible()
-  // })
+  test('clicking outside menu closes it', async ({ page }) => {
+    // Click hamburger button to open menu
+    const hamburger = page.getByLabel('Open menu', { exact: true })
+    await expect(hamburger).toBeVisible()
+    await hamburger.click()
+    await page.waitForTimeout(300) // Wait for animation to finish
+
+    // Menu should now be visible
+    const menu = page.getByTestId('mobile-menu')
+    await expect(menu).toBeVisible()
+
+    // Click outside (top left corner)
+    await page.mouse.click(10, 10)
+    await expect(menu).not.toBeVisible()
+  })
 })
