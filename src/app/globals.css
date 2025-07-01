@@ -128,6 +128,24 @@
       opacity: 0;
     }
   }
+
+  /* Appear staggered */
+  --animate-appear-slower: appear-slower 300ms ease-in;
+
+  @keyframes appear-slower {
+    from {
+      transform: translateY(-33px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-33px);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {
