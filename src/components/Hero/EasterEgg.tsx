@@ -17,7 +17,7 @@ export default function Component({ className = '', children }: Props) {
       <div
         className={clsx(
           'pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-500',
-          isDragging ? 'opacity-100' : 'opacity-20',
+          isDragging ? 'opacity-100' : 'opacity-0',
         )}
         style={{
           zIndex: 0,

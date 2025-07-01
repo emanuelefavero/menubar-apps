@@ -22,12 +22,12 @@ export default function Component() {
         priority
       />
 
-      <EasterEgg>
+      <EasterEgg className='animate-appear'>
         <DraggableSnapBack
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
         >
-          <Card className='animate-appear'>
+          <Card>
             {/* Icon */}
             <Image
               src='/images/menubar-tasks.png'
