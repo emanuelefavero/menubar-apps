@@ -1,14 +1,11 @@
 import { title } from '@/config/metadata'
+import { headerLinks } from '@/data/headerLinks'
 import { expect, test } from '@playwright/test'
 
-const headerLinks = [
-  { label: title, path: '/' },
-  { label: 'About Us', path: '/about-us' },
-  { label: 'Support', path: '/support' },
-]
+const links = [{ label: title, href: '/' }, ...headerLinks]
 
 test.describe('Header Navigation', () => {
-  for (const link of headerLinks) {
+  for (const link of links) {
     test(`navigates to ${link.label} page when clicking header link`, async ({
       page,
     }) => {
@@ -18,7 +15,7 @@ test.describe('Header Navigation', () => {
       })
       await expect(navLink).toBeVisible()
       await navLink.click()
-      await expect(page).toHaveURL(link.path)
+      await expect(page).toHaveURL(link.href)
     })
   }
 })
