@@ -1,6 +1,5 @@
-'use client'
-
 import clsx from 'clsx'
+import AsciiArt from './AsciiArt'
 import { useDragStore } from './store/useDragStore'
 
 // TIP: This component contains an ASCII art Easter egg that appears when the user drags the hero card
@@ -27,11 +26,7 @@ export default function Component({ className = '', children }: Props) {
           fontSize: 14,
         }}
       >
-        {`
-  (\\_/)
-  ( •_•)
- / >🍪   You found the bunny!
-        `}
+        <AsciiArt />
       </div>
       {children}
     </div>
