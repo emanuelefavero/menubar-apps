@@ -22,13 +22,13 @@ export default function Component() {
   )
 
   return (
-    <nav>
+    <div>
       <HamburgerButton
         ref={buttonRef}
         open={open}
         onClick={() => setOpen((prev) => !prev)}
       />
       <HamburgerMenu ref={menuRef} open={open} onClick={() => setOpen(false)} />
-    </nav>
+    </div>
   )
 }

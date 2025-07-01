@@ -15,7 +15,9 @@ export default function Component({ open, onClick, ref }: Props) {
   const isHome = useIsHome()
 
   return (
-    <div
+    <nav
+      role='menu'
+      data-testid='mobile-menu'
       ref={ref}
       className={clsx(
         'hamburger-menu',
@@ -50,6 +52,6 @@ export default function Component({ open, onClick, ref }: Props) {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
