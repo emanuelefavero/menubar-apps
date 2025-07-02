@@ -1,10 +1,9 @@
+import type { HeaderLink } from '@/data/headerLinks'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-interface Props {
-  href: string
-  label: string
+interface Props extends HeaderLink {
   onClick?: () => void
 }
 
