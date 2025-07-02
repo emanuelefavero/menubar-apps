@@ -1,0 +1,43 @@
+@layer components {
+  .header {
+    --header-background: oklch(86.582% 0.01069 261.88 / 0.2);
+    --header-shadow:
+      0px 2px 2px 0 rgba(2, 3, 5, 0.1),
+      5px 3px 4px -5px rgba(237, 237, 251, 0.8) inset,
+      -3px -1px 4px -3px rgba(223, 223, 247, 0.2) inset,
+      0px 0px 0px 1px rgba(47, 59, 71, 0.18);
+    --header-border-top: linear-gradient(
+      135deg,
+      rgba(242, 244, 249, 0.769) 0%,
+      rgba(255, 255, 255, 0) 40%
+    );
+    --header-border-bottom: var(--header-border-top);
+    --header-mask:
+      linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
+  }
+
+  /* Card Gradient Borders */
+  .header::before,
+  .header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.7rem;
+    pointer-events: none;
+    z-index: 100;
+    mask: var(--header-mask);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    padding: 1px; /* Border thickness */
+    box-sizing: border-box;
+  }
+
+  .header::before {
+    background: var(--header-border-top);
+  }
+
+  .header::after {
+    background: var(--header-border-bottom);
+    transform: rotate(180deg);
+  }
+}
