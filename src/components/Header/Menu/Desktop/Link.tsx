@@ -23,22 +23,30 @@ export default function Component({
   const scrolledHalfway = useScrolledHalfway()
 
   const baseStyles = clsx(
-    scrolledHalfway ? 'text-white' : 'text-gray-700',
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none hover:bg-white/30 transition duration-250',
+    scrolledHalfway === 'top'
+      ? 'text-gray-700'
+      : scrolledHalfway === 'halfway'
+        ? 'text-gray-200'
+        : 'text-(--foreground)',
+    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none hover:bg-white/30 transition duration-200 active:scale-[97%]',
   )
 
   const groupStyles = clsx(
-    scrolledHalfway
-      ? 'group-has-[:hover]:text-white!'
-      : 'group-has-[:hover]:text-gray-700!',
+    scrolledHalfway === 'top'
+      ? 'group-has-[:hover]:text-gray-700!'
+      : scrolledHalfway === 'halfway'
+        ? 'group-has-[:hover]:text-gray-200!'
+        : 'group-has-[:hover]:text-(--foreground)!',
     'group-has-[:hover]:border-transparent! group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none',
   )
 
-  const activeStyles =
-    'border-b-2 border-black/15! bg-white/80 text-gray-700! shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:border-black/15! hover:bg-white/80'
+  const activeStyles = clsx(
+    'border-b-2 border-black/15! bg-white/80 text-gray-700! shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:border-black/15! hover:bg-white/80 hover:text-gray-700!',
+  )
 
-  const activeGroupStyles =
-    'group-has-[:hover]:hover:border-black/15 group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs'
+  const activeGroupStyles = clsx(
+    'group-has-[:hover]:hover:border-black/15 group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs',
+  )
 
   return (
     <Link
