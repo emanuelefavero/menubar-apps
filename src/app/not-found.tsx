@@ -7,7 +7,7 @@ import LinkButton from '@/components/shared/LinkButton'
 
 function TestScroll() {
   return (
-    <div className='flex min-h-screen w-full items-center justify-center bg-[rgb(235,239,241)] p-20 text-2xl text-gray-700 dark:bg-[rgb(30,37,48)] dark:text-gray-200'>
+    <div className='flex min-h-screen w-full items-center justify-center bg-(--background) p-20 text-2xl'>
       <h2>Lorem ipsum dolor sit amet.</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
