@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * Custom hook to determine the scroll direction of the page
+ * Determine the scroll direction of the page
  * @returns `true` if scrolling up, `false` if scrolling down
  */
 

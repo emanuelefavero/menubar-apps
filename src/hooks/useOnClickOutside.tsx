@@ -4,6 +4,7 @@ import { useEffect } from 'react'
  * Calls handler when a click occurs outside the given ref(s).
  * @param refs Array of refs to check for outside clicks.
  * @param handler Function to call on outside click.
+ * @returns void
  */
 
 export function useOnClickOutside(
