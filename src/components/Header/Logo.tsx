@@ -16,7 +16,11 @@ export default function Component({ className, ...props }: Props) {
   const scrolledHalfway = useScrolledHalfway()
 
   const baseStyles = clsx(
-    scrolledHalfway ? 'text-white' : 'text-gray-700',
+    scrolledHalfway === 'top'
+      ? 'text-gray-700'
+      : scrolledHalfway === 'halfway'
+        ? 'text-gray-200'
+        : 'text-(--foreground)',
     'rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250',
   )
 
