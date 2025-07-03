@@ -11,7 +11,7 @@ export default function Component({ open, onClick, ref }: Props) {
   return (
     <button
       ref={ref}
-      className='block cursor-pointer p-1 xs:hidden'
+      className='mr-1.5 block cursor-pointer p-1 xs:hidden'
       aria-label='Open menu'
       title='Open menu'
       onClick={onClick} // Toggle menu on click
