@@ -22,22 +22,24 @@ export default function Component({ open, onClick, ref }: Props) {
       <span
         className={clsx(
           'mb-1 block h-0.5 w-6 rounded-full transition-transform duration-300',
-          open && 'translate-y-1.5 rotate-45 bg-red-800',
-          !open && scrolledHalfway ? 'bg-white' : 'bg-gray-700',
+          open && 'translate-y-1.5 rotate-45',
+          open && (scrolledHalfway ? 'bg-rose-200' : 'bg-rose-800'),
+          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
         )}
       ></span>
       <span
         className={clsx(
           'mb-1 block h-0.5 w-6 rounded-full transition-opacity duration-150',
           open && 'opacity-0',
-          !open && scrolledHalfway ? 'bg-white' : 'bg-gray-700',
+          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
         )}
       ></span>
       <span
         className={clsx(
           'block h-0.5 w-6 rounded-full transition-transform duration-300',
-          open && '-translate-y-1.5 -rotate-45 bg-red-800',
-          !open && scrolledHalfway ? 'bg-white' : 'bg-gray-700',
+          open && '-translate-y-1.5 -rotate-45',
+          open && (scrolledHalfway ? 'bg-rose-200' : 'bg-rose-800'),
+          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
         )}
       ></span>
     </button>
