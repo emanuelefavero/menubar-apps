@@ -23,23 +23,48 @@ export default function Component({ open, onClick, ref }: Props) {
         className={clsx(
           'mb-1 block h-0.5 w-6 rounded-full transition-transform duration-300',
           open && 'translate-y-1.5 rotate-45',
-          open && (scrolledHalfway ? 'bg-rose-200' : 'bg-rose-800'),
-          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
+          open &&
+            (scrolledHalfway === 'top'
+              ? 'bg-rose-800'
+              : scrolledHalfway === 'halfway'
+                ? 'bg-rose-200'
+                : 'bg-rose-800 dark:bg-rose-200'),
+          !open &&
+            (scrolledHalfway === 'top'
+              ? 'bg-gray-700'
+              : scrolledHalfway === 'halfway'
+                ? 'bg-gray-200'
+                : 'bg-(--foreground)'),
         )}
       ></span>
       <span
         className={clsx(
           'mb-1 block h-0.5 w-6 rounded-full transition-opacity duration-150',
           open && 'opacity-0',
-          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
+          !open &&
+            (scrolledHalfway === 'top'
+              ? 'bg-gray-700'
+              : scrolledHalfway === 'halfway'
+                ? 'bg-gray-200'
+                : 'bg-(--foreground)'),
         )}
       ></span>
       <span
         className={clsx(
           'block h-0.5 w-6 rounded-full transition-transform duration-300',
           open && '-translate-y-1.5 -rotate-45',
-          open && (scrolledHalfway ? 'bg-rose-200' : 'bg-rose-800'),
-          !open && (scrolledHalfway ? 'bg-white' : 'bg-gray-700'),
+          open &&
+            (scrolledHalfway === 'top'
+              ? 'bg-rose-800'
+              : scrolledHalfway === 'halfway'
+                ? 'bg-rose-200'
+                : 'bg-rose-800 dark:bg-rose-200'),
+          !open &&
+            (scrolledHalfway === 'top'
+              ? 'bg-gray-700'
+              : scrolledHalfway === 'halfway'
+                ? 'bg-gray-200'
+                : 'bg-(--foreground)'),
         )}
       ></span>
     </button>
