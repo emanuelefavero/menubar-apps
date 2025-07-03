@@ -1,5 +1,6 @@
 'use client'
 
+import { useScrolledHalfway } from '@/hooks/useScrolledHalfway'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -19,9 +20,12 @@ export default function Component({
 }: Props) {
   const pathname = usePathname()
   const isActive = pathname === href
+  const scrolledHalfway = useScrolledHalfway()
 
-  const baseStyles =
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent text-gray-700 no-underline select-none hover:bg-white/30 transition duration-250'
+  const baseStyles = clsx(
+    scrolledHalfway ? 'text-white' : 'text-gray-700',
+    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none hover:bg-white/30 transition duration-250',
+  )
 
   const groupStyles =
     'group-has-[:hover]:border-transparent! group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none'
