@@ -9,8 +9,8 @@ import Logo from './Logo'
 import DesktopMenu from './Menu/Desktop/Menu'
 import MobileMenu from './Menu/Mobile/Menu'
 
-export default function Component() {
-  // Track scroll direction
+// Custom hook for header show/hide on scroll
+function useShowOnScroll() {
   const [show, setShow] = useState(true)
   const lastScrollY = useRef(0)
   const ticking = useRef(false)
@@ -31,9 +31,16 @@ export default function Component() {
         ticking.current = true
       }
     }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  return show
+}
+
+export default function Component() {
+  const show = useShowOnScroll()
 
   return (
     <motion.header
