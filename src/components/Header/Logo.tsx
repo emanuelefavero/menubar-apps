@@ -21,7 +21,7 @@ export default function Component({ className, ...props }: Props) {
   )
 
   const homeStyles =
-    'border-b-2 border-black/15! bg-white/80 shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'
+    'border-b-2 border-black/15! bg-white/80 text-gray-700! shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'
 
   const nonHomeStyles = 'hover:bg-white/30'
 
