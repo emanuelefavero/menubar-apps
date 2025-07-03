@@ -151,8 +151,8 @@
 @layer base {
   /* Variables */
   :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #ebeff1;
+    --foreground: #364153;
     --primary: rgba(48, 111, 219, 0.9);
     --primary-hover: rgba(39, 101, 208, 0.9);
     --text-shadow-lg: 2px 2px 0.5px rgba(0, 0, 0, 0.25);
@@ -162,8 +162,8 @@
   /* Dark Variables */
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #1f252f;
-      --foreground: #ededed;
+      --background: #1e2530;
+      --foreground: #e5e7eb;
     }
   }
 
