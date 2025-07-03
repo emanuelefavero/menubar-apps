@@ -1,46 +1,16 @@
 'use client'
 
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
+import { useScrollDirection } from '@/hooks/useScrollDirection'
 import clsx from 'clsx'
 import { motion } from 'motion/react'
-import { useEffect, useRef, useState } from 'react'
 import './Header.css'
 import Logo from './Logo'
 import DesktopMenu from './Menu/Desktop/Menu'
 import MobileMenu from './Menu/Mobile/Menu'
 
-// Custom hook for header show/hide on scroll
-function useShowOnScroll() {
-  const [show, setShow] = useState(true)
-  const lastScrollY = useRef(0)
-  const ticking = useRef(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
-            setShow(false) // scrolling down
-          } else {
-            setShow(true) // scrolling up
-          }
-          lastScrollY.current = currentScrollY
-          ticking.current = false
-        })
-        ticking.current = true
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  return show
-}
-
 export default function Component() {
-  const show = useShowOnScroll()
+  const show = useScrollDirection()
 
   return (
     <motion.header
