@@ -14,7 +14,7 @@ export default function Component() {
   const show = useScrollDirection()
   const scrollStage = useScrollStage()
 
-  const headerBgColor =
+  const bgColor =
     scrollStage === 'top'
       ? 'bg-(--bg-image-top)/30'
       : scrollStage === 'halfway'
@@ -42,7 +42,7 @@ export default function Component() {
       <div
         className={clsx(
           'header',
-          headerBgColor,
+          bgColor,
           'relative flex items-center justify-between rounded-full px-1 py-[0.2rem] shadow-(--header-shadow)',
         )}
       >
