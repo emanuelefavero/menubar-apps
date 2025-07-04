@@ -28,7 +28,7 @@ export default function Component({
       : scrollStage === 'halfway'
         ? 'text-gray-200'
         : 'text-(--foreground)',
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none hover:bg-white/30 transition duration-200 active:scale-[97%]',
+    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none hover:bg-white/30 transition duration-200 active:scale-[0.97]',
   )
 
   const groupStyles = clsx(

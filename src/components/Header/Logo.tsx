@@ -21,7 +21,7 @@ export default function Component({ className, ...props }: Props) {
       : scrollStage === 'halfway'
         ? 'text-gray-200'
         : 'text-(--foreground)',
-    'rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[97%]',
+    'rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
   )
 
   const homeStyles =

@@ -29,7 +29,7 @@ export default function Component({ open, onClick, ref }: Props) {
       <ul className='flex flex-col items-center gap-2'>
         {/* Home Link (shown when not home) */}
         {!isHome && (
-          <li className='transition-transform duration-250 active:scale-[97%]'>
+          <li className='transition-transform duration-250 active:scale-[0.97]'>
             <HamburgerLink
               href='/'
               label='Home'
@@ -42,7 +42,7 @@ export default function Component({ open, onClick, ref }: Props) {
         {headerLinks.map((link) => (
           <li
             key={`hamburger-link-${link.href}`}
-            className='transition-transform duration-250 active:scale-[97%]'
+            className='transition-transform duration-250 active:scale-[0.97]'
           >
             <HamburgerLink
               href={link.href}
