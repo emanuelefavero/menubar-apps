@@ -5,34 +5,34 @@ import { useEffect, useState } from 'react'
  * @returns 'top' if at the top, 'halfway' if scrolled halfway, 'full' if scrolled past halfway
  */
 
-type Scrolled = 'top' | 'halfway' | 'full'
+type ScrollStage = 'top' | 'halfway' | 'full'
 
 export function useScrollStage() {
-  const [scrolled, setScrolled] = useState<Scrolled>('top')
+  const [scrollStage, setScrollStage] = useState<ScrollStage>('top')
 
   useEffect(() => {
-    function onScroll() {
+    const onScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset
       const halfway = window.innerHeight * 0.5
       const full = window.innerHeight
 
       // Determine scroll state
       if (scrollY < halfway) {
-        setScrolled('top')
+        setScrollStage('top')
       } else if (scrollY >= halfway && scrollY < full) {
-        setScrolled('halfway')
+        setScrollStage('halfway')
       } else {
-        setScrolled('full')
+        setScrollStage('full')
       }
     }
 
+    // Attach scroll event listener
     window.addEventListener('scroll', onScroll, { passive: true })
-    // Check on mount in case already scrolled
     onScroll()
 
     // Cleanup
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  return scrolled
+  return scrollStage
 }
