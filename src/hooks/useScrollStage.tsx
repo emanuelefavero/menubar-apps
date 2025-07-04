@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 type Scrolled = 'top' | 'halfway' | 'full'
 
-export function useScrolledHalfway() {
+export function useScrollStage() {
   const [scrolled, setScrolled] = useState<Scrolled>('top')
 
   useEffect(() => {

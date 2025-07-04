@@ -2,7 +2,7 @@
 
 import { title } from '@/config/metadata'
 import { useIsHome } from '@/hooks/useIsHome'
-import { useScrolledHalfway } from '@/hooks/useScrolledHalfway'
+import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
@@ -13,12 +13,12 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 export default function Component({ className, ...props }: Props) {
   const isHome = useIsHome()
-  const scrolledHalfway = useScrolledHalfway()
+  const scrollStage = useScrollStage()
 
   const baseStyles = clsx(
-    scrolledHalfway === 'top'
+    scrollStage === 'top'
       ? 'text-gray-700'
-      : scrolledHalfway === 'halfway'
+      : scrollStage === 'halfway'
         ? 'text-gray-200'
         : 'text-(--foreground)',
     'rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250',
