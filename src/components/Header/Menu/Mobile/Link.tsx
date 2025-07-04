@@ -1,5 +1,6 @@
 import type { HeaderLink } from '@/data/headerLinks'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
+import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -9,14 +10,34 @@ interface Props extends HeaderLink {
 
 export default function Component({ href, label, onClick }: Props) {
   const isActive = useIsActiveLink(href)
+  const scrollStage = useScrollStage()
+
+  const baseStyles =
+    'text-lg no-underline transition-all duration-250 select-none'
+
+  const linkColor = clsx(
+    scrollStage === 'top'
+      ? 'text-gray-700 hover:text-black'
+      : scrollStage === 'halfway'
+        ? 'text-gray-200 hover:text-white'
+        : 'text-(--foreground) hover:text-black dark:hover:text-white',
+  )
+
+  const activeLinkColor = clsx(
+    scrollStage === 'top'
+      ? 'text-black'
+      : scrollStage === 'halfway'
+        ? 'text-white'
+        : 'text-black dark:text-white',
+  )
 
   return (
     <Link
       href={href}
       className={clsx(
-        'text-lg no-underline transition-all duration-250 select-none hover:text-black',
-        isActive && 'font-bold text-black',
-        !isActive && 'font-medium text-gray-700',
+        baseStyles,
+        isActive ? 'font-bold' : 'font-medium',
+        isActive ? activeLinkColor : linkColor,
       )}
       onClick={onClick} // Close menu on link click
     >
