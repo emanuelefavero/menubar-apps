@@ -22,7 +22,7 @@ export default function LinkButton({
   ...props
 }: Props) {
   const baseStyles =
-    'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-xs'
+    'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-md'
 
   const sizeStyles = {
     none: 'px-3 py-1.5',

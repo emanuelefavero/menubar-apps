@@ -50,7 +50,7 @@ export default function Component() {
         {/* TIP: We need to add `backdrop-blur` in the `before` pseudo element because the `MobileMenu` will also have a `backdrop-blur` effect, and nested backdrop-blur effects are not supported in CSS. @see https://github.com/tailwindlabs/tailwindcss/discussions/15103 */}
         <div
           className={clsx(
-            'pointer-events-none absolute inset-0 h-full w-full before:absolute before:inset-0 before:-z-10 before:rounded-full before:backdrop-blur-xl',
+            'pointer-events-none absolute inset-0 h-full w-full before:absolute before:inset-0 before:-z-10 before:rounded-full before:backdrop-blur-md',
             'backface-hidden',
           )}
         />
