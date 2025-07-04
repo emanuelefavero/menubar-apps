@@ -153,6 +153,7 @@
   :root {
     --bg-image-top: #ebeff1;
     --bg-image-bottom: #1e2530;
+    --bg-image-bottom-lighter: #303e4e;
     --background: var(--bg-image-top);
     --foreground: #374151; /* text-gray-700 */
     --primary: rgba(48, 111, 219, 0.9);

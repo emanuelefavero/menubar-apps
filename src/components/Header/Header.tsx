@@ -2,6 +2,7 @@
 
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
+import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import { motion } from 'motion/react'
 import './Header.css'
@@ -11,6 +12,21 @@ import MobileMenu from './Menu/Mobile/Menu'
 
 export default function Component() {
   const show = useScrollDirection()
+  const scrollStage = useScrollStage()
+
+  const headerBgColor =
+    scrollStage === 'top'
+      ? 'bg-(--bg-image-top)/30'
+      : scrollStage === 'halfway'
+        ? 'bg-(--bg-image-bottom-lighter)/30'
+        : 'bg-(--bg-image-top)/30 dark:bg-(--bg-image-bottom-lighter)/30'
+
+  const shadowBgColor =
+    scrollStage === 'top'
+      ? 'bg-(--bg-image-top)/30'
+      : scrollStage === 'halfway'
+        ? 'bg-(--bg-image-bottom)/30'
+        : 'bg-(--background)/30'
 
   return (
     <motion.header
@@ -26,7 +42,8 @@ export default function Component() {
       <div
         className={clsx(
           'header',
-          'relative flex items-center justify-between rounded-full bg-(--header-background) px-1 py-[0.2rem] shadow-(--header-shadow)',
+          headerBgColor,
+          'relative flex items-center justify-between rounded-full px-1 py-[0.2rem] shadow-(--header-shadow)',
         )}
       >
         {/* Backdrop Blur */}
@@ -38,7 +55,7 @@ export default function Component() {
           )}
         />
 
-        <BackgroundShadow bgColor='bg-white/30' blur='blur-xl' />
+        <BackgroundShadow bgColor={shadowBgColor} blur='blur-xl' />
         <Logo />
         <div>
           <DesktopMenu />

@@ -1,6 +1,6 @@
 @layer components {
   .card {
-    --card-background: oklch(55.088% 0.02429 252.686 / 0.2);
+    --card-background: rgba(104, 115, 128, 0.2);
     --card-shadow:
       2px 5px 5px 0 rgba(2, 3, 5, 0.16),
       5px 3px 4px -5px rgba(223, 223, 247, 0.8) inset,
