@@ -1,6 +1,5 @@
 @layer components {
   .hamburger-menu {
-    --hamburger-menu-background: oklch(0.91 0.0119 239.92 / 0.2);
     --hamburger-menu-shadow:
       1px 3px 3px 0 rgba(2, 3, 5, 0.16),
       5px 3px 4px -5px rgba(237, 237, 251, 0.8) inset,

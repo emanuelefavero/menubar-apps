@@ -1,5 +1,6 @@
 import { headerLinks } from '@/data/headerLinks'
 import { useIsHome } from '@/hooks/useIsHome'
+import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import { Ref } from 'react'
 import './HamburgerMenu.css'
@@ -13,6 +14,14 @@ interface Props {
 
 export default function Component({ open, onClick, ref }: Props) {
   const isHome = useIsHome()
+  const scrollStage = useScrollStage()
+
+  const bgColor =
+    scrollStage === 'top'
+      ? 'bg-(--bg-image-top)/30'
+      : scrollStage === 'halfway'
+        ? 'bg-(--bg-image-bottom-lighter)/30'
+        : 'bg-(--bg-image-top)/30 dark:bg-(--bg-image-bottom-lighter)/30'
 
   return (
     <nav
@@ -23,7 +32,8 @@ export default function Component({ open, onClick, ref }: Props) {
         'hamburger-menu',
         open && 'block',
         !open && 'hidden',
-        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] bg-(--hamburger-menu-background) p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
+        bgColor,
+        'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
       )}
     >
       <ul className='flex flex-col items-center gap-2'>
