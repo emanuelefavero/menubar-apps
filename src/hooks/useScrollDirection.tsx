@@ -37,7 +37,7 @@ export function useScrollDirection() {
     }
 
     // Attach scroll event listener
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
 
     // Cleanup
     return () => {
