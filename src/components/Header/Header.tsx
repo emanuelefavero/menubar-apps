@@ -5,6 +5,7 @@ import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import { motion } from 'motion/react'
+import BackdropBlur from './BackdropBlur'
 import './Header.css'
 import Logo from './Logo'
 import DesktopMenu from './Menu/Desktop/Menu'
@@ -46,14 +47,8 @@ export default function Component() {
           'relative flex items-center justify-between rounded-full px-1 py-[0.2rem] shadow-(--header-shadow)',
         )}
       >
-        {/* Backdrop Blur */}
-        {/* TIP: We need to add `backdrop-blur` in the `before` pseudo element because the `MobileMenu` will also have a `backdrop-blur` effect, and nested backdrop-blur effects are not supported in CSS. @see https://github.com/tailwindlabs/tailwindcss/discussions/15103 */}
-        <div
-          className={clsx(
-            'pointer-events-none absolute inset-0 h-full w-full before:absolute before:inset-0 before:-z-10 before:rounded-full before:backdrop-blur-md',
-            'backface-hidden',
-          )}
-        />
+        {/* TIP: This component is needed because CSS does not support nested backdrop-blur effects  */}
+        <BackdropBlur />
 
         <BackgroundShadow bgColor={shadowBgColor} blur='blur-xl' />
         <Logo />
