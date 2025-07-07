@@ -1,22 +1,21 @@
+import { throttle } from 'lodash-es'
 import { useEffect, useState } from 'react'
 
 /**
  * Determine if the user has scrolled halfway down the page or fully (after the halfway end point)
  * @returns 'top' if at the top, 'halfway' if scrolled halfway, 'full' if scrolled past halfway
  */
-
 type ScrollStage = 'top' | 'halfway' | 'full'
 
 export function useScrollStage() {
   const [scrollStage, setScrollStage] = useState<ScrollStage>('top')
 
   useEffect(() => {
-    const onScroll = () => {
+    const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset
       const halfway = window.innerHeight * 0.5
       const full = window.innerHeight
 
-      // Determine scroll state
       if (scrollY < halfway) {
         setScrollStage('top')
       } else if (scrollY >= halfway && scrollY < full) {
@@ -26,12 +25,15 @@ export function useScrollStage() {
       }
     }
 
-    // Attach scroll event listener
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
+    const throttledScroll = throttle(handleScroll, 100)
 
-    // Cleanup
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('scroll', throttledScroll, { passive: true })
+    throttledScroll()
+
+    return () => {
+      window.removeEventListener('scroll', throttledScroll)
+      throttledScroll.cancel()
+    }
   }, [])
 
   return scrollStage
