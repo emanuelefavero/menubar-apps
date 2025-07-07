@@ -1,3 +1,4 @@
+import { throttle } from 'lodash-es'
 import { useEffect, useRef, useState } from 'react'
 
 /**
@@ -8,27 +9,30 @@ import { useEffect, useRef, useState } from 'react'
 export function useScrollDirection() {
   const [show, setShow] = useState(true)
   const lastScrollY = useRef(0)
-  const ticking = useRef(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
-            setShow(false) // scrolling down
-          } else {
-            setShow(true) // scrolling up
-          }
-          lastScrollY.current = currentScrollY
-          ticking.current = false
-        })
-        ticking.current = true
-      }
-    }
+    // Scroll event handler (with throttle)
+    const throttledScroll = throttle(() => {
+      const currentScrollY = window.scrollY
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+      // If the current scroll position is greater than the last, we are scrolling down
+      if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
+        setShow(false) // scrolling down
+      } else {
+        setShow(true) // scrolling up
+      }
+
+      lastScrollY.current = currentScrollY
+    }, 100) // 100ms throttle, adjust as needed
+
+    // Attach the throttled scroll event listener
+    window.addEventListener('scroll', throttledScroll)
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', throttledScroll)
+      throttledScroll.cancel?.()
+    }
   }, [])
 
   return show
