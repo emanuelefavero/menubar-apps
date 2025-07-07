@@ -14,7 +14,7 @@ export default function Component() {
   const { setIsDragging } = useDragStore()
 
   return (
-    <section className='relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-14'>
+    <section className='relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-25% px-4 py-14'>
       <BackgroundImage
         src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
