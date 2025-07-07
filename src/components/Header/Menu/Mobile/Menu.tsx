@@ -1,7 +1,7 @@
 'use client'
 
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
-import { useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import HamburgerButton from './HamburgerButton'
 import HamburgerMenu from './HamburgerMenu'
 
@@ -10,16 +10,22 @@ export default function Component() {
   const menuRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  // Close the menu when clicking outside of it or the button
-  useOnClickOutside(
-    [
+  // Memoize refs to avoid unnecessary re-renders
+  const refs = useMemo(
+    () => [
       menuRef as React.RefObject<HTMLElement>,
       buttonRef as React.RefObject<HTMLElement>,
     ],
-    () => {
-      if (open) setOpen(false)
-    },
+    [menuRef, buttonRef],
   )
+
+  // Memoized callback to close the menu if menu is open
+  const handleClickOutside = useCallback(() => {
+    if (open) setOpen(false)
+  }, [open])
+
+  // Close the menu when clicking outside of it (with memoization)
+  useOnClickOutside(refs, handleClickOutside)
 
   return (
     <div>
