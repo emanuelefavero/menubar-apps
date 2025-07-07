@@ -16,7 +16,7 @@ export default function Component({ className = '', children }: Props) {
     <div className={clsx('relative z-10 w-full max-w-[400px]', className)}>
       <div
         className={clsx(
-          'pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-500',
+          'pointer-events-none absolute inset-0 flex items-center justify-center text-gray-200 transition-opacity duration-500 select-none text-shadow-(--text-shadow-sm)',
           isDragging ? 'opacity-100' : 'opacity-0',
         )}
         style={{
