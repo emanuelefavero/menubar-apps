@@ -151,7 +151,6 @@
 @layer base {
   /* Variables */
   :root {
-    /* --bg-image-top-darker: #d4d8de; */
     --bg-image-top: #ebeff1;
     --bg-image-top-left: #c9cfd6;
     --bg-image-top-right: #d8dde0;
@@ -188,7 +187,7 @@
 
   body {
     color: var(--foreground);
-    background: rgb(212, 216, 222);
+    background: var(--background);
     font-family:
       -apple-system, 'Helvetica Neue', Helvetica, BlinkMacSystemFont,
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
