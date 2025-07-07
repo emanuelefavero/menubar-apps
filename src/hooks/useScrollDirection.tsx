@@ -9,29 +9,40 @@ import { useEffect, useRef, useState } from 'react'
 export function useScrollDirection() {
   const [show, setShow] = useState(true)
   const lastScrollY = useRef(0)
+  const ticking = useRef(false)
 
   useEffect(() => {
-    // Scroll event handler (with throttle)
-    const throttledScroll = throttle(() => {
+    // Throttle the scroll event to improve performance
+    const handleScrollLogic = throttle(() => {
       const currentScrollY = window.scrollY
 
-      // If the current scroll position is greater than the last, we are scrolling down
+      // If the user has scrolled down more than 10px, hide the header
       if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
-        setShow(false) // scrolling down
+        setShow(false)
       } else {
-        setShow(true) // scrolling up
+        setShow(true)
       }
 
       lastScrollY.current = currentScrollY
-    }, 100) // 100ms throttle, adjust as needed
+    }, 100) // Adjust the throttle delay as needed
 
-    // Attach the throttled scroll event listener
-    window.addEventListener('scroll', throttledScroll)
+    const onScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          handleScrollLogic()
+          ticking.current = false
+        })
+        ticking.current = true
+      }
+    }
+
+    // Attach scroll event listener
+    window.addEventListener('scroll', onScroll)
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', throttledScroll)
-      throttledScroll.cancel?.()
+      window.removeEventListener('scroll', onScroll)
+      handleScrollLogic.cancel?.()
     }
   }, [])
 
