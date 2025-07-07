@@ -151,7 +151,10 @@
 @layer base {
   /* Variables */
   :root {
+    /* --bg-image-top-darker: #d4d8de; */
     --bg-image-top: #ebeff1;
+    --bg-image-top-left: #c9cfd6;
+    --bg-image-top-right: #d8dde0;
     --bg-image-bottom: #1e2530;
     --bg-image-bottom-lighter: #303e4e;
     --background: var(--bg-image-top);

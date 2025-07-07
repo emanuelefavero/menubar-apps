@@ -27,6 +27,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* OverflowBackgroundTop */}
+        <div
+          className='pointer-events-none fixed top-0 right-0 left-0 z-[-9999] h-1/2 bg-linear-to-r from-(--bg-image-top-left) to-(--bg-image-top-right)'
+          aria-hidden='true'
+        />
+
         <Header />
         <main>{children}</main>
 
