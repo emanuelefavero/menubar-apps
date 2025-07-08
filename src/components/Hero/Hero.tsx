@@ -15,6 +15,9 @@ export default function Component() {
 
   return (
     <section className='relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-20% px-4 py-14'>
+      {/* Top Background Gradient to merge the background overflow color and the top of the hero seamlessly */}
+      <div className='absolute top-0 left-0 h-screen w-full bg-gradient-to-b from-(--bg-image-top) via-(--bg-image-top)/50 via-10% to-transparent to-20%'></div>
+
       <BackgroundImage
         src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'

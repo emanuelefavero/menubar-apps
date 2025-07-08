@@ -13,7 +13,7 @@ export default function Component({ topClassName, bottomClassName }: Props) {
       {/* Top */}
       <div
         className={clsx(
-          'pointer-events-none fixed top-0 right-0 left-0 z-[-9999] h-1/2 bg-linear-to-r from-(--bg-image-top-left) to-(--bg-image-top-right)',
+          'pointer-events-none fixed top-0 right-0 left-0 z-[-9999] h-1/2 bg-(--bg-image-top)',
           topClassName,
         )}
         aria-hidden='true'
