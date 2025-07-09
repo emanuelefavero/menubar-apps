@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import AsciiArt from './AsciiArt'
-import { useDragStore } from './store/useDragStore'
+import { useDragStore } from '../store/useDragStore'
 
 // TIP: This component contains an ASCII art Easter egg that appears when the user drags the hero card
 

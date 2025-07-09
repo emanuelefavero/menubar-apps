@@ -1,6 +1,6 @@
-import BackgroundGradientTop from '@/components/shared/BackgroundGradientTop'
+import BackgroundGradientTop from '@/components/Hero/Section/BackgroundGradientTop'
 import BackgroundImage from '@/components/shared/BackgroundImage'
-import LinkAttribution from '@/components/shared/LinkAttribution'
+import LinkAttribution from '@/components/Hero/Section/LinkAttribution'
 import clsx from 'clsx'
 
 interface Props {

@@ -5,8 +5,8 @@ import LinkButton from '@/components/shared/LinkButton'
 import { heroAppName } from '@/config/hero'
 import Image from 'next/image'
 import Card from './Card'
-import EasterEgg from './EasterEgg'
-import HeroSection from './Section'
+import EasterEgg from './EasterEgg/EasterEgg'
+import HeroSection from './Section/Section'
 import { useDragStore } from './store/useDragStore'
 
 export default function Component() {

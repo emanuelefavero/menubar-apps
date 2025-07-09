@@ -1,5 +1,5 @@
 import TestScroll from '@/components/__dev__/TestScroll'
-import HeroSection from '@/components/Hero/Section'
+import HeroSection from '@/components/Hero/Section/Section'
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
 import LinkButton from '@/components/shared/LinkButton'
 
