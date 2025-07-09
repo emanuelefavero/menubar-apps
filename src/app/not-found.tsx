@@ -1,8 +1,6 @@
 import TestScroll from '@/components/__dev__/TestScroll'
-import BackgroundGradientTop from '@/components/shared/BackgroundGradientTop'
-import BackgroundImage from '@/components/shared/BackgroundImage'
+import HeroSection from '@/components/Hero/Section'
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
-import LinkAttribution from '@/components/shared/LinkAttribution'
 import LinkButton from '@/components/shared/LinkButton'
 
 // TODO: Remove TestScroll component used for testing scrolling effect ↓
@@ -10,16 +8,7 @@ import LinkButton from '@/components/shared/LinkButton'
 export default function NotFound() {
   return (
     <>
-      <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-20% px-4 py-14 text-center text-white'>
-        <BackgroundGradientTop />
-
-        <BackgroundImage
-          src='/images/paul-pastourmatzis-unsplash.jpg'
-          alt='Background'
-          className='-z-10 object-cover object-center'
-          priority
-        />
-
+      <HeroSection className='text-center text-white'>
         <div className='relative'>
           <BackgroundShadow bgColor='bg-gray-900/20' blur='blur-3xl' />
 
@@ -37,12 +26,7 @@ export default function NotFound() {
             <LinkButton className='mt-1'>← Go back to Home</LinkButton>
           </div>
         </div>
-
-        <LinkAttribution
-          name='Paul Pastourmatzis'
-          href='https://unsplash.com/photos/silhouette-of-trees-covered-by-fog-KT3WlrL_bsg'
-        />
-      </div>
+      </HeroSection>
 
       {/* This is a test scroll component for development purposes */}
       {process.env.NODE_ENV === 'development' && (
