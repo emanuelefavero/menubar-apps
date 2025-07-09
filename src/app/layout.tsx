@@ -1,5 +1,5 @@
 import Header from '@/components/Header/Header'
-import BackgroundOverflow from '@/components/shared/BackgroundOverflow'
+import BackgroundOverflow from '@/components/shared/BackgroundOverflow/BackgroundOverflow'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
