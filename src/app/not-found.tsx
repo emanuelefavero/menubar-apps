@@ -10,7 +10,7 @@ import LinkButton from '@/components/shared/LinkButton'
 export default function NotFound() {
   return (
     <>
-      <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden pt-12 text-center text-white'>
+      <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-20% px-4 py-14 text-center text-white'>
         <BackgroundGradientTop />
 
         <BackgroundImage
