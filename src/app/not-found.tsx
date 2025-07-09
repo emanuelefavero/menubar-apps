@@ -1,4 +1,5 @@
 import TestScroll from '@/components/__dev__/TestScroll'
+import BackgroundGradientTop from '@/components/shared/BackgroundGradientTop'
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
 import LinkAttribution from '@/components/shared/LinkAttribution'
@@ -10,6 +11,8 @@ export default function NotFound() {
   return (
     <>
       <div className='relative flex min-h-screen flex-col items-center justify-center gap-4 overflow-hidden pt-12 text-center text-white'>
+        <BackgroundGradientTop />
+
         <BackgroundImage
           src='/images/paul-pastourmatzis-unsplash.jpg'
           alt='Background'
