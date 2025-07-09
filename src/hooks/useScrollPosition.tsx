@@ -6,8 +6,13 @@ import { useEffect, useState } from 'react'
  * @returns An object containing scrollX and scrollY scroll coordinates
  */
 
-export function useScrollPosition() {
-  const [scrollPosition, setScrollPosition] = useState({
+interface ScrollPosition {
+  scrollX: number
+  scrollY: number
+}
+
+export function useScrollPosition(): ScrollPosition {
+  const [scrollPosition, setScrollPosition] = useState<ScrollPosition>({
     scrollX: 0,
     scrollY: 0,
   })
