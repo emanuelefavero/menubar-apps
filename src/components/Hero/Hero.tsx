@@ -1,30 +1,19 @@
 'use client'
 
 import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
-import BackgroundImage from '@/components/shared/BackgroundImage'
-import LinkAttribution from '@/components/shared/LinkAttribution'
 import LinkButton from '@/components/shared/LinkButton'
 import { heroAppName } from '@/config/hero'
 import Image from 'next/image'
-import BackgroundGradientTop from '../shared/BackgroundGradientTop'
 import Card from './Card'
 import EasterEgg from './EasterEgg'
+import HeroSection from './Section'
 import { useDragStore } from './store/useDragStore'
 
 export default function Component() {
   const { setIsDragging } = useDragStore()
 
   return (
-    <section className='relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-20% px-4 py-14'>
-      <BackgroundGradientTop />
-
-      <BackgroundImage
-        src='/images/paul-pastourmatzis-unsplash.jpg'
-        alt='Background'
-        className='-z-10 object-cover object-center'
-        priority
-      />
-
+    <HeroSection>
       <EasterEgg className='animate-appear'>
         <DraggableSnapBack
           onDragStart={() => setIsDragging(true)}
@@ -84,11 +73,6 @@ export default function Component() {
           </Card>
         </DraggableSnapBack>
       </EasterEgg>
-
-      <LinkAttribution
-        name='Paul Pastourmatzis'
-        href='https://unsplash.com/photos/silhouette-of-trees-covered-by-fog-KT3WlrL_bsg'
-      />
-    </section>
+    </HeroSection>
   )
 }
