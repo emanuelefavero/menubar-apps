@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
  * Determine if the user has scrolled halfway down the page or fully (after the halfway end point)
  * @returns 'top' if at the top, 'halfway' if scrolled halfway, 'full' if scrolled past halfway
  */
+
 type ScrollStage = 'top' | 'halfway' | 'full'
 
 export function useScrollStage() {
