@@ -20,16 +20,16 @@ const Bottom = dynamic(
 // TIP: This component is used to create a background overflow effect at the top and bottom of the page since the Hero component has a different color at the top compared to the bottom of the page
 
 export default function Component() {
-  const { y } = useScrollPosition()
+  const { scrollY } = useScrollPosition()
   const { height } = useViewportSize()
 
   return (
     <>
       {/* Display Top component only when the user has not scrolled more than halfway */}
-      {y < height / 2 && <Top />}
+      {scrollY < height / 2 && <Top />}
 
       {/* Display Bottom component only when the user has scrolled more than halfway */}
-      {y > height / 2 && <Bottom />}
+      {scrollY > height / 2 && <Bottom />}
     </>
   )
 }

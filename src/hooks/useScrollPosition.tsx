@@ -3,17 +3,20 @@ import { useEffect, useState } from 'react'
 
 /**
  * Track the current scroll position of the page
- * @returns An object containing x and y scroll coordinates
+ * @returns An object containing scrollX and scrollY scroll coordinates
  */
 
 export function useScrollPosition() {
-  const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 })
+  const [scrollPosition, setScrollPosition] = useState({
+    scrollX: 0,
+    scrollY: 0,
+  })
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition({
-        x: window.scrollX || window.pageXOffset,
-        y: window.scrollY || window.pageYOffset,
+        scrollX: window.scrollX || window.pageXOffset,
+        scrollY: window.scrollY || window.pageYOffset,
       })
     }
 
