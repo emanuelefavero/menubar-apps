@@ -1,9 +1,7 @@
-import { cleanup, render, screen } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import React, { useRef } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useOnClickOutside } from './useOnClickOutside'
-
-// TODO use testing-library/react fire event instead of dispatchEvent
 
 // Test component to use the hook
 function ComponentWithHook({ handler }: { handler: ClickHandler }) {
@@ -31,7 +29,7 @@ describe('useOnClickOutside', () => {
     render(<ComponentWithHook handler={handler} />)
 
     const outsideElement = screen.getByTestId('outside')
-    outsideElement.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))
+    fireEvent.mouseDown(outsideElement)
 
     expect(handler).toHaveBeenCalledTimes(1)
   })
@@ -41,7 +39,7 @@ describe('useOnClickOutside', () => {
     render(<ComponentWithHook handler={handler} />)
 
     const insideElement = screen.getByTestId('inside')
-    insideElement.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }))
+    fireEvent.mouseDown(insideElement)
 
     expect(handler).not.toHaveBeenCalled()
   })
