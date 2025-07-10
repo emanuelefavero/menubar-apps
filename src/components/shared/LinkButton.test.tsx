@@ -10,31 +10,29 @@ describe('LinkButton', () => {
   it('renders with no props', () => {
     render(<Component>Click Me</Component>)
 
-    const linkButton = screen.getByRole('link', { name: 'Click Me' })
+    const item = screen.getByRole('link', { name: 'Click Me' })
 
     // Ensure the it is rendered
-    expect(linkButton).toBeDefined()
+    expect(item).toBeDefined()
 
     // Ensure it has the correct children
-    expect(linkButton.textContent).toBe('Click Me')
+    expect(item.textContent).toBe('Click Me')
 
     // href defaults to '/'
-    expect(linkButton.getAttribute('href')).toBe('/')
+    expect(item.getAttribute('href')).toBe('/')
 
     // Default variant is 'primary'
-    expect(linkButton.getAttribute('class')).toContain('bg-white/80')
+    expect(item.getAttribute('class')).toContain('bg-white/80')
 
     // Default size is 'none'
-    expect(linkButton.getAttribute('class')).not.toMatch(
-      /text-base|text-sm|text-lg/,
-    )
+    expect(item.getAttribute('class')).not.toMatch(/text-base|text-sm|text-lg/)
   })
 
   it('renders with custom href', () => {
     render(<Component href='/custom'>Custom Link</Component>)
 
-    const linkButton = screen.getByRole('link', { name: 'Custom Link' })
-    expect(linkButton.getAttribute('href')).toBe('/custom')
+    const item = screen.getByRole('link', { name: 'Custom Link' })
+    expect(item.getAttribute('href')).toBe('/custom')
   })
 
   it('renders with custom variant', () => {
@@ -46,8 +44,8 @@ describe('LinkButton', () => {
     variants.forEach(([variant, className]) => {
       render(<Component variant={variant}>{variant} Link</Component>)
 
-      const linkButton = screen.getByRole('link', { name: `${variant} Link` })
-      expect(linkButton.getAttribute('class')).toContain(className)
+      const item = screen.getByRole('link', { name: `${variant} Link` })
+      expect(item.getAttribute('class')).toContain(className)
     })
   })
 
@@ -62,24 +60,24 @@ describe('LinkButton', () => {
     sizes.forEach(([size, className]) => {
       render(<Component size={size}>{size} Link</Component>)
 
-      const linkButton = screen.getByRole('link', { name: `${size} Link` })
-      expect(linkButton.getAttribute('class')).toContain(className)
+      const item = screen.getByRole('link', { name: `${size} Link` })
+      expect(item.getAttribute('class')).toContain(className)
     })
   })
 
   it('applies additional className', () => {
     render(<Component className='custom-class'>Custom Class Link</Component>)
 
-    const linkButton = screen.getByRole('link', {
+    const item = screen.getByRole('link', {
       name: 'Custom Class Link',
     })
-    expect(linkButton.getAttribute('class')).toContain('custom-class')
+    expect(item.getAttribute('class')).toContain('custom-class')
   })
 
   it('applies additional link attributes', () => {
     render(<Component target='_blank'>Link Attribute Link</Component>)
 
-    const linkButton = screen.getByRole('link', { name: 'Link Attribute Link' })
-    expect(linkButton.getAttribute('target')).toBe('_blank')
+    const item = screen.getByRole('link', { name: 'Link Attribute Link' })
+    expect(item.getAttribute('target')).toBe('_blank')
   })
 })
