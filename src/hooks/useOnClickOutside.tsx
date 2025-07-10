@@ -14,12 +14,10 @@ import { useEffect } from 'react'
  * })
  * ```
  *
+ * @see `globals.d.ts` for `RefsArray` and `ClickHandler` types
  */
 
-export function useOnClickOutside(
-  refs: Array<React.RefObject<HTMLElement>>,
-  handler: (event: MouseEvent | TouchEvent) => void,
-) {
+export function useOnClickOutside(refs: RefsArray, handler: ClickHandler) {
   useEffect(() => {
     // Ensure refs are valid
     function listener(event: MouseEvent | TouchEvent) {

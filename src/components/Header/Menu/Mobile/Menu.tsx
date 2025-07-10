@@ -12,10 +12,7 @@ export default function Component() {
 
   // Memoize refs to avoid unnecessary re-renders
   const refs = useMemo(
-    () => [
-      menuRef as React.RefObject<HTMLElement>,
-      buttonRef as React.RefObject<HTMLElement>,
-    ],
+    () => [menuRef as HTMLElementRef, buttonRef as HTMLElementRef],
     [menuRef, buttonRef],
   )
 

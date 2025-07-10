@@ -6,13 +6,9 @@ import { useOnClickOutside } from './useOnClickOutside'
 // TODO use testing-library/react fire event instead of dispatchEvent
 
 // Test component to use the hook
-function ComponentWithHook({
-  handler,
-}: {
-  handler: (e: MouseEvent | TouchEvent) => void
-}) {
+function ComponentWithHook({ handler }: { handler: ClickHandler }) {
   const ref = useRef<HTMLDivElement>(null)
-  useOnClickOutside([ref as React.RefObject<HTMLElement>], handler)
+  useOnClickOutside([ref as HTMLElementRef], handler)
 
   return (
     <div>
