@@ -7,11 +7,11 @@ describe('Homepage', () => {
   it('renders a heading', () => {
     render(<Page />)
 
-    const heading = screen.getByRole('heading', {
+    const item = screen.getByRole('heading', {
       level: 1,
       name: new RegExp(heroAppName, 'i'),
     })
 
-    expect(heading).toBeDefined()
+    expect(item).toBeDefined()
   })
 })
