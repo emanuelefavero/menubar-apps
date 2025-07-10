@@ -64,4 +64,18 @@ test.describe('Homepage Performance', () => {
     expect(metrics.fcp).toBeLessThan(1000) // Adjust threshold as needed
     expect(metrics.lcp).toBeLessThan(1000) // Adjust threshold as needed
   })
+
+  // * No console errors
+  test('has no console errors', async ({ page }) => {
+    const errors: string[] = []
+    page.on('pageerror', (err) => errors.push(err.message))
+    page.on('console', (msg) => {
+      if (msg.type() === 'error' || msg.type() === 'warning') {
+        errors.push(msg.text())
+      }
+    })
+
+    await page.goto('/')
+    expect(errors).toEqual([])
+  })
 })
