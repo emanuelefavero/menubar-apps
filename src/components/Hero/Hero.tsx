@@ -2,7 +2,7 @@
 
 import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
 import LinkButton from '@/components/shared/LinkButton'
-import { heroAppName } from '@/config/hero'
+import { heroAppDescription, heroAppName } from '@/config/hero'
 import Image from 'next/image'
 import Card from './Card'
 import EasterEgg from './EasterEgg/EasterEgg'
@@ -36,7 +36,7 @@ export default function Component() {
               {heroAppName}
             </h1>
             <p className='mt-2.5 text-lg text-shadow-(--text-shadow-sm)'>
-              Your Tasks, Always Within Reach
+              {heroAppDescription}
             </p>
 
             {/* Line */}
