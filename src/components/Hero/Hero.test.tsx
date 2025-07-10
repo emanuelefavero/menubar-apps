@@ -1,15 +1,25 @@
-import { heroAppName } from '@/config/hero'
+import { heroAppDescription, heroAppName } from '@/config/hero'
 import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import Component from './Hero'
 
 describe('Hero', () => {
-  it('renders the correct heroAppName as h1', () => {
+  beforeAll(() => {
     render(<Component />)
+  })
 
-    const heading = screen.getByRole('heading', { level: 1 })
+  it('renders the correct heroAppName as h1', () => {
+    const item = screen.getByRole('heading', { level: 1 })
 
-    expect(heading).toBeDefined()
-    expect(heading.textContent).toBe(heroAppName)
+    expect(item).toBeDefined()
+    expect(item.textContent).toBe(heroAppName)
+  })
+
+  it('renders the correct heroAppDescription as p', () => {
+    const item = screen.getByText(heroAppDescription)
+
+    expect(item).toBeDefined()
+    expect(item.tagName).toBe('P')
+    expect(item.textContent).toBe(heroAppDescription)
   })
 })
