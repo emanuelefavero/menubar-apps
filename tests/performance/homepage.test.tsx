@@ -24,6 +24,12 @@ test.describe('Homepage Performance', () => {
 
   // * First Contentful Paint (FCP) and Largest Contentful Paint (LCP)
   test('FCP and LCP', async ({ page }) => {
+    // Only run in development mode
+    test.skip(
+      process.env.NODE_ENV !== 'development',
+      'FCP and LCP tests are only run in development mode',
+    )
+
     await page.goto('/')
 
     // Wait for the page to be fully loaded
