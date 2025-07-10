@@ -1,14 +1,15 @@
 import { heroAppDescription, heroAppName } from '@/config/hero'
-import { render, screen } from '@testing-library/react'
-import { beforeAll, describe, expect, it } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, it } from 'vitest'
 import Component from './Hero'
 
 describe('Hero', () => {
-  beforeAll(() => {
-    render(<Component />)
+  afterEach(() => {
+    cleanup()
   })
 
   it('renders the correct heroAppName as h1', () => {
+    render(<Component />)
     const item = screen.getByRole('heading', { level: 1 })
 
     expect(item).toBeDefined()
@@ -16,6 +17,7 @@ describe('Hero', () => {
   })
 
   it('renders the correct heroAppDescription as p', () => {
+    render(<Component />)
     const item = screen.getByText(heroAppDescription)
 
     expect(item).toBeDefined()
