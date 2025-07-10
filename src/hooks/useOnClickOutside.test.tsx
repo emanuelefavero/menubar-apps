@@ -43,4 +43,24 @@ describe('useOnClickOutside', () => {
 
     expect(handler).not.toHaveBeenCalled()
   })
+
+  it('calls handler when touching outside the ref element', () => {
+    const handler = vi.fn()
+    render(<ComponentWithHook handler={handler} />)
+
+    const outsideElement = screen.getByTestId('outside')
+    fireEvent.touchStart(outsideElement)
+
+    expect(handler).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not call handler when touching inside the ref element', () => {
+    const handler = vi.fn()
+    render(<ComponentWithHook handler={handler} />)
+
+    const insideElement = screen.getByTestId('inside')
+    fireEvent.touchStart(insideElement)
+
+    expect(handler).not.toHaveBeenCalled()
+  })
 })
