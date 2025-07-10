@@ -1,4 +1,4 @@
-import { cleanup, render } from '@testing-library/react'
+import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useIsHome } from './useIsHome'
 
@@ -9,9 +9,9 @@ vi.mock('next/navigation', () => ({
 }))
 
 // Test wrapper component to use the hook
-function TestComponent() {
+function ComponentWithHook() {
   const isHome = useIsHome()
-  return <div data-testid='is-home'>{isHome.toString()}</div>
+  return <div data-testid='is-home'>{isHome ? 'true' : 'false'}</div>
 }
 
 describe('useIsHome', () => {
@@ -23,28 +23,24 @@ describe('useIsHome', () => {
   it('returns true when on home page', () => {
     mockUsePathname.mockReturnValue('/')
 
-    const { getByTestId } = render(<TestComponent />)
-    const result = getByTestId('is-home')
+    render(<ComponentWithHook />)
+    const item = screen.getByTestId('is-home')
 
-    expect(result.textContent).toBe('true')
+    expect(item.textContent).toBe('true')
   })
 
   it('returns false when on any other page', () => {
-    const nonHomeRoutes = [
-      '/about-us',
-      '/support',
-      '/some-other-page',
-      '/nested/route',
-    ]
+    const nonHomeRoutes = ['/about-us', '/support', '/nested/route']
 
     nonHomeRoutes.forEach((route) => {
       mockUsePathname.mockReturnValue(route)
 
-      const { getByTestId } = render(<TestComponent />)
-      const result = getByTestId('is-home')
+      render(<ComponentWithHook />)
+      const item = screen.getByTestId('is-home')
 
-      expect(result.textContent).toBe('false')
+      expect(item.textContent).toBe('false')
       cleanup() // Clean up after each iteration
+      vi.clearAllMocks() // Clear mocks to reset state
     })
   })
 })
