@@ -3,8 +3,16 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { useScrollDirection } from './useScrollDirection'
 
 describe('useScrollDirection', () => {
+  const setScrollY = (value: number) => {
+    Object.defineProperty(window, 'scrollY', { value, writable: true })
+  }
+
+  const fireScroll = () => {
+    window.dispatchEvent(new Event('scroll'))
+  }
+
   beforeEach(() => {
-    window.scrollY = 0 // Reset scroll position before each test
+    setScrollY(0) // Reset scrollY before each test
   })
 
   it('should return true by default', () => {
@@ -17,14 +25,14 @@ describe('useScrollDirection', () => {
 
     // Scroll down first
     act(() => {
-      Object.defineProperty(window, 'scrollY', { value: 100, writable: true })
-      window.dispatchEvent(new Event('scroll'))
+      setScrollY(100)
+      fireScroll()
     })
 
     // Scroll up
     act(() => {
-      Object.defineProperty(window, 'scrollY', { value: 50, writable: true })
-      window.dispatchEvent(new Event('scroll'))
+      setScrollY(50)
+      fireScroll()
     })
 
     await waitFor(() => {
@@ -37,8 +45,8 @@ describe('useScrollDirection', () => {
 
     // Scroll down
     act(() => {
-      Object.defineProperty(window, 'scrollY', { value: 100, writable: true })
-      window.dispatchEvent(new Event('scroll'))
+      setScrollY(100)
+      fireScroll()
     })
 
     await waitFor(() => {
