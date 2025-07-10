@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react'
 /**
  * Track the current scroll position of the page
  * @returns An object containing scrollX and scrollY scroll coordinates
+ *
+ * @example
+ * ```tsx
+ * const { scrollX, scrollY } = useScrollPosition()
+ * console.log(scrollX, scrollY) // 0, 200
+ * ```
  */
 
 interface ScrollPosition {

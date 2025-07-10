@@ -4,7 +4,13 @@ import { useEffect, useState } from 'react'
 /**
  * Track the current viewport size (width and height)
  * Updates when the user resizes the window
- * @returns An object containing width and height of the viewport
+ * @returns An object containing width and height of the viewport as numbers
+ *
+ * @example
+ * ```tsx
+ * const { width, height } = useViewportSize()
+ * console.log(width, height) // 1920, 1080
+ * ```
  */
 
 interface ViewportSize {

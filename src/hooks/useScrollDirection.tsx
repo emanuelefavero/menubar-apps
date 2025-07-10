@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 /**
  * Determine the scroll direction of the page
  * @returns `true` if scrolling up, `false` if scrolling down
+ *
+ * @example
+ * ```tsx
+ * const isScrollingUp = useScrollDirection()
+ * ```
  */
 
 export function useScrollDirection() {

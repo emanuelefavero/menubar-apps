@@ -5,6 +5,15 @@ import { useEffect } from 'react'
  * @param refs Array of refs to check for outside clicks.
  * @param handler Function to call on outside click.
  * @returns void
+ *
+ * @example
+ * ```tsx
+ * const ref = useRef<HTMLDivElement>(null)
+ * useOnClickOutside([ref], () => {
+ *  console.log('Clicked outside the element!')
+ * })
+ * ```
+ *
  */
 
 export function useOnClickOutside(
