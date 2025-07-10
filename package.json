@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.3.5",
     "@playwright/test": "^1.53.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
