@@ -3,12 +3,9 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { useScrollPosition } from './useScrollPosition'
 
 describe('useScrollPosition', () => {
-  const setScrollX = (value: number) => {
-    Object.defineProperty(window, 'scrollX', { value, writable: true })
-  }
-
-  const setScrollY = (value: number) => {
-    Object.defineProperty(window, 'scrollY', { value, writable: true })
+  const setScrollPosition = (x: number, y: number) => {
+    Object.defineProperty(window, 'scrollX', { value: x, writable: true })
+    Object.defineProperty(window, 'scrollY', { value: y, writable: true })
   }
 
   const fireScroll = () => {
@@ -16,9 +13,7 @@ describe('useScrollPosition', () => {
   }
 
   beforeEach(() => {
-    // Reset scroll positions before each test
-    setScrollX(0)
-    setScrollY(0)
+    setScrollPosition(0, 0) // Reset scroll position before each test
   })
 
   it('should return initial scroll position', () => {
@@ -30,8 +25,7 @@ describe('useScrollPosition', () => {
     const { result } = renderHook(() => useScrollPosition())
 
     act(() => {
-      setScrollY(100)
-      setScrollX(50)
+      setScrollPosition(50, 100)
       fireScroll()
     })
 
