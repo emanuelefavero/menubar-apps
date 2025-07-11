@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { useOnClickOutside } from './useOnClickOutside'
 
-// Test component to use the hook
+// Test component with useOnClickOutside hook
 function ComponentWithHook({ handler }: { handler: ClickHandler }) {
   const ref = useRef<HTMLDivElement>(null)
   useOnClickOutside([ref as HTMLElementRef], handler)

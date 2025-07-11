@@ -2,7 +2,6 @@ import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { useScrollStage } from './useScrollStage'
 
-// Helper to set scroll position and window size
 const setScroll = (y: number, innerHeight = 1000) => {
   Object.defineProperty(window, 'scrollY', { value: y, writable: true })
   Object.defineProperty(window, 'innerHeight', {

@@ -2,15 +2,15 @@ import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { useScrollDirection } from './useScrollDirection'
 
+const setScrollY = (value: number) => {
+  Object.defineProperty(window, 'scrollY', { value, writable: true })
+}
+
+const fireScroll = () => {
+  window.dispatchEvent(new Event('scroll'))
+}
+
 describe('useScrollDirection', () => {
-  const setScrollY = (value: number) => {
-    Object.defineProperty(window, 'scrollY', { value, writable: true })
-  }
-
-  const fireScroll = () => {
-    window.dispatchEvent(new Event('scroll'))
-  }
-
   beforeEach(() => {
     setScrollY(0) // Reset scrollY before each test
   })
