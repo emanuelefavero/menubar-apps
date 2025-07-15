@@ -18,7 +18,7 @@ export default function Component({
       src={src}
       alt={alt}
       fill
-      className={`-z-10 object-cover object-center ${className}`}
+      className={`-z-10 object-cover object-center select-none ${className}`}
       priority={priority}
     />
   )
