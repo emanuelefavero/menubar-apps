@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import Link from 'next/link'
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
@@ -18,8 +17,14 @@ export default function Component({
   )
 
   return (
-    <Link href={href} className={clsx(baseStyles, className)} {...props}>
+    <a
+      href={href}
+      className={clsx(baseStyles, className)}
+      target='_blank'
+      rel='noopener noreferrer'
+      {...props}
+    >
       {children}
-    </Link>
+    </a>
   )
 }

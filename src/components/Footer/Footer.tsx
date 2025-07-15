@@ -1,4 +1,4 @@
-import Link from '@/components/shared/Link'
+import LinkExternal from '@/components/shared/LinkExternal'
 import { devName, devUrl, title } from '@/config/metadata'
 
 export default function Component() {
@@ -25,15 +25,13 @@ export default function Component() {
           <span className='mr-0.5 text-(--foreground-secondary)'>
             Developed by{' '}
           </span>
-          <Link
+          <LinkExternal
             href={devUrl}
-            target='_blank'
-            rel='noopener noreferrer'
             aria-label={`Visit ${devName}'s website`}
             title={`Visit ${devName}'s website`}
           >
             {devName}
-          </Link>
+          </LinkExternal>
         </div>
       </div>
     </footer>
