@@ -1,3 +1,4 @@
+import Link from '@/components/shared/Link'
 import { devName, devUrl, title } from '@/config/metadata'
 
 export default function Component() {
@@ -20,21 +21,20 @@ export default function Component() {
         <span className='mx-2 hidden h-4 w-px rounded bg-(--foreground-secondary) select-none xs:inline-block'></span>
 
         {/* Developer Link */}
-        <span className='text-center text-xs'>
+        <div className='text-center text-xs'>
           <span className='mr-0.5 text-(--foreground-secondary)'>
             Developed by{' '}
           </span>
-          <a
+          <Link
             href={devUrl}
-            className='font-medium underline underline-offset-4 transition duration-250 hover:text-(--foreground-secondary) active:scale-[0.97]'
             target='_blank'
             rel='noopener noreferrer'
             aria-label={`Visit ${devName}'s website`}
             title={`Visit ${devName}'s website`}
           >
             {devName}
-          </a>
-        </span>
+          </Link>
+        </div>
       </div>
     </footer>
   )
