@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 interface Props {
   name: string
   href: string
@@ -18,14 +16,14 @@ export default function Component({
       className={`absolute right-4 bottom-4 z-0 rounded-full text-[0.6rem] text-white/70 ${className}`}
     >
       <span>{label}</span>{' '}
-      <Link
+      <a
         href={href}
         target='_blank'
         rel='noopener noreferrer'
         draggable={false}
       >
         {name}
-      </Link>
+      </a>
     </div>
   )
 }
