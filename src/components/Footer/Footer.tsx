@@ -1,5 +1,4 @@
 import { devName, devUrl, title } from '@/config/metadata'
-import Link from 'next/link'
 
 export default function Component() {
   const year = new Date().getFullYear()
@@ -25,16 +24,16 @@ export default function Component() {
           <span className='mr-0.5 text-(--foreground-secondary)'>
             Developed by{' '}
           </span>
-          <Link
+          <a
             href={devUrl}
-            className='font-semibold underline-offset-2 hover:underline'
+            className='font-medium underline underline-offset-4 transition duration-250 hover:text-(--foreground-secondary) active:scale-[0.97]'
             target='_blank'
             rel='noopener noreferrer'
             aria-label={`Visit ${devName}'s website`}
             title={`Visit ${devName}'s website`}
           >
             {devName}
-          </Link>
+          </a>
         </span>
       </div>
     </footer>
