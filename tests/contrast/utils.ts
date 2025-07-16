@@ -1,6 +1,4 @@
-// Shared color contrast helpers for Playwright tests
-
-// Helper to parse rgb/rgba/hex color to [r, g, b]
+// * Helper to parse rgb/rgba/hex color to [r, g, b]
 export function parseColor(color: string): [number, number, number] {
   if (color.startsWith('rgb')) {
     const nums = color.match(/\d+/g)?.map(Number) || [0, 0, 0]
@@ -18,8 +16,8 @@ export function parseColor(color: string): [number, number, number] {
   throw new Error('Unsupported color format: ' + color)
 }
 
-// WCAG relative luminance
-export function luminance([r, g, b]: [number, number, number]): number {
+// WCAG relative luminance (used in contrast ratio calculation ↓)
+function luminance([r, g, b]: [number, number, number]): number {
   const a = [r, g, b].map((v) => {
     v /= 255
     return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
@@ -27,7 +25,7 @@ export function luminance([r, g, b]: [number, number, number]): number {
   return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2]
 }
 
-// WCAG contrast ratio
+// * WCAG contrast ratio
 export function contrast(
   rgb1: [number, number, number],
   rgb2: [number, number, number],
