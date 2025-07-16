@@ -24,4 +24,14 @@ describe('DeveloperLink', () => {
 
     expect(item.getAttribute('href')).toBe(devUrl)
   })
+
+  it('renders developer link with correct target', () => {
+    render(<Component />)
+
+    const item = screen.getByRole('link', {
+      name: `Visit ${devName}'s website`,
+    })
+
+    expect(item.getAttribute('target')).toBe('_blank')
+  })
 })
