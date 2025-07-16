@@ -1,7 +1,6 @@
+import { devName, title } from '@/config/metadata'
 import { expect, test } from '@playwright/test'
 
-const appTitle = 'MenuBar Apps'
-const devName = 'Emanuele Favero'
 const year = new Date().getFullYear().toString()
 
 const viewports = [
@@ -23,7 +22,7 @@ for (const viewport of viewports) {
     await expect(footer).toBeVisible()
 
     // Check logo, developer link, and year are visible in the footer
-    await expect(footer.getByText(appTitle, { exact: false })).toBeVisible()
+    await expect(footer.getByText(title, { exact: false })).toBeVisible()
     await expect(footer.getByText(devName, { exact: false })).toBeVisible()
     await expect(footer.getByText(year, { exact: false })).toBeVisible()
   })
