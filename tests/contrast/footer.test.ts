@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { AA } from './config'
 import { contrast, parseColor } from './utils'
 
 test('Footer background and text color contrast meets WCAG AA (>=4.5:1)', async ({
@@ -22,5 +23,5 @@ test('Footer background and text color contrast meets WCAG AA (>=4.5:1)', async 
   // Calculate contrast ratio
   const ratio = contrast(bg, fg)
 
-  expect(ratio).toBeGreaterThanOrEqual(4.5)
+  expect(ratio).toBeGreaterThanOrEqual(AA)
 })
