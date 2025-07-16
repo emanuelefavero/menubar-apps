@@ -26,4 +26,22 @@ for (const viewport of viewports) {
     await expect(footer.getByText(devName, { exact: false })).toBeVisible()
     await expect(footer.getByText(year, { exact: false })).toBeVisible()
   })
+
+  test(`Footer divider visibility on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize({
+      width: viewport.width,
+      height: viewport.height,
+    })
+    await page.goto('/')
+
+    const footer = page.locator('footer')
+    const divider = footer.locator('span[role="presentation"]')
+
+    // Check that the divider is visible on desktop and hidden on mobile
+    if (viewport.name === 'desktop') {
+      await expect(divider).toBeVisible()
+    } else {
+      await expect(divider).toBeHidden()
+    }
+  })
 }
