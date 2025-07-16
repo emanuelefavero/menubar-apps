@@ -18,10 +18,10 @@ test('Footer background and text color contrast meets WCAG AA (>=4.5:1)', async 
 
   // Parse colors to RGB arrays
   const bg = parseColor(bgColor)
-  const fg = parseColor(textColor)
+  const text = parseColor(textColor)
 
   // Calculate contrast ratio
-  const ratio = contrast(bg, fg)
+  const ratio = contrast(bg, text)
 
   expect(ratio).toBeGreaterThanOrEqual(AA)
 })
