@@ -24,12 +24,12 @@ export default function Component() {
   )
 }
 
-interface FooterRowProps {
+interface RowProps {
   children: React.ReactNode
   className?: string
 }
 
-function Row({ children, className }: FooterRowProps) {
+function Row({ children, className }: RowProps) {
   return (
     <div
       className={clsx(
