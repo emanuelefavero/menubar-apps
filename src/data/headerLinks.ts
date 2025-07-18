@@ -4,12 +4,6 @@ export interface HeaderLink {
 }
 
 export const headerLinks: readonly HeaderLink[] = [
-  {
-    href: '/about-us',
-    label: 'About Us',
-  },
-  {
-    href: '/support',
-    label: 'Support',
-  },
+  { href: '/about-us', label: 'About Us' },
+  { href: '/support', label: 'Support' },
 ]
