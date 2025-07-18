@@ -16,7 +16,10 @@ export default function Component({
   return (
     <Link
       href={href}
-      className={clsx('text-sm font-medium uppercase', className)}
+      className={clsx(
+        'h-full px-3 py-2 text-sm font-medium uppercase no-underline hover:bg-white/5',
+        className,
+      )}
       {...props}
     >
       {children}

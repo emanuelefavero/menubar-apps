@@ -19,7 +19,7 @@ export default function Component() {
           </Link>
         ))}
       </Row>
-      <Row>
+      <Row variant='bottom'>
         <Logo />
         <Divider />
         <DeveloperLink />
