@@ -1,8 +1,8 @@
-import clsx from 'clsx'
 import Link from 'next/link'
 import DeveloperLink from './DeveloperLink'
 import Divider from './Divider'
 import Logo from './Logo'
+import Row from './Row'
 
 export default function Component() {
   return (
@@ -21,23 +21,5 @@ export default function Component() {
         <DeveloperLink />
       </Row>
     </footer>
-  )
-}
-
-interface RowProps {
-  children: React.ReactNode
-  className?: string
-}
-
-function Row({ children, className }: RowProps) {
-  return (
-    <div
-      className={clsx(
-        'flex w-full flex-wrap items-center justify-center gap-4 py-2',
-        className,
-      )}
-    >
-      {children}
-    </div>
   )
 }
