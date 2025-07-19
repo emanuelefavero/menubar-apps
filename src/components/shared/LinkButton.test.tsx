@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import Component, { type Size, type Variant } from './LinkButton'
+import Component, { type Size, type Theme, type Variant } from './LinkButton'
 
 describe('LinkButton', () => {
   afterEach(() => {
@@ -37,14 +37,29 @@ describe('LinkButton', () => {
 
   it('renders with custom variant', () => {
     const variants: [Variant, string][] = [
-      ['primary', 'bg-white/80'],
-      ['secondary', 'bg-black/10'],
+      ['primary', 'bg-gray-800 text-white'],
+      ['secondary', 'bg-gray-300/10 text-gray-800'],
     ]
 
     variants.forEach(([variant, className]) => {
       render(<Component variant={variant}>{variant} Link</Component>)
 
       const item = screen.getByRole('link', { name: `${variant} Link` })
+      expect(item.getAttribute('class')).toContain(className)
+    })
+  })
+
+  it('renders with custom theme', () => {
+    const themes: [Theme, string][] = [
+      ['light', 'bg-white/80 text-gray-800'],
+      ['dark', 'bg-gray-800 text-white'],
+      ['default', 'bg-gray-800 text-white'],
+    ]
+
+    themes.forEach(([theme, className]) => {
+      render(<Component theme={theme}>{theme} Link</Component>)
+
+      const item = screen.getByRole('link', { name: `${theme} Link` })
       expect(item.getAttribute('class')).toContain(className)
     })
   })
