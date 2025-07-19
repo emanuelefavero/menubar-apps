@@ -1,7 +1,4 @@
-import TestScroll from '@/components/__dev__/TestScroll'
 import LinkButton from '@/components/shared/LinkButton'
-
-// TODO: Remove TestScroll component used for testing scrolling effect ↓
 
 export default function NotFound() {
   return (
@@ -17,14 +14,6 @@ export default function NotFound() {
 
         <LinkButton className='mt-1'>← Go back to Home</LinkButton>
       </div>
-
-      {/* This is a test scroll component for development purposes */}
-      {process.env.NODE_ENV === 'development' && (
-        <>
-          <TestScroll />
-          <TestScroll />
-        </>
-      )}
     </>
   )
 }
