@@ -35,18 +35,17 @@ export default function Component({
   }
 
   const variantStyles = {
-    primary: clsx(
-      'border-b-2 border-black/15 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white',
-      {
-        // Light theme
-        'bg-white/80 text-gray-800 hover:bg-white': theme === 'light',
-        // Dark theme
-        'bg-gray-800 text-white/80 hover:bg-gray-800': theme === 'dark',
-        // Default theme (system/user)
-        'bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white/80 hover:bg-white dark:hover:bg-gray-800':
-          theme === 'default',
-      },
-    ),
+    primary: clsx('border-b-2 shadow-2xs inset-shadow-sm', {
+      // Light theme
+      'bg-white/80 text-gray-800 border-black/15 inset-shadow-white shadow-black/25 hover:bg-white':
+        theme === 'light',
+      // Dark theme
+      'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700':
+        theme === 'dark',
+      // Default theme (system/user)
+      'bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white/80 hover:bg-white dark:hover:bg-gray-800':
+        theme === 'default',
+    }),
     secondary:
       'border-b border-white/20 bg-black/10 text-white shadow-md inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] inset-shadow-black/60 hover:bg-gray-500/5',
   }
