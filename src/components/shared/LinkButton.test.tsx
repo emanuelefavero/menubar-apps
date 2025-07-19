@@ -1,8 +1,8 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import Component, { type Size, type Variant } from './HeroButton'
+import Component, { type Size, type Variant } from './LinkButton'
 
-describe('HeroButton', () => {
+describe('LinkButton', () => {
   afterEach(() => {
     cleanup()
   })

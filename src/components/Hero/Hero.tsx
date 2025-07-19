@@ -1,7 +1,7 @@
 'use client'
 
-import HeroButton from '@/components/Hero/HeroButton'
 import DraggableSnapBack from '@/components/motion/DraggableSnapBack'
+import LinkButton from '@/components/shared/LinkButton'
 import { heroAppDescription, heroAppName } from '@/config/hero'
 import Image from 'next/image'
 import Card from './Card'
@@ -43,7 +43,7 @@ export default function Component() {
             <div className='mt-2.5 h-[1px] w-full bg-white/20'></div>
 
             {/* Download button */}
-            <HeroButton
+            <LinkButton
               theme='light'
               size='lg'
               href='/images/menubar-tasks.png'
@@ -55,10 +55,10 @@ export default function Component() {
             >
               Download Now{' '}
               <span className='hidden 2xs:inline-block'>- 100% Free</span>
-            </HeroButton>
+            </LinkButton>
 
             {/* Support button */}
-            <HeroButton
+            <LinkButton
               size='lg'
               href='https://buymeacoffee.com/emanuelefavero'
               variant='secondary'
@@ -70,7 +70,7 @@ export default function Component() {
               draggable={false}
             >
               Support the App <span aria-hidden='true'>☕</span>
-            </HeroButton>
+            </LinkButton>
           </Card>
         </DraggableSnapBack>
       </EasterEgg>
