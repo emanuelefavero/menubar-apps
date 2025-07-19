@@ -59,6 +59,7 @@ export default function Component() {
 
             {/* Support button */}
             <LinkButton
+              theme='dark'
               size='lg'
               href='https://buymeacoffee.com/emanuelefavero'
               variant='secondary'

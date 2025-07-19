@@ -46,8 +46,17 @@ export default function Component({
       'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700 dark:bg-white/80 dark:text-gray-800 dark:border-black/15 dark:inset-shadow-white dark:shadow-black/25 hover:dark:bg-white':
         theme === 'default',
     }),
-    secondary:
-      'border-b border-white/20 bg-black/10 text-white shadow-md inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] inset-shadow-black/60 hover:bg-gray-500/5',
+    secondary: clsx('border-b', {
+      // Light theme
+      'border-black/20 bg-gray-300/10 text-gray-800 shadow-white/60 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10':
+        theme === 'light',
+      // Dark theme
+      'border-white/20 bg-black/10 text-white inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] hover:bg-gray-500/5':
+        theme === 'dark',
+      // Default theme (system/user)
+      'border-black/20 bg-gray-300/10 text-gray-800 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10 dark:border-white/20 dark:bg-black/10 dark:text-white dark:inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] dark:hover:bg-gray-500/5':
+        theme === 'default',
+    }),
   }
 
   return (
