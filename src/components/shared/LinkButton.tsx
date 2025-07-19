@@ -35,24 +35,31 @@ export default function Component({
   }
 
   const variantStyles = {
+    // Primary variant
     primary: clsx('border-b-2 shadow-2xs inset-shadow-sm', {
       // Light theme
       'bg-white/80 text-gray-800 border-black/15 inset-shadow-white shadow-black/25 hover:bg-white':
         theme === 'light',
+
       // Dark theme
       'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700':
         theme === 'dark',
+
       // Default theme (system/user)
       'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700 dark:bg-white/80 dark:text-gray-800 dark:border-black/15 dark:inset-shadow-white dark:shadow-black/25 hover:dark:bg-white':
         theme === 'default',
     }),
+
+    // Secondary variant
     secondary: clsx('border-b', {
       // Light theme
       'border-black/20 bg-gray-300/10 text-gray-800 shadow-white/60 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10':
         theme === 'light',
+
       // Dark theme
       'border-white/20 bg-black/10 text-white inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] hover:bg-gray-500/5':
         theme === 'dark',
+
       // Default theme (system/user)
       'border-black/20 bg-gray-300/10 text-gray-800 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10 dark:border-white/20 dark:bg-black/10 dark:text-white dark:inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] dark:hover:bg-gray-500/5':
         theme === 'default',
