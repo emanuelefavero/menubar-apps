@@ -43,7 +43,7 @@ export default function Component({
       'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700':
         theme === 'dark',
       // Default theme (system/user)
-      'bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white/80 hover:bg-white dark:hover:bg-gray-800':
+      'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700 dark:bg-white/80 dark:text-gray-800 dark:border-black/15 dark:inset-shadow-white dark:shadow-black/25 hover:dark:bg-white':
         theme === 'default',
     }),
     secondary:
