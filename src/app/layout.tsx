@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
-import BackgroundOverflow from '@/components/shared/BackgroundOverflow/BackgroundOverflow'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
 import './globals.css'
@@ -20,7 +19,6 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
-        <BackgroundOverflow />
         <Footer />
       </body>
     </html>

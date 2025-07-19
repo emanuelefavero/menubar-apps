@@ -1,5 +1,8 @@
+'use client'
+
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 import { Ref } from 'react'
 
 interface Props {
@@ -9,7 +12,9 @@ interface Props {
 }
 
 export default function Component({ open, onClick, ref }: Props) {
-  const scrollStage = useScrollStage()
+  const pathname = usePathname()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const getOpenColor = () => {
     if (scrollStage === 'top') return 'bg-rose-800'

@@ -5,6 +5,7 @@ import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import { motion } from 'motion/react'
+import { usePathname } from 'next/navigation'
 import BackdropBlur from './BackdropBlur'
 import './Header.css'
 import Logo from './Logo'
@@ -13,7 +14,9 @@ import MobileMenu from './Menu/Mobile/Menu'
 
 export default function Component() {
   const show = useScrollDirection()
-  const scrollStage = useScrollStage()
+  const pathname = usePathname()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const bgColor =
     scrollStage === 'top'

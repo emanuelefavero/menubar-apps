@@ -5,6 +5,7 @@ import { useIsHome } from '@/hooks/useIsHome'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { AnchorHTMLAttributes } from 'react'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -13,7 +14,9 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 export default function Component({ className, ...props }: Props) {
   const isHome = useIsHome()
-  const scrollStage = useScrollStage()
+  const pathname = usePathname()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const baseStyles = clsx(
     scrollStage === 'top'

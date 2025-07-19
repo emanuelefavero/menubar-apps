@@ -20,7 +20,8 @@ export default function Component({
 }: Props) {
   const pathname = usePathname()
   const isActive = pathname === href
-  const scrollStage = useScrollStage()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const baseStyles = clsx(
     scrollStage === 'top'

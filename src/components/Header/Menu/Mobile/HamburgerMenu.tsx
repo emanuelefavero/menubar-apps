@@ -1,7 +1,10 @@
+'use client'
+
 import { headerLinks } from '@/data/headerLinks'
 import { useIsHome } from '@/hooks/useIsHome'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 import { Ref } from 'react'
 import './HamburgerMenu.css'
 import HamburgerLink from './Link'
@@ -14,7 +17,9 @@ interface Props {
 
 export default function Component({ open, onClick, ref }: Props) {
   const isHome = useIsHome()
-  const scrollStage = useScrollStage()
+  const pathname = usePathname()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const bgColor =
     scrollStage === 'top'

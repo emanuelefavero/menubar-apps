@@ -1,8 +1,11 @@
+'use client'
+
 import type { HeaderLink } from '@/data/headerLinks'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface Props extends HeaderLink {
   onClick?: () => void
@@ -10,7 +13,9 @@ interface Props extends HeaderLink {
 
 export default function Component({ href, label, onClick }: Props) {
   const isActive = useIsActiveLink(href)
-  const scrollStage = useScrollStage()
+  const pathname = usePathname()
+  const scrollStageFromHook = useScrollStage()
+  const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const baseStyles =
     'text-lg no-underline transition-all duration-250 select-none'
