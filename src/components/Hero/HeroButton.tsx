@@ -13,7 +13,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string
 }
 
-export default function LinkButton({
+export default function Component({
   href = '/',
   variant = 'primary',
   size = 'none',

@@ -1,5 +1,5 @@
 import TestScroll from '@/components/__dev__/TestScroll'
-import LinkButton from '@/components/shared/LinkButton'
+import HeroButton from '@/components/Hero/HeroButton'
 
 // TODO: Remove TestScroll component used for testing scrolling effect ↓
 
@@ -15,7 +15,7 @@ export default function NotFound() {
           Sorry, the page you are looking for does not exist.
         </p>
 
-        <LinkButton className='mt-1'>← Go back to Home</LinkButton>
+        <HeroButton className='mt-1'>← Go back to Home</HeroButton>
       </div>
 
       {/* This is a test scroll component for development purposes */}
