@@ -44,6 +44,7 @@ export default function Component() {
 
             {/* Download button */}
             <HeroButton
+              theme='light'
               size='lg'
               href='/images/menubar-tasks.png'
               className='mt-4'

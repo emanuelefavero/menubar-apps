@@ -4,11 +4,13 @@ import { AnchorHTMLAttributes } from 'react'
 
 export type Variant = 'primary' | 'secondary'
 export type Size = 'none' | 'sm' | 'base' | 'lg'
+export type Theme = 'light' | 'dark' | 'default'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string
   variant?: Variant
   size?: Size
+  theme?: Theme
   children: React.ReactNode
   className?: string
 }
@@ -17,6 +19,7 @@ export default function Component({
   href = '/',
   variant = 'primary',
   size = 'none',
+  theme = 'default',
   children,
   className = '',
   ...props
@@ -32,8 +35,18 @@ export default function Component({
   }
 
   const variantStyles = {
-    primary:
-      'border-b-2 border-black/15 bg-white/80 text-gray-800 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white hover:bg-white',
+    primary: clsx(
+      'border-b-2 border-black/15 shadow-2xs inset-shadow-sm shadow-black/25 inset-shadow-white',
+      {
+        // Light theme
+        'bg-white/80 text-gray-800 hover:bg-white': theme === 'light',
+        // Dark theme
+        'bg-gray-800 text-white/80 hover:bg-gray-800': theme === 'dark',
+        // Default theme (system/user)
+        'bg-white/80 dark:bg-gray-800 text-gray-800 dark:text-white/80 hover:bg-white dark:hover:bg-gray-800':
+          theme === 'default',
+      },
+    ),
     secondary:
       'border-b border-white/20 bg-black/10 text-white shadow-md inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.6)] inset-shadow-black/60 hover:bg-gray-500/5',
   }
