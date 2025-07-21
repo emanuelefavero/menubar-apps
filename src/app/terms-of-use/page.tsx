@@ -14,22 +14,21 @@ export default async function Page() {
   )
 
   return (
-    <div className='px-4 py-44'>
-      <div>
+    <div className='max-w-screen-lg px-4 py-44'>
+      <div className='mb-8 flex items-center justify-center gap-6'>
         <Image
           src='/images/terms-of-use-icon.png'
           alt='Terms of Use Icon'
           width={64}
           height={64}
-          className='mb-8'
         />
-
-        <p>
+        <p className='text-4xl font-light uppercase'>
           Here{"'"}s some <strong>important info</strong> about using our
           services
         </p>
       </div>
 
+      {/* Markdown content */}
       <article
         dangerouslySetInnerHTML={{ __html: html }}
         className={clsx(baseStyles, linkStyles)}
