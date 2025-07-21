@@ -14,7 +14,7 @@ export default async function Page() {
   )
 
   return (
-    <div className='max-w-screen-lg px-4 py-44'>
+    <div className='max-w-screen-lg px-4 py-24'>
       <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
         <Image
           src='/images/terms-of-use-icon.png'
