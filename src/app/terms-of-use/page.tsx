@@ -21,10 +21,12 @@ export default async function Page() {
           alt='Terms of Use Icon'
           width={64}
           height={64}
+          className='select-none'
         />
         <p className='text-xl font-light uppercase xs:text-4xl'>
-          Here{"'"}s some <strong>important info</strong> about using our
-          services
+          Here{"'"}s some{' '}
+          <strong className='font-medium'>important info</strong> about using
+          our services
         </p>
       </div>
 
