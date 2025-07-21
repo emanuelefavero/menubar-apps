@@ -5,7 +5,10 @@ export default async function Page() {
 
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: html }} className='px-4 py-24' />
+      <article
+        dangerouslySetInnerHTML={{ __html: html }}
+        className='prose px-4 py-24 lg:prose-lg dark:prose-invert'
+      />
     </>
   )
 }
