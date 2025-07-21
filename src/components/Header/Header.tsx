@@ -38,7 +38,7 @@ export default function Component() {
       animate={{ scaleX: show ? 1 : 0 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className={clsx(
-        'fixed top-0 z-50 w-full rounded-full p-2',
+        'fixed top-0 z-50 flex w-full items-center justify-center rounded-full p-2',
         // Performance optimization
         'origin-center translate-z-0 will-change-transform backface-hidden',
       )}
@@ -46,6 +46,7 @@ export default function Component() {
       <div
         className={clsx(
           'header',
+          'w-full max-w-screen-3xl', // header max width
           bgColor,
           'relative flex items-center justify-between rounded-full px-1 py-[0.2rem] shadow-(--header-shadow)',
         )}
