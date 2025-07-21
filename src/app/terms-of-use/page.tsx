@@ -1,13 +1,22 @@
 import { getMarkdownAsHtml } from '@/lib/markdown'
+import clsx from 'clsx'
 
 export default async function Page() {
   const html = await getMarkdownAsHtml('terms-of-use.md')
+
+  const baseStyles = clsx(
+    'prose max-w-screen-lg px-4 py-24 lg:prose-lg dark:prose-invert',
+  )
+
+  const linkStyles = clsx(
+    'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary) prose-a:active:scale-[0.97]',
+  )
 
   return (
     <>
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className='prose max-w-screen-lg px-4 py-24 lg:prose-lg dark:prose-invert prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary) prose-a:active:scale-[0.97]'
+        className={clsx(baseStyles, linkStyles)}
       />
     </>
   )
