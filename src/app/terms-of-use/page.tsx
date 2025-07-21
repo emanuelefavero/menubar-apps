@@ -1,7 +1,7 @@
 import { getMarkdownAsHtml } from '@/lib/markdown'
 
 export default async function Page() {
-  const html = await getMarkdownAsHtml('src/app/terms-of-use/terms-of-use.md')
+  const html = await getMarkdownAsHtml('terms-of-use.md')
 
   return (
     <>
