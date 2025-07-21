@@ -7,7 +7,7 @@ export default async function Page() {
     <>
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className='prose px-4 py-24 lg:prose-lg dark:prose-invert'
+        className='prose max-w-screen-lg px-4 py-24 lg:prose-lg dark:prose-invert'
       />
     </>
   )
