@@ -15,14 +15,14 @@ export default async function Page() {
 
   return (
     <div className='max-w-screen-lg px-4 py-44'>
-      <div className='mb-8 flex items-center justify-center gap-6'>
+      <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
         <Image
           src='/images/terms-of-use-icon.png'
           alt='Terms of Use Icon'
           width={64}
           height={64}
         />
-        <p className='text-4xl font-light uppercase'>
+        <p className='text-xl font-light uppercase xs:text-4xl'>
           Here{"'"}s some <strong>important info</strong> about using our
           services
         </p>
