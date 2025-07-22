@@ -1,6 +1,13 @@
+import { title } from '@/config/metadata'
 import { getMarkdownAsHtml } from '@/lib/markdown'
 import clsx from 'clsx'
+import type { Metadata } from 'next'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: `${title} - Terms of Use`,
+  description: `Terms and conditions for using ${title} services.`,
+}
 
 export default async function Page() {
   const html = await getMarkdownAsHtml('terms-of-use.md')
