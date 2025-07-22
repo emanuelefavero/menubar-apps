@@ -1,4 +1,4 @@
-import GoHomeButton from '@/components/shared/GoHomeButton'
+import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 
 export default function NotFound() {
   return (
@@ -12,7 +12,7 @@ export default function NotFound() {
           Sorry, the page you are looking for does not exist.
         </p>
 
-        <GoHomeButton className='mt-1' />
+        <GoBackHomeButton className='mt-1' />
       </div>
     </>
   )
