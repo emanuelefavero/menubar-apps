@@ -18,6 +18,12 @@ export default async function Page() {
   // @see https://github.com/tailwindlabs/tailwindcss-typography
   const baseStyles = clsx('prose max-w-screen-lg lg:prose-lg dark:prose-invert')
 
+  const headingsStyles = clsx(
+    'prose-headings:mb-3 prose-headings:uppercase prose-headings:font-medium',
+    // Make headings smaller
+    'prose-h1:text-3xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs',
+  )
+
   const linkStyles = clsx(
     'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
   )
@@ -45,7 +51,7 @@ export default async function Page() {
       {/* Markdown content */}
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className={clsx(baseStyles, linkStyles, lineStyles)}
+        className={clsx(baseStyles, headingsStyles, linkStyles, lineStyles)}
       />
     </div>
   )
