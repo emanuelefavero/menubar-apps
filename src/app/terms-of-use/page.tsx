@@ -31,6 +31,7 @@ export default async function Page() {
           width={64}
           height={64}
           className='select-none'
+          priority
         />
         <p className='text-xl font-light uppercase xs:text-4xl'>
           Here{"'"}s some{' '}
