@@ -22,6 +22,8 @@ export default async function Page() {
     'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
   )
 
+  const lineStyles = clsx('prose-hr:p-0 prose-hr:m-0 prose-hr:mb-5')
+
   return (
     <div className='max-w-screen-lg px-4 py-24'>
       <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
@@ -43,7 +45,7 @@ export default async function Page() {
       {/* Markdown content */}
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className={clsx(baseStyles, linkStyles)}
+        className={clsx(baseStyles, linkStyles, lineStyles)}
       />
     </div>
   )
