@@ -1,20 +1,32 @@
-import { description, title } from '@/config/metadata'
+import { description, pageMetadata, title } from '@/config/metadata'
 import { expect, test } from '@playwright/test'
 
-// Check that the page has a title (tab title, not h1)
-test('has title', async ({ page }) => {
+test('homepage has correct metadata', async ({ page }) => {
   await page.goto('/')
 
+  // Check title
   await expect(page).toHaveTitle(new RegExp(title, 'i'))
-})
 
-// Check that the page has a description meta tag
-test('has description meta tag', async ({ page }) => {
-  await page.goto('/')
-
+  // Check description meta tag
   const descriptionMeta = page.locator('meta[name="description"]')
   await expect(descriptionMeta).toHaveAttribute(
     'content',
     new RegExp(description, 'i'),
+  )
+})
+
+test('terms of use page has correct metadata', async ({ page }) => {
+  await page.goto('/terms-of-use')
+
+  // Check title
+  await expect(page).toHaveTitle(
+    new RegExp(pageMetadata['terms-of-use'].title, 'i'),
+  )
+
+  // Check description meta tag
+  const descriptionMeta = page.locator('meta[name="description"]')
+  await expect(descriptionMeta).toHaveAttribute(
+    'content',
+    new RegExp(pageMetadata['terms-of-use'].description, 'i'),
   )
 })
