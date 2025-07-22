@@ -1,12 +1,14 @@
-import { title } from '@/config/metadata'
+import { pageMetadata } from '@/config/metadata'
 import { getMarkdownAsHtml } from '@/lib/markdown'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
+const page = 'terms-of-use'
+
 export const metadata: Metadata = {
-  title: `${title} - Terms of Use`,
-  description: `Terms and conditions for using ${title} services.`,
+  title: pageMetadata[page].title,
+  description: pageMetadata[page].description,
 }
 
 export default async function Page() {
