@@ -1,3 +1,4 @@
+import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 import { pageMetadata } from '@/config/metadata'
 import { getMarkdownAsHtml } from '@/lib/markdown'
 import clsx from 'clsx'
@@ -53,6 +54,11 @@ export default async function Page() {
         dangerouslySetInnerHTML={{ __html: html }}
         className={clsx(baseStyles, headingsStyles, linkStyles, lineStyles)}
       />
+
+      {/* Go back home button */}
+      <div className='mt-12 flex w-full items-center justify-center'>
+        <GoBackHomeButton className='text-sm' />
+      </div>
     </div>
   )
 }
