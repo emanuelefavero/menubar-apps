@@ -29,7 +29,7 @@ export default function Component({
 
   const [showHint, setShowHint] = useState(false)
 
-  // Show hint only after 1 second and hide after 5 seconds
+  // Show hint only after 1 second and hide after 3 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHint(true)
@@ -37,7 +37,7 @@ export default function Component({
 
     const hideTimer = setTimeout(() => {
       setShowHint(false)
-    }, 5000)
+    }, 3000)
 
     return () => {
       clearTimeout(timer)
