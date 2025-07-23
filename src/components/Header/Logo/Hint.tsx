@@ -15,8 +15,6 @@ export default function Component({
   scrollStage = 'full',
   pathname = '/',
 }: Props) {
-  const [showHint, setShowHint] = useState(false)
-
   const baseStyles = clsx(
     // Default styles
     'absolute hidden top-1/2 left-full ml-1.5 -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
@@ -28,6 +26,8 @@ export default function Component({
         ? 'text-(--success-light)'
         : 'text-(--success)', // System light/dark mode
   )
+
+  const [showHint, setShowHint] = useState(false)
 
   // Show hint only after 1 second and hide after 5 seconds
   useEffect(() => {
