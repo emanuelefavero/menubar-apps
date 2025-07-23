@@ -47,15 +47,23 @@ export default function Component({
 
   return (
     <span
+      // Transition effect for showing/hiding the hint
       className={clsx(
-        baseStyles,
-        className,
-
-        // Show hint only if not on home page
-        showHint && pathname !== '/' && '3xs:inline-block',
+        'transition-opacity duration-500',
+        showHint ? 'opacity-100' : 'opacity-0',
       )}
     >
-      ← Go Home
+      <span
+        className={clsx(
+          baseStyles,
+          className,
+
+          // Show hint only if not on home page
+          showHint && pathname !== '/' && '3xs:inline-block',
+        )}
+      >
+        ← Go Home
+      </span>
     </span>
   )
 }
