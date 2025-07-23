@@ -8,7 +8,7 @@ import { motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 import BackdropBlur from './BackdropBlur'
 import './Header.css'
-import Logo from './Logo'
+import Logo from './Logo/Logo'
 import DesktopMenu from './Menu/Desktop/Menu'
 import MobileMenu from './Menu/Mobile/Menu'
 
