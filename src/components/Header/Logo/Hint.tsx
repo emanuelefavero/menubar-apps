@@ -4,15 +4,17 @@ import clsx from 'clsx'
 interface Props {
   className?: string
   scrollStage?: ScrollStage
+  pathname?: string
 }
 
 export default function Component({
   className = '',
   scrollStage = 'full',
+  pathname = '/',
 }: Props) {
   const baseStyles = clsx(
     // Default styles
-    'absolute top-1/2 left-full ml-1.5 inline-block -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
+    'absolute hidden top-1/2 left-full ml-1.5 -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
 
     // Color based on scroll stage
     scrollStage === 'top'
@@ -22,5 +24,15 @@ export default function Component({
         : 'text-(--success)', // System light/dark mode
   )
 
-  return <span className={clsx(baseStyles, className)}>← Go Home</span>
+  return (
+    <span
+      className={clsx(
+        baseStyles,
+        className,
+        pathname !== '/' && '3xs:inline-block',
+      )}
+    >
+      ← Go Home
+    </span>
+  )
 }
