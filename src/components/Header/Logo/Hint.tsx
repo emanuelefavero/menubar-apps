@@ -2,9 +2,11 @@
 
 import type { ScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 interface Props {
+  showHint: boolean
+  setShowHint: (show: boolean) => void
   className?: string
   scrollStage?: ScrollStage
   pathname?: string
@@ -14,6 +16,8 @@ export default function Component({
   className = '',
   scrollStage = 'full',
   pathname = '/',
+  showHint,
+  setShowHint,
 }: Props) {
   const baseStyles = clsx(
     // Default styles
@@ -26,8 +30,6 @@ export default function Component({
         ? 'text-(--success-light)'
         : 'text-(--success)', // System light/dark mode
   )
-
-  const [showHint, setShowHint] = useState(false)
 
   // Show hint only after 1 second and hide after 3 seconds
   useEffect(() => {
@@ -43,7 +45,7 @@ export default function Component({
       clearTimeout(timer)
       clearTimeout(hideTimer)
     }
-  }, [pathname])
+  }, [pathname, setShowHint])
 
   return (
     <span

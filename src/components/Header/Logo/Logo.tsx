@@ -6,7 +6,7 @@ import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { AnchorHTMLAttributes } from 'react'
+import { useRef, useState, type AnchorHTMLAttributes } from 'react'
 import Hint from './Hint'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -18,6 +18,8 @@ export default function Component({ className, ...props }: Props) {
   const pathname = usePathname()
   const scrollStageFromHook = useScrollStage()
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
+  const [showHint, setShowHint] = useState(false)
+  const hasHovered = useRef(false)
 
   const baseStyles = clsx(
     // Default styles
@@ -50,10 +52,22 @@ export default function Component({ className, ...props }: Props) {
         className,
       )}
       {...props}
+      onMouseEnter={() => {
+        if (!hasHovered.current) {
+          setShowHint(true)
+          hasHovered.current = true
+        }
+      }}
+      onMouseLeave={() => setShowHint(false)}
     >
       {title}
 
-      <Hint scrollStage={scrollStage} pathname={pathname} />
+      <Hint
+        scrollStage={scrollStage}
+        pathname={pathname}
+        showHint={showHint}
+        setShowHint={setShowHint}
+      />
     </Link>
   )
 }
