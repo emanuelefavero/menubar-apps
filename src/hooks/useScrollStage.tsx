@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
  * ```
  */
 
-type ScrollStage = 'top' | 'halfway' | 'full'
+export type ScrollStage = 'top' | 'halfway' | 'full'
 
 export function useScrollStage() {
   const [scrollStage, setScrollStage] = useState<ScrollStage>('top')

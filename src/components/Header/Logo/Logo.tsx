@@ -53,7 +53,7 @@ export default function Component({ className, ...props }: Props) {
     >
       {title}
 
-      <Hint />
+      <Hint scrollStage={scrollStage} />
     </Link>
   )
 }
