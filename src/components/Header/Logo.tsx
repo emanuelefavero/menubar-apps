@@ -42,6 +42,7 @@ export default function Component({ className, ...props }: Props) {
     <Link
       href='/'
       className={clsx(
+        'relative min-w-max whitespace-nowrap',
         baseStyles,
         isHome ? homeStyles : nonHomeStyles,
         className,
@@ -49,6 +50,11 @@ export default function Component({ className, ...props }: Props) {
       {...props}
     >
       {title}
+
+      {/* label */}
+      <span className='pointer-events-none absolute top-1/2 left-full ml-2 inline-block -translate-y-1/2 animate-bounce-x text-sm'>
+        ← Go Home
+      </span>
     </Link>
   )
 }

@@ -147,6 +147,19 @@
       opacity: 0;
     }
   }
+
+  /* Bounce */
+  --animate-bounce-x: bounce-x 1.5s infinite ease-in-out;
+
+  @keyframes bounce-x {
+    0%,
+    100% {
+      transform: translateX(2px);
+    }
+    50% {
+      transform: translateX(-2px);
+    }
+  }
 }
 
 @layer base {
