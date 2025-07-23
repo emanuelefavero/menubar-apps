@@ -24,7 +24,9 @@ export default function Component({ className, ...props }: Props) {
       : scrollStage === 'halfway'
         ? 'text-gray-200'
         : 'text-(--foreground)',
-    'rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
+
+    // Default styles
+    'relative rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
   )
 
   const homeStyles =
@@ -42,7 +44,6 @@ export default function Component({ className, ...props }: Props) {
     <Link
       href='/'
       className={clsx(
-        'relative min-w-max whitespace-nowrap',
         baseStyles,
         isHome ? homeStyles : nonHomeStyles,
         className,
@@ -52,7 +53,7 @@ export default function Component({ className, ...props }: Props) {
       {title}
 
       {/* label */}
-      <span className='pointer-events-none absolute top-1/2 left-full ml-2 inline-block -translate-y-1/2 animate-bounce-x text-sm'>
+      <span className='absolute top-1/2 left-full ml-2 inline-block -translate-y-1/2 animate-bounce-x text-sm whitespace-nowrap'>
         ← Go Home
       </span>
     </Link>
