@@ -1,7 +1,6 @@
 import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
+import Markdown from '@/components/shared/Markdown'
 import { pageMetadata } from '@/config/metadata'
-import { getMarkdownAsHtml } from '@/lib/markdown'
-import clsx from 'clsx'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -13,24 +12,6 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  const html = await getMarkdownAsHtml('terms-of-use.md')
-
-  // NOTE: Styles for markdown content use `prose` classes from the `@tailwindcss/typography` plugin.
-  // @see https://github.com/tailwindlabs/tailwindcss-typography
-  const baseStyles = clsx('prose max-w-screen-lg lg:prose-lg dark:prose-invert')
-
-  const headingsStyles = clsx(
-    'prose-headings:mb-3 prose-headings:uppercase prose-headings:font-medium',
-    // Make headings smaller
-    'prose-h1:text-3xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs',
-  )
-
-  const linkStyles = clsx(
-    'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
-  )
-
-  const lineStyles = clsx('prose-hr:p-0 prose-hr:m-0 prose-hr:mb-5')
-
   return (
     <div className='max-w-screen-lg px-4 py-24'>
       <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
@@ -50,10 +31,7 @@ export default async function Page() {
       </div>
 
       {/* Markdown content */}
-      <article
-        dangerouslySetInnerHTML={{ __html: html }}
-        className={clsx(baseStyles, headingsStyles, linkStyles, lineStyles)}
-      />
+      <Markdown file={`${page}.md`} />
 
       {/* Go back home button */}
       <div className='mt-12 flex w-full items-center justify-center'>
