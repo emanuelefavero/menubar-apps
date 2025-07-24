@@ -30,3 +30,10 @@ test('terms of use page has correct metadata', async ({ page }) => {
   await expectTitle(page, markdownPages[route].titleMetadata)
   await expectDescription(page, markdownPages[route].descriptionMetadata)
 })
+
+test('privacy policy page has correct metadata', async ({ page }) => {
+  const route = 'privacy-policy'
+  await page.goto(`/${route}`)
+  await expectTitle(page, markdownPages[route].titleMetadata)
+  await expectDescription(page, markdownPages[route].descriptionMetadata)
+})
