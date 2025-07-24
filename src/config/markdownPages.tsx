@@ -4,9 +4,9 @@ interface MarkdownPage {
   [slug: string]: {
     titleMetadata: string
     descriptionMetadata: string
-    imageSrc: string
-    imageAlt: string
-    description: React.ReactNode
+    imageSrc?: string
+    imageAlt?: string
+    description?: React.ReactNode
   }
 }
 

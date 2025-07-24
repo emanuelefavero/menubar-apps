@@ -1,8 +1,9 @@
 import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 import Markdown from '@/components/shared/Markdown'
+import MarkdownPageHeader from '@/components/shared/MarkdownPageHeader'
 import { getMarkdownPage } from '@/config/markdownPages'
 import type { Metadata } from 'next'
-import Image from 'next/image'
+// ...existing code...
 import { notFound } from 'next/navigation'
 
 interface Props {
@@ -35,19 +36,11 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
-        <Image
-          src={markdownPage.imageSrc}
-          alt={markdownPage.imageAlt}
-          width={64}
-          height={64}
-          className='select-none'
-          priority
-        />
-        <p className='text-xl font-light uppercase xs:text-4xl'>
-          {markdownPage.description}
-        </p>
-      </div>
+      <MarkdownPageHeader
+        imageSrc={markdownPage.imageSrc}
+        imageAlt={markdownPage.imageAlt}
+        description={markdownPage.description}
+      />
 
       {/* Markdown content */}
       <Markdown file={`${slug}.md`} />
