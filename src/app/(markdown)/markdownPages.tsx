@@ -1,6 +1,6 @@
 import { title } from '@/config/metadata'
 
-interface PageData {
+interface MarkdownPage {
   [slug: string]: {
     titleMetadata: string
     descriptionMetadata: string
@@ -10,7 +10,7 @@ interface PageData {
   }
 }
 
-export const pageData: PageData = {
+export const markdownPages: MarkdownPage = {
   'terms-of-use': {
     titleMetadata: `${title} - Terms of Use`,
     descriptionMetadata: `Terms and conditions for using ${title} services.`,
@@ -25,6 +25,6 @@ export const pageData: PageData = {
   },
 }
 
-export function getPageData(slug: string) {
-  return pageData[slug] || null
+export function getMarkdownPage(slug: string) {
+  return markdownPages[slug] || null
 }

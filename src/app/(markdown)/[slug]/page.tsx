@@ -3,7 +3,7 @@ import Markdown from '@/components/shared/Markdown'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getPageData } from '../pageData'
+import { getMarkdownPage } from '../markdownPages'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -12,9 +12,9 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug
 
-  const pageData = getPageData(slug)
+  const markdownPage = getMarkdownPage(slug)
 
-  if (!pageData) {
+  if (!markdownPage) {
     return {
       title: 'Page Not Found',
       description: 'The requested page does not exist.',
@@ -22,30 +22,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: pageData.titleMetadata,
-    description: pageData.descriptionMetadata,
+    title: markdownPage.titleMetadata,
+    description: markdownPage.descriptionMetadata,
   }
 }
 
 export default async function Page({ params }: Props) {
   const { slug } = await params
-  const pageData = getPageData(slug)
+  const markdownPage = getMarkdownPage(slug)
 
-  if (!pageData) notFound()
+  if (!markdownPage) notFound()
 
   return (
     <>
       <div className='mb-8 flex flex-col items-center justify-center gap-6 3xs:flex-row'>
         <Image
-          src={pageData.imageSrc}
-          alt={pageData.imageAlt}
+          src={markdownPage.imageSrc}
+          alt={markdownPage.imageAlt}
           width={64}
           height={64}
           className='select-none'
           priority
         />
         <p className='text-xl font-light uppercase xs:text-4xl'>
-          {pageData.description}
+          {markdownPage.description}
         </p>
       </div>
 
