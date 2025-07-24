@@ -24,16 +24,11 @@ test('homepage has correct metadata', async ({ page }) => {
   await expectDescription(page, description)
 })
 
-test('terms of use page has correct metadata', async ({ page }) => {
-  const route = 'terms-of-use'
-  await page.goto(`/${route}`)
-  await expectTitle(page, markdownPages[route].titleMetadata)
-  await expectDescription(page, markdownPages[route].descriptionMetadata)
-})
-
-test('privacy policy page has correct metadata', async ({ page }) => {
-  const route = 'privacy-policy'
-  await page.goto(`/${route}`)
-  await expectTitle(page, markdownPages[route].titleMetadata)
-  await expectDescription(page, markdownPages[route].descriptionMetadata)
-})
+// Loop through each markdown page and check metadata
+for (const route of Object.keys(markdownPages)) {
+  test(`${route} page has correct metadata`, async ({ page }) => {
+    await page.goto(`/${route}`)
+    await expectTitle(page, markdownPages[route].titleMetadata)
+    await expectDescription(page, markdownPages[route].descriptionMetadata)
+  })
+}
