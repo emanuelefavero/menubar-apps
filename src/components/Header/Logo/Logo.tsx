@@ -53,7 +53,7 @@ export default function Component({ className, ...props }: Props) {
       )}
       {...props}
       onMouseEnter={() => {
-        if (!hasHovered.current) {
+        if (!hasHovered.current && !isHome) {
           setShowHint(true)
           hasHovered.current = true
         }
