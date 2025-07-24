@@ -3,13 +3,13 @@ import Markdown from '@/components/shared/Markdown'
 import MarkdownPageHeader from '@/components/shared/MarkdownPageHeader'
 import { getMarkdownPage } from '@/config/markdownPages'
 import type { Metadata } from 'next'
-// ...existing code...
 import { notFound } from 'next/navigation'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
+// * Metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug
 
@@ -28,6 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+/*
+NOTE: This is a dynamic route segment. To add new markdown pages:
+  1. Create a new markdown file in the `src/content` directory (the file name should match the slug).
+  2. Add the corresponding entry in the `markdownPages` object in `src/config/markdownPages.tsx`.
+*/
+
+// * Page
 export default async function Page({ params }: Props) {
   const { slug } = await params
   const markdownPage = getMarkdownPage(slug)
