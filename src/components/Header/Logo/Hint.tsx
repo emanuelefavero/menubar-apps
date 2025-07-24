@@ -10,6 +10,7 @@ interface Props {
   className?: string
   scrollStage?: ScrollStage
   pathname?: string
+  hasLogoHoveredNonHome?: boolean
 }
 
 export default function Component({
@@ -18,6 +19,7 @@ export default function Component({
   pathname = '/',
   showHint,
   setShowHint,
+  hasLogoHoveredNonHome = false,
 }: Props) {
   const baseStyles = clsx(
     // Default styles
@@ -31,8 +33,12 @@ export default function Component({
         : 'text-(--success)', // System light/dark mode
   )
 
-  // Show hint only after 1 second and hide after 3 seconds
+  // Show hint only after 1 second and hide after 3 seconds, unless hasLogoHoveredNonHome is true
   useEffect(() => {
+    if (hasLogoHoveredNonHome) {
+      setShowHint(false)
+      return
+    }
     const timer = setTimeout(() => {
       setShowHint(true)
     }, 1000)
@@ -45,7 +51,7 @@ export default function Component({
       clearTimeout(timer)
       clearTimeout(hideTimer)
     }
-  }, [pathname, setShowHint])
+  }, [pathname, setShowHint, hasLogoHoveredNonHome])
 
   return (
     <span

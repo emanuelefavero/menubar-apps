@@ -6,7 +6,7 @@ import { useScrollStage } from '@/hooks/useScrollStage'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useRef, useState, type AnchorHTMLAttributes } from 'react'
+import { useEffect, useRef, useState, type AnchorHTMLAttributes } from 'react'
 import Hint from './Hint'
 
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -20,6 +20,18 @@ export default function Component({ className, ...props }: Props) {
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
   const [showHint, setShowHint] = useState(false)
   const hasHovered = useRef(false)
+
+  // State to track if logoHoveredNonHome is set in sessionStorage
+  const [hasLogoHoveredNonHome, setHasLogoHoveredNonHome] = useState(false)
+
+  // Check sessionStorage for logoHoveredNonHome on mount and on pathname change
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setHasLogoHoveredNonHome(
+        sessionStorage.getItem('logoHoveredNonHome') === 'true',
+      )
+    }
+  }, [pathname])
 
   const baseStyles = clsx(
     // Default styles
@@ -55,7 +67,12 @@ export default function Component({ className, ...props }: Props) {
       onMouseEnter={() => {
         if (!hasHovered.current && !isHome) {
           setShowHint(true)
-          hasHovered.current = true
+          hasHovered.current = true // Hide hint after first hover
+
+          // Set sessionStorage to prevent showing hint again if logo is hovered on a non-home page
+          if (typeof window !== 'undefined') {
+            sessionStorage.setItem('logoHoveredNonHome', 'true')
+          }
         }
       }}
       onMouseLeave={() => setShowHint(false)}
@@ -67,6 +84,7 @@ export default function Component({ className, ...props }: Props) {
         pathname={pathname}
         showHint={showHint}
         setShowHint={setShowHint}
+        hasLogoHoveredNonHome={hasLogoHoveredNonHome}
       />
     </Link>
   )
