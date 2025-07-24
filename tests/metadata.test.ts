@@ -1,4 +1,5 @@
-import { description, pageMetadata, title } from '@/config/metadata'
+import { pageData } from '@/app/(markdown)/pageData'
+import { description, title } from '@/config/metadata'
 import { expect, test, type Page } from '@playwright/test'
 
 // * Helpers
@@ -26,6 +27,6 @@ test('homepage has correct metadata', async ({ page }) => {
 test('terms of use page has correct metadata', async ({ page }) => {
   const route = 'terms-of-use'
   await page.goto(`/${route}`)
-  await expectTitle(page, pageMetadata[route].title)
-  await expectDescription(page, pageMetadata[route].description)
+  await expectTitle(page, pageData[route].titleMetadata)
+  await expectDescription(page, pageData[route].descriptionMetadata)
 })

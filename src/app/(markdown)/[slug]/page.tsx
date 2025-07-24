@@ -5,9 +5,6 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getPageData } from '../pageData'
 
-// TODO remove this (update tests that use this)
-// import { pageMetadata } from '@/config/metadata'
-
 interface Props {
   params: Promise<{ slug: string }>
 }
