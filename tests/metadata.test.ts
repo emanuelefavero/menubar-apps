@@ -1,4 +1,4 @@
-import { markdownPages } from '@/app/(markdown)/markdownPages'
+import { markdownPages } from '@/config/markdownPages'
 import { description, title } from '@/config/metadata'
 import { expect, test, type Page } from '@playwright/test'
 

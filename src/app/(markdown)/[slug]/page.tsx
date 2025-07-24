@@ -1,9 +1,9 @@
 import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 import Markdown from '@/components/shared/Markdown'
+import { getMarkdownPage } from '@/config/markdownPages'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getMarkdownPage } from '../markdownPages'
 
 interface Props {
   params: Promise<{ slug: string }>
