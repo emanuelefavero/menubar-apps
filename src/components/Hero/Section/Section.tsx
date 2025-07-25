@@ -1,3 +1,4 @@
+import BackgroundGradientBottom from '@/components/Hero/Section/BackgroundGradientBottom'
 import BackgroundGradientTop from '@/components/Hero/Section/BackgroundGradientTop'
 import LinkAttribution from '@/components/Hero/Section/LinkAttribution'
 import BackgroundImage from '@/components/shared/BackgroundImage'
@@ -12,11 +13,12 @@ export default function Component({ className, children }: Props) {
   return (
     <section
       className={clsx(
-        'relative flex min-h-screen w-full flex-col items-center justify-center gap-4 overflow-hidden bg-gradient-to-t from-(--bg-image-bottom) via-(--bg-image-bottom)/50 via-10% to-transparent to-20% px-4 py-14',
+        'relative flex min-h-screen w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 py-14',
         className,
       )}
     >
       <BackgroundGradientTop />
+      <BackgroundGradientBottom />
 
       <BackgroundImage
         src='/images/paul-pastourmatzis-unsplash.jpg'
