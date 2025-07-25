@@ -21,8 +21,11 @@ export default async function Component({ file, className = '' }: Props) {
     'prose-h1:text-3xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs',
   )
 
+  // TIP: We set paragraphs to relative to ensure they appear on top of the BackgroundNoise component (img elements will also be affected)
+  const pStyles = clsx('prose-p:relative')
+
   const linkStyles = clsx(
-    'prose-a:z-10 prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
+    'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
   )
 
   const lineStyles = clsx(
@@ -34,6 +37,7 @@ export default async function Component({ file, className = '' }: Props) {
       dangerouslySetInnerHTML={{ __html: html }}
       className={clsx(
         baseStyles,
+        pStyles,
         headingsStyles,
         linkStyles,
         lineStyles,

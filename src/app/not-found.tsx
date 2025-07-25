@@ -3,7 +3,7 @@ import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 export default function NotFound() {
   return (
     <>
-      <div className='relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-4 text-center'>
+      <div className='relative flex min-h-screen w-full flex-col items-center justify-center gap-4 text-center'>
         <span className='text-4xl font-medium'>404</span>
 
         <h1 className='text-4xl font-bold'>Page Not Found</h1>

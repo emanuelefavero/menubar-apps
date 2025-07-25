@@ -23,7 +23,7 @@ export default function Component({ className, children }: Props) {
       <BackgroundImage
         src='/images/paul-pastourmatzis-unsplash.jpg'
         alt='Background'
-        className='-z-10 object-cover object-center'
+        className='-z-20 object-cover object-center'
         priority
       />
 

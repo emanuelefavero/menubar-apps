@@ -17,10 +17,10 @@ export default function Component({ imageSrc, imageAlt, description }: Props) {
         alt={imageAlt}
         width={64}
         height={64}
-        className='z-10 select-none'
+        className='z-0 select-none'
         priority
       />
-      <p className='z-10 text-xl font-light uppercase xs:text-4xl'>
+      <p className='z-0 text-xl font-light uppercase xs:text-4xl'>
         {description}
       </p>
     </div>

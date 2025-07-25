@@ -11,7 +11,6 @@ export default function DeveloperLink() {
         href={devUrl}
         aria-label={`Visit ${devName}'s website`}
         title={`Visit ${devName}'s website`}
-        className='z-10'
       >
         {devName}
       </LinkExternal>
