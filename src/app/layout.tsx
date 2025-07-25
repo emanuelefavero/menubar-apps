@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <BackgroundNoise />
+        <BackgroundNoise url='/images/noise.png' />
         <Header />
         <main className='flex min-h-screen flex-col items-center justify-center'>
           {children}
