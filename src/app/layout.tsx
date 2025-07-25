@@ -17,6 +17,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
+        <div
+          className='fixed inset-0 -z-10 bg-repeat select-none'
+          style={{
+            backgroundImage: "url('/images/n1.png')",
+            backgroundSize: '256px 256px',
+          }}
+          aria-hidden='true'
+        />
         <Header />
         <main className='flex min-h-screen flex-col items-center justify-center'>
           {children}
