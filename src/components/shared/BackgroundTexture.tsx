@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   url: string
   className?: string
 }
 
-export default function Component({ url, className = '' }: Props) {
+export default function Component({ url, className = '', ...props }: Props) {
   return (
     <div
       className={clsx(
@@ -14,6 +14,7 @@ export default function Component({ url, className = '' }: Props) {
       )}
       style={{ backgroundImage: `url(${url})` }}
       aria-hidden='true'
+      {...props}
     />
   )
 }
