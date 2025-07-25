@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
-import BackgroundNoise from '@/components/shared/BackgroundNoise'
+import BackgroundTexture from '@/components/shared/BackgroundTexture'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
 import './globals.css'
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <BackgroundNoise url='/images/noise.png' />
+        <BackgroundTexture url='/images/noise.png' />
         <Header />
         <main className='flex min-h-screen flex-col items-center justify-center'>
           {children}
