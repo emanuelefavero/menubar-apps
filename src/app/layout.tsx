@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
+import BackgroundNoise from '@/components/shared/BackgroundNoise'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
 import './globals.css'
@@ -17,14 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <div
-          className='fixed inset-0 -z-10 bg-repeat select-none'
-          style={{
-            backgroundImage: "url('/images/n1.png')",
-            backgroundSize: '256px 256px',
-          }}
-          aria-hidden='true'
-        />
+        <BackgroundNoise />
         <Header />
         <main className='flex min-h-screen flex-col items-center justify-center'>
           {children}
