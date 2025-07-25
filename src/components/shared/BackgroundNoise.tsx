@@ -7,11 +7,10 @@ interface Props {
 export default function Component({ className = '' }: Props) {
   return (
     <div
-      className={clsx('fixed inset-0 -z-10 bg-repeat select-none', className)}
-      style={{
-        backgroundImage: "url('/images/n1.png')",
-        backgroundSize: '256px 256px',
-      }}
+      className={clsx(
+        'pointer-events-none fixed inset-0 z-10 bg-[url(/images/n1.png)] bg-auto bg-repeat select-none',
+        className,
+      )}
       aria-hidden='true'
     />
   )

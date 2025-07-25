@@ -22,7 +22,7 @@ export default async function Component({ file, className = '' }: Props) {
   )
 
   const linkStyles = clsx(
-    'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
+    'prose-a:z-10 prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
   )
 
   const lineStyles = clsx(

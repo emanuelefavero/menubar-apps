@@ -17,7 +17,7 @@ export default function Component({
     <Link
       href={href}
       className={clsx(
-        'h-full px-3 py-2 text-sm font-medium uppercase no-underline transition duration-250 hover:bg-black/5 active:scale-[0.97] dark:hover:bg-white/5',
+        'z-10 h-full px-3 py-2 text-sm font-medium uppercase no-underline transition duration-250 hover:bg-black/5 hover:backdrop-blur-[6px] active:scale-[0.97] dark:hover:bg-white/5',
         className,
       )}
       {...props}

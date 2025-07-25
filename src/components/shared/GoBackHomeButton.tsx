@@ -6,5 +6,7 @@ interface Props {
 }
 
 export default function GoHomeButton({ className = '' }: Props) {
-  return <LinkButton className={clsx(className)}>← Go Back Home</LinkButton>
+  return (
+    <LinkButton className={clsx('z-10', className)}>← Go Back Home</LinkButton>
+  )
 }
