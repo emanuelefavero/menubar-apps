@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLImageElement> {
   src: string
   alt?: string
   className?: string
@@ -12,6 +12,7 @@ export default function Component({
   alt = 'Background',
   className = '',
   priority = false,
+  ...props
 }: Props) {
   return (
     <Image
@@ -20,6 +21,7 @@ export default function Component({
       fill
       className={`-z-10 object-cover object-center select-none ${className}`}
       priority={priority}
+      {...props}
     />
   )
 }
