@@ -1,11 +1,5 @@
 # Privacy Policy
 
-![screenshot](/images/privacy-policy-icon.png 'screenshot')
-
-> Ciao **come** _bene bene_
-
-Ciao [allora come va](https://example.com)
-
 ---
 
 We at MenuBar Apps are committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.
