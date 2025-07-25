@@ -25,7 +25,9 @@ export default async function Component({ file, className = '' }: Props) {
     'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
   )
 
-  const lineStyles = clsx('prose-hr:p-0 prose-hr:m-0 prose-hr:mb-5')
+  const lineStyles = clsx(
+    'prose-hr:p-0 prose-hr:m-0 prose-hr:mb-5 prose-hr:border-gray-300 dark:prose-hr:border-gray-700',
+  )
 
   return (
     <article
