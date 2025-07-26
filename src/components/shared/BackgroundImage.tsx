@@ -1,26 +1,23 @@
-import Image from 'next/image'
+import clsx from 'clsx'
 
-interface Props extends React.HTMLAttributes<HTMLImageElement> {
-  src: string
-  alt?: string
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  url: string
   className?: string
-  priority?: boolean
 }
 
-export default function Component({
-  src,
-  alt = 'Background',
+export default function BackgroundImage({
+  url,
   className = '',
-  priority = false,
   ...props
 }: Props) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      className={`-z-20 object-cover object-center select-none ${className}`}
-      priority={priority}
+    <div
+      className={clsx(
+        'pointer-events-none absolute inset-0 bg-cover bg-center select-none',
+        className,
+      )}
+      style={{ backgroundImage: `url(${url})` }}
+      aria-hidden='true'
       {...props}
     />
   )
