@@ -16,10 +16,12 @@ export default function Component({
     <div
       className={clsx(
         zIndex,
-        'pointer-events-none fixed inset-0 bg-auto bg-repeat opacity-15 select-none dark:opacity-20',
+        'pointer-events-none fixed inset-0 bg-auto bg-repeat opacity-15 select-none dark:opacity-15',
         className,
       )}
-      style={{ backgroundImage: `url(${url})` }}
+      style={{
+        backgroundImage: `url(${url})`,
+      }}
       aria-hidden='true'
       {...props}
     />
