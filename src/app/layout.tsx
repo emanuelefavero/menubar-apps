@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
+import BackgroundGradient from '@/components/shared/BackgroundGradient'
 import BackgroundTexture from '@/components/shared/BackgroundTexture'
 import { description, title } from '@/config/metadata'
 import type { Metadata } from 'next'
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
+        <BackgroundGradient />
         <BackgroundTexture url='/images/noise.png' />
         <Header />
         <main className='flex min-h-screen flex-col items-center justify-center'>
