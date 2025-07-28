@@ -2,8 +2,10 @@ import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
 import Markdown from '@/components/shared/Markdown'
 import MarkdownPageHeader from '@/components/shared/MarkdownPageHeader'
 import { getMarkdownPage } from '@/config/markdownPages'
+import fs from 'fs/promises'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import path from 'path'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -26,6 +28,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: markdownPage.titleMetadata,
     description: markdownPage.descriptionMetadata,
   }
+}
+
+// * Static Params
+export async function generateStaticParams() {
+  const dir = path.join(process.cwd(), 'src/content')
+  const files = await fs.readdir(dir)
+  return files
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({
+      slug: file.replace('.md', ''),
+    }))
 }
 
 /*
@@ -51,6 +64,7 @@ export default async function Page({ params }: Props) {
 
       {/* Markdown content */}
       <Markdown file={`${slug}.md`} />
+      {/* <Markdown file={`${slug}.md`} /> */}
 
       {/* Go back home button */}
       <div className='mt-12 flex w-full items-center justify-center'>
