@@ -21,7 +21,7 @@ export default function Component({ className, children }: Props) {
       <BackgroundGradientBottom />
 
       <BackgroundImage
-        src='/images/paul-pastourmatzis-unsplash.webp'
+        src='/images/paul-pastourmatzis.webp'
         alt='Background'
         className='-z-20'
       />
