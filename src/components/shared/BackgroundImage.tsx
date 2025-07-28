@@ -16,7 +16,7 @@ export default function BackgroundImage({
   return (
     <div
       className={clsx(
-        'pointer-events-none absolute inset-0 h-full w-full select-none',
+        'pointer-events-none absolute inset-0 h-full w-full bg-(--bg-image-bottom-lighter) select-none',
         className,
       )}
       aria-hidden='true'
