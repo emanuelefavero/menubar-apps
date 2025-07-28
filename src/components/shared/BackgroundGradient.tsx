@@ -5,10 +5,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   className?: string
 }
 
-// sky-200
-// blue-400
-// indigo-900
-
 export default function Component({
   zIndex = 'z-0',
   className = '',
