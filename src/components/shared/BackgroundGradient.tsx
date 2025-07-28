@@ -14,13 +14,16 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
+  const baseStyles = clsx('pointer-events-none fixed inset-0 select-none')
+  const gradientStyles = clsx(
+    'bg-radial-[at_50%_53%] from-transparent via-blue-800/20 to-sky-400 to-100%',
+    'opacity-10',
+    'mix-blend-multiply dark:mix-blend-screen',
+  )
+
   return (
     <div
-      className={clsx(
-        zIndex,
-        'pointer-events-none fixed inset-0 bg-radial-[at_50%_53%] from-transparent via-blue-800/20 to-sky-400 to-100% opacity-10 mix-blend-multiply select-none dark:opacity-10 dark:mix-blend-screen',
-        className,
-      )}
+      className={clsx(baseStyles, gradientStyles, zIndex, className)}
       aria-hidden='true'
       {...props}
     />
