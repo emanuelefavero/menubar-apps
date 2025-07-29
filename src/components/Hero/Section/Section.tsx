@@ -31,6 +31,8 @@ export default function Component({ className, children }: Props) {
       <LinkAttribution
         name='Paul Pastourmatzis'
         href='https://unsplash.com/photos/silhouette-of-trees-covered-by-fog-KT3WlrL_bsg'
+        aria-label='Photo by Paul Pastourmatzis on Unsplash'
+        title='Photo by Paul Pastourmatzis on Unsplash'
       />
     </section>
   )
