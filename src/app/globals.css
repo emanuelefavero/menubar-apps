@@ -171,8 +171,10 @@
     --background: var(--bg-image-top);
     --foreground: #374151; /* similar to gray-700 */
     --foreground-secondary: #4a5565; /* gray-600 */
-    --primary: rgba(48, 111, 219, 0.9);
-    --primary-hover: rgba(39, 101, 208, 0.9);
+    --primary-light: #62c0f6;
+    --primary-dark: #2c8fc8;
+    --primary: var(--primary-dark);
+    --selection: rgba(98, 192, 246, 0.3);
     --success-light: #00c950; /* green-500 */
     --success-dark: #026630; /* green-800 */
     --success: var(--success-dark);
@@ -184,6 +186,8 @@
       --background: var(--bg-image-bottom);
       --foreground: #e5e7eb; /* gray-200 */
       --foreground-secondary: #d1d5db; /* gray-300 */
+      --primary: var(--primary-light);
+      --selection: rgba(44, 143, 200, 0.35);
       --success: var(--success-light);
     }
   }
@@ -215,6 +219,10 @@
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--selection);
   }
 
   a {

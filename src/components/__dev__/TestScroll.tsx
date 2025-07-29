@@ -4,7 +4,7 @@ export default function Component() {
   return (
     <div className='flex min-h-screen w-full flex-col items-center justify-center bg-(--background) p-20 text-2xl'>
       <div className='max-w-screen-lg'>
-        <h2 className='mb-4 text-3xl font-semibold'>
+        <h2 className='mb-4 text-3xl font-semibold text-(--primary)'>
           Lorem ipsum dolor sit amet.
         </h2>
         <p>
