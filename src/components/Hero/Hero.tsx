@@ -23,7 +23,7 @@ export default function Component() {
             {/* Icon */}
             <Image
               src='/images/menubar-tasks.png'
-              alt='Logo'
+              alt='MenuBar Tasks logo'
               width={124}
               height={124}
               className='rounded-4xl shadow-md shadow-black/15'
