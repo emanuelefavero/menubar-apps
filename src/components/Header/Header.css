@@ -13,30 +13,30 @@
     --header-border-bottom: var(--header-border-top);
     --header-mask:
       linear-gradient(#ffffff 0 0) content-box, linear-gradient(#fff 0 0);
-  }
 
-  /* Card Gradient Borders */
-  .header::before,
-  .header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 1.7rem;
-    pointer-events: none;
-    z-index: 100;
-    mask: var(--header-mask);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-    padding: 1px; /* Border thickness */
-    box-sizing: border-box;
-  }
+    /* Header Gradient Borders */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 1.7rem;
+      pointer-events: none;
+      z-index: 100;
+      mask: var(--header-mask);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+      padding: 1px; /* Border thickness */
+      box-sizing: border-box;
+    }
 
-  .header::before {
-    background: var(--header-border-top);
-  }
+    &::before {
+      background: var(--header-border-top);
+    }
 
-  .header::after {
-    background: var(--header-border-bottom);
-    transform: rotate(180deg);
+    &::after {
+      background: var(--header-border-bottom);
+      transform: rotate(180deg);
+    }
   }
 }
