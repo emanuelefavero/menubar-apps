@@ -16,8 +16,8 @@
   }
 
   /* Card Gradient Borders */
-  .hamburger-menu::before,
-  .hamburger-menu::after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -31,11 +31,11 @@
     box-sizing: border-box;
   }
 
-  .hamburger-menu::before {
+  &::before {
     background: var(--hamburger-menu-border-top);
   }
 
-  .hamburger-menu::after {
+  &::after {
     background: var(--hamburger-menu-border-bottom);
     transform: rotate(180deg);
   }
