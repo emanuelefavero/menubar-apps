@@ -30,7 +30,6 @@ export default function Component({ open, onClick, ref }: Props) {
 
   return (
     <nav
-      role='menu'
       data-testid='mobile-menu'
       ref={ref}
       className={clsx(
