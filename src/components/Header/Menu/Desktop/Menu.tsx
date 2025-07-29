@@ -8,7 +8,6 @@ interface Props {
 export default function Component({ className = '' }: Props) {
   return (
     <nav
-      role='menu'
       data-testid='desktop-menu'
       className={`group hidden -space-x-2 select-none xs:flex ${className}`}
     >
