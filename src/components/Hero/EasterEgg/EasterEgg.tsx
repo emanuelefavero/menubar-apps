@@ -25,6 +25,7 @@ export default function Component({ className = '', children }: Props) {
           whiteSpace: 'pre',
           fontSize: 14,
         }}
+        aria-hidden='true'
       >
         <AsciiArt />
       </div>
