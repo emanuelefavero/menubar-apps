@@ -1,3 +1,4 @@
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
@@ -24,8 +25,10 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
-  const baseStyles =
-    'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-md'
+  const baseStyles = clsx(
+    'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-md',
+    focusStyle,
+  )
 
   const sizeStyles = {
     none: 'px-3 py-1.5',
