@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+/* TailwindCSS */
 @theme {
   /* BREAKPOINTS */
   --breakpoint-5xs: 12rem; /* 192px */
@@ -162,6 +163,7 @@
   }
 }
 
+/* CSS */
 @layer base {
   /* Variables */
   :root {

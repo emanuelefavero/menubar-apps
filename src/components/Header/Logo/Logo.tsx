@@ -3,6 +3,7 @@
 import { title } from '@/config/metadata'
 import { useIsHome } from '@/hooks/useIsHome'
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -35,7 +36,8 @@ export default function Component({ className, ...props }: Props) {
 
   const baseStyles = clsx(
     // Default styles
-    'relative rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97] outline-none ring-0 focus-visible:ring-2 focus-visible:ring-(--primary)',
+    'relative rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
+    focusStyle,
 
     scrollStage === 'top'
       ? 'text-gray-700'

@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -31,7 +32,8 @@ export default function Component({
         : 'text-(--foreground) hover:bg-white/50 dark:hover:bg-white/10',
 
     // Default styles
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none transition duration-200 active:scale-[0.97] outline-none ring-0 focus-visible:ring-2 focus-visible:ring-(--primary)',
+    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none transition duration-200 active:scale-[0.97]',
+    focusStyle,
   )
 
   const groupStyles = clsx(
