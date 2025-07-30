@@ -29,7 +29,9 @@ export default function Component({
       : scrollStage === 'halfway'
         ? 'text-gray-200 hover:bg-white/10'
         : 'text-(--foreground) hover:bg-white/50 dark:hover:bg-white/10',
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none transition duration-200 active:scale-[0.97]',
+
+    // Default styles
+    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none transition duration-200 active:scale-[0.97] outline-none ring-0 focus-visible:ring-2 focus-visible:ring-(--primary)',
   )
 
   const groupStyles = clsx(
