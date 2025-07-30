@@ -28,7 +28,10 @@ export default function Component({
         rel='noopener noreferrer'
         draggable={false}
         {...props}
-        className={clsx('rounded-full px-1 py-0.5', focusStyle)}
+        className={clsx(
+          'rounded-full px-1 py-0.5 underline-offset-4 focus-visible:no-underline',
+          focusStyle,
+        )}
       >
         {label} {name}
       </a>
