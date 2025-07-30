@@ -1,6 +1,7 @@
 'use client'
 
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import { Ref } from 'react'
@@ -33,7 +34,10 @@ export default function Component({ open, onClick, ref }: Props) {
   return (
     <button
       ref={ref}
-      className='mr-1.5 block cursor-pointer p-1 xs:hidden'
+      className={clsx(
+        'mr-1.5 block cursor-pointer rounded p-1 xs:hidden',
+        focusStyle,
+      )}
       aria-label='Open menu'
       title='Open menu'
       onClick={onClick}
