@@ -35,7 +35,7 @@ export default function Component({ open, onClick, ref }: Props) {
     <button
       ref={ref}
       className={clsx(
-        'mr-1.5 block cursor-pointer rounded p-1 xs:hidden',
+        'block cursor-pointer rounded rounded-r-full p-1 pl-1.5 pr-3 py-2 xs:hidden',
         focusStyle,
       )}
       aria-label='Open menu'
