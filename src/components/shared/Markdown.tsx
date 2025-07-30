@@ -25,7 +25,9 @@ export default async function Component({ file, className = '' }: Props) {
   const pStyles = clsx('prose-p:relative')
 
   const linkStyles = clsx(
-    'prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
+    'prose-a:underline-offset-4 prose-a:rounded-md prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
+    // Focus styles for links
+    'prose-a:px-0.5 prose-a:focus-visible:no-underline prose-a:outline-none prose-a:ring-0 prose-a:focus-visible:ring-2 prose-a:focus-visible:ring-(--primary)',
   )
 
   const lineStyles = clsx(
