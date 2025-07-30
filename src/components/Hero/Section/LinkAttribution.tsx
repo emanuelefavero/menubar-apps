@@ -1,3 +1,6 @@
+import { focusStyle } from '@/styles/focus'
+import clsx from 'clsx'
+
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   name: string
   href: string
@@ -14,7 +17,10 @@ export default function Component({
 }: Props) {
   return (
     <div
-      className={`absolute right-4 bottom-4 z-0 rounded-full text-[0.6rem] text-white/70 ${className}`}
+      className={clsx(
+        'absolute right-4 bottom-4 z-0 rounded-full text-[0.6rem] text-white/70',
+        className,
+      )}
     >
       <a
         href={href}
@@ -22,6 +28,7 @@ export default function Component({
         rel='noopener noreferrer'
         draggable={false}
         {...props}
+        className={clsx('rounded-full px-1 py-0.5', focusStyle)}
       >
         {label} {name}
       </a>
