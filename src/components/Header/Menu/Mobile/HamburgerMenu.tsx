@@ -40,7 +40,7 @@ export default function Component({ open, onClick, ref }: Props) {
         'absolute top-12 right-0 z-50 mr-2 animate-appear rounded-[1.5rem] p-4 shadow-(--hamburger-menu-shadow) backdrop-blur-[6px] xs:hidden',
       )}
     >
-      <ul className='flex flex-col items-center gap-2'>
+      <ul className='flex flex-col items-center gap-1.5'>
         {/* Home Link (shown when not home) */}
         {!isHome && (
           <li className='transition-transform duration-250 active:scale-[0.97]'>

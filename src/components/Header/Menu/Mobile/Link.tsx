@@ -3,6 +3,7 @@
 import type { HeaderLink } from '@/data/headerLinks'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -17,8 +18,10 @@ export default function Component({ href, label, onClick }: Props) {
   const scrollStageFromHook = useScrollStage()
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
-  const baseStyles =
-    'text-lg no-underline transition-all duration-250 select-none'
+  const baseStyles = clsx(
+    'text-lg rounded px-1 py-0.5 no-underline transition-all duration-250 select-none',
+    focusStyle,
+  )
 
   const linkColor = clsx(
     scrollStage === 'top'
