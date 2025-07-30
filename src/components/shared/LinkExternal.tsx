@@ -1,3 +1,4 @@
+import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -13,7 +14,8 @@ export default function Component({
   ...props
 }: Props) {
   const baseStyles = clsx(
-    'font-medium underline underline-offset-4 transition duration-250 hover:text-(--foreground-secondary) active:scale-[0.97]',
+    'font-medium underline underline-offset-4 rounded-full px-1 py-0.5 transition duration-250 hover:text-(--foreground-secondary) active:scale-[0.97]',
+    `focus-visible:no-underline ${focusStyle}`,
   )
 
   return (

@@ -4,9 +4,7 @@ import { devName, devUrl } from '@/config/metadata'
 export default function DeveloperLink() {
   return (
     <div className='text-center text-xs'>
-      <span className='mr-0.5 text-(--foreground-secondary)'>
-        Developed by{' '}
-      </span>
+      <span className='text-(--foreground-secondary)'>Developed by </span>
       <LinkExternal
         href={devUrl}
         aria-label={`Visit ${devName}'s website`}
