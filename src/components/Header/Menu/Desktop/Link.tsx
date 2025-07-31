@@ -61,6 +61,8 @@ export default function Component({
         isActive && activeGroupStyles,
         className,
       )}
+      aria-label={`Go to ${label}`}
+      title={`Go to ${label}`}
       {...props}
     >
       {label}
