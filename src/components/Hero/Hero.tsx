@@ -26,7 +26,7 @@ export default function Component() {
               alt='MenuBar Tasks logo'
               width={124}
               height={124}
-              className='rounded-4xl shadow-md shadow-black/15'
+              className='rounded-4xl shadow-md shadow-black/15 select-none'
               priority
               draggable={false}
               aria-hidden='true'
@@ -41,7 +41,7 @@ export default function Component() {
             </p>
 
             {/* Line */}
-            <div className='mt-2.5 h-[1px] w-full bg-white/20'></div>
+            <div className='mt-2.5 h-[1px] w-full bg-white/20 select-none'></div>
 
             {/* Download button */}
             <LinkButton
