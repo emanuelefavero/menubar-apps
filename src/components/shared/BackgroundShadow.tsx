@@ -14,6 +14,7 @@ export default function Component({
   return (
     <div
       className={`absolute inset-0 -z-10 m-auto h-full w-full rounded-full ${bgColor} ${blur} ${className}`}
+      aria-hidden='true'
     ></div>
   )
 }
