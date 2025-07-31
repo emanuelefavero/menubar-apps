@@ -2,7 +2,7 @@
 
 ---
 
-We at MenuBar Apps are committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.
+We at _MenuBar Apps_ are committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights regarding your data.
 
 ## What We Collect
 

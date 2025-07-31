@@ -2,7 +2,7 @@
 
 ---
 
-Welcome to MenuBar Apps. Before you get started, please take a moment to read these Terms of Use and End User License Agreement (EULA). By using our website, apps, or any related services ("Services"), you’re agreeing to these terms. If you’re not comfortable with them, you may choose not to use the Services.
+Welcome to _MenuBar Apps_. Before you get started, please take a moment to read these Terms of Use and End User License Agreement (EULA). By using our website, apps, or any related services ("Services"), you’re agreeing to these terms. If you’re not comfortable with them, you may choose not to use the Services.
 
 We may update these Terms from time to time, and we’ll do our best to keep you informed. If you keep using our Services after changes are posted, it means you’re cool with the new Terms.
 
