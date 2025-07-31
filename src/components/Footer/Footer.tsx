@@ -14,6 +14,7 @@ export default function Component() {
           <Link
             key={`footer-link-${link.href}`}
             href={link.href}
+            label={link.label}
             className={clsx(
               index === 0 ? 'rounded-l-full' : '',
               index === footerLinks.length - 1 ? 'rounded-r-full' : '',

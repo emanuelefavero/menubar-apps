@@ -1,18 +1,18 @@
 'use client'
 
+import type { FooterLink } from '@/data/footerLinks'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string
-  children: React.ReactNode
-  className?: string
-}
+interface Props
+  extends FooterLink,
+    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
 
 export default function Component({
   href,
+  label,
   children,
   className = '',
   ...props
@@ -39,6 +39,8 @@ export default function Component({
         focusStyle,
         className,
       )}
+      aria-label={`Go to ${label}`}
+      title={`Go to ${label}`}
       data-active={isActive ? 'true' : undefined}
       {...props}
     >
