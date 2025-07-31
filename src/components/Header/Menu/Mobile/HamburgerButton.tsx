@@ -35,11 +35,11 @@ export default function Component({ open, onClick, ref }: Props) {
     <button
       ref={ref}
       className={clsx(
-        'block cursor-pointer rounded rounded-r-full p-1 pl-1.5 pr-3 py-2 xs:hidden',
+        'block cursor-pointer rounded rounded-r-full p-1 py-2 pr-3 pl-1.5 xs:hidden',
         focusStyle,
       )}
-      aria-label='Open menu'
-      title='Open menu'
+      aria-label={open ? 'Close menu' : 'Open menu'}
+      title={open ? 'Close menu' : 'Open menu'}
       onClick={onClick}
     >
       <span
