@@ -1,3 +1,6 @@
+'use client'
+
+import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -14,14 +17,29 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
+  const isActive = useIsActiveLink(href)
+
+  const baseStyles = clsx(
+    'h-full px-3 py-2 text-sm font-medium uppercase no-underline transition duration-250 backdrop-blur-[6px] border border-transparent active:scale-[0.97]',
+  )
+
+  const activeStyles = clsx(
+    'border-dotted border-black/15! bg-black/[0.015] dark:border-white/15! dark:bg-white/[0.025]',
+  )
+
+  const hoverStyles = clsx('hover:bg-black/[0.03] dark:hover:bg-white/5')
+
   return (
     <Link
       href={href}
       className={clsx(
-        'h-full px-3 py-2 text-sm font-medium uppercase no-underline transition duration-250 hover:bg-black/5 hover:backdrop-blur-[6px] active:scale-[0.97] dark:hover:bg-white/5',
+        baseStyles,
+        hoverStyles,
+        isActive && activeStyles,
         focusStyle,
         className,
       )}
+      data-active={isActive ? 'true' : undefined}
       {...props}
     >
       {children}
