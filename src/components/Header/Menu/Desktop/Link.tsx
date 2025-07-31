@@ -63,6 +63,7 @@ export default function Component({
       )}
       aria-label={`Go to ${label}`}
       title={`Go to ${label}`}
+      data-active={isActive ? 'true' : undefined}
       {...props}
     >
       {label}
