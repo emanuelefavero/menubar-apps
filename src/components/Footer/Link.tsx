@@ -24,10 +24,10 @@ export default function Component({
   )
 
   const activeStyles = clsx(
-    'border-dotted border-black/15! bg-black/[0.015] dark:border-white/15! dark:bg-white/[0.025]',
+    'border-dotted border-white bg-white/20 dark:border-white/15 dark:bg-white/[0.025]',
   )
 
-  const hoverStyles = clsx('hover:bg-black/[0.03] dark:hover:bg-white/5')
+  const hoverStyles = clsx('hover:bg-white/50 dark:hover:bg-white/5')
 
   return (
     <Link
