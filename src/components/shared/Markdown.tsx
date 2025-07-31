@@ -9,7 +9,10 @@ interface Props {
 }
 
 export default async function Component({ file, className = '' }: Props) {
-  const html = await getMarkdownAsHtml(file)
+  let html = await getMarkdownAsHtml(file)
+
+  // Hide <hr> from screen readers
+  html = html.replace(/<hr(\s*\/?)>/g, '<hr aria-hidden="true"$1>')
 
   // NOTE: Styles for markdown content use `prose` classes from the `@tailwindcss/typography` plugin.
   // @see https://github.com/tailwindlabs/tailwindcss-typography
