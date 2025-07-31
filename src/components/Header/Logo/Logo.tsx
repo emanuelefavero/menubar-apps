@@ -78,7 +78,7 @@ export default function Component({ className, ...props }: Props) {
         }
       }}
       onMouseLeave={() => setShowHint(false)}
-      aria-label={`Home - ${title}`}
+      aria-label={title}
       title={`Home - ${title}`}
       data-active={isHome ? 'true' : undefined}
     >
