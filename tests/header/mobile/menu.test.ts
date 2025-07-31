@@ -11,9 +11,9 @@ test.describe('Mobile Menu', () => {
     page,
   }) => {
     // Click hamburger button to open menu
-    const hamburger = page.getByLabel('Open menu', { exact: true })
-    await expect(hamburger).toBeVisible()
-    await hamburger.click()
+    const openHamburger = page.getByLabel('Open menu', { exact: true })
+    await expect(openHamburger).toBeVisible()
+    await openHamburger.click()
     await page.waitForTimeout(300) // Wait for animation to finish
 
     // Menu should now be visible
@@ -21,7 +21,9 @@ test.describe('Mobile Menu', () => {
     await expect(menu).toBeVisible()
 
     // Close menu (simulate clicking hamburger again)
-    await hamburger.click()
+    const closeHamburger = page.getByLabel('Close menu', { exact: true })
+    await expect(closeHamburger).toBeVisible()
+    await closeHamburger.click()
     await expect(menu).not.toBeVisible()
   })
 
