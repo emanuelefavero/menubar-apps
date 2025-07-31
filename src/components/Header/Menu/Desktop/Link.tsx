@@ -1,6 +1,7 @@
 'use client'
 
 import { HeaderLink } from '@/data/headerLinks'
+import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
@@ -18,7 +19,7 @@ export default function Component({
   ...props
 }: Props) {
   const pathname = usePathname()
-  const isActive = pathname === href
+  const isActive = useIsActiveLink(href)
   const scrollStageFromHook = useScrollStage()
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
