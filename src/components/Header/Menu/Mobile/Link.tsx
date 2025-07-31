@@ -7,12 +7,13 @@ import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import React from 'react'
 
-interface Props extends HeaderLink {
-  onClick?: () => void
-}
+interface Props
+  extends HeaderLink,
+    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
 
-export default function Component({ href, label, onClick }: Props) {
+export default function Component({ href, label, ...props }: Props) {
   const isActive = useIsActiveLink(href)
   const pathname = usePathname()
   const scrollStageFromHook = useScrollStage()
@@ -47,7 +48,7 @@ export default function Component({ href, label, onClick }: Props) {
         isActive ? 'font-bold' : 'font-medium',
         isActive ? activeLinkColor : linkColor,
       )}
-      onClick={onClick} // Close menu on link click
+      {...props}
     >
       {label}
     </Link>
