@@ -29,6 +29,7 @@ export default function Component() {
               className='rounded-4xl shadow-md shadow-black/15'
               priority
               draggable={false}
+              aria-hidden='true'
             />
 
             {/* Title and description */}

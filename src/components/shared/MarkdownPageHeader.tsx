@@ -19,6 +19,8 @@ export default function Component({ imageSrc, imageAlt, description }: Props) {
         height={64}
         className='z-0 select-none'
         priority
+        draggable={false}
+        aria-hidden='true'
       />
       <p className='z-0 text-xl font-light uppercase xs:text-4xl'>
         {description}
