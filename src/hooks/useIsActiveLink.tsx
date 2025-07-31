@@ -16,5 +16,10 @@ import { usePathname } from 'next/navigation'
 
 export function useIsActiveLink(href: string): boolean {
   const pathname = usePathname()
-  return pathname === href
+
+  // Remove forward slashes from the beginning and end of the href and pathname
+  const cleanedHref = href.replace(/^\/|\/$/g, '')
+  const cleanedPathname = pathname.replace(/^\/|\/$/g, '')
+
+  return cleanedPathname === cleanedHref
 }
