@@ -1,21 +1,19 @@
 'use client'
 
+import { HeaderLink } from '@/data/headerLinks'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { AnchorHTMLAttributes } from 'react'
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string
-  children: React.ReactNode
-  className?: string
-}
+interface Props
+  extends HeaderLink,
+    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
 
 export default function Component({
   href,
-  children,
+  label,
   className = '',
   ...props
 }: Props) {
@@ -65,7 +63,7 @@ export default function Component({
       )}
       {...props}
     >
-      {children}
+      {label}
     </Link>
   )
 }

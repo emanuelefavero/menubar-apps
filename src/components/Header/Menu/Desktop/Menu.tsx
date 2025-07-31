@@ -12,9 +12,11 @@ export default function Component({ className = '' }: Props) {
       className={`group hidden -space-x-2 select-none xs:flex ${className}`}
     >
       {headerLinks.map((link) => (
-        <DesktopLink key={`desktop-link-${link.href}`} href={link.href}>
-          {link.label}
-        </DesktopLink>
+        <DesktopLink
+          key={`desktop-link-${link.href}`}
+          href={link.href}
+          label={link.label}
+        />
       ))}
     </nav>
   )
