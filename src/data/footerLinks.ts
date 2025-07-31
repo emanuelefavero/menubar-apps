@@ -6,6 +6,4 @@ export interface FooterLink {
 export const footerLinks: readonly FooterLink[] = [
   { href: 'terms-of-use', label: 'Terms of Use' },
   { href: 'privacy-policy', label: 'Privacy Policy' },
-  { href: 'cookie-policy', label: 'Cookie Policy' },
-  { href: 'accessibility', label: 'Accessibility' },
 ]
