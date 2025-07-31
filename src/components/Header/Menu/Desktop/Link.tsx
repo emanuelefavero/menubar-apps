@@ -62,7 +62,7 @@ export default function Component({
         isActive && activeGroupStyles,
         className,
       )}
-      aria-label={`Go to ${label}`}
+      aria-label={label}
       title={`Go to ${label}`}
       data-active={isActive ? 'true' : undefined}
       {...props}
