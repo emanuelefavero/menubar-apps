@@ -12,7 +12,7 @@ test.describe('Footer Navigation', () => {
       })
       await expect(footerLink).toBeVisible()
       await footerLink.click()
-      await expect(page).toHaveURL(`/${link.href}`)
+      await expect(page).toHaveURL(link.href)
     })
   }
 })
