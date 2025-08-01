@@ -17,7 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className='scrollbar-thin scrollbar-thumb-gray-600/40 scrollbar-track-transparent dark:scrollbar-thumb-gray-400/40'
+    >
       <body>
         <BackgroundGradient />
         <BackgroundTexture url='/images/noise.png' />
