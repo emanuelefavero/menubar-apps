@@ -1,5 +1,5 @@
 export interface FooterLink {
-  href: RelativeHref
+  href: Href
   label: string
 }
 
