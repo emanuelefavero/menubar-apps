@@ -1,6 +1,5 @@
 'use client'
 
-import type { Route } from '@/data/routes'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
