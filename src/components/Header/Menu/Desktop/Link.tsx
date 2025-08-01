@@ -1,6 +1,6 @@
 'use client'
 
-import { HeaderLink } from '@/data/headerLinks'
+import type { Route } from '@/data/routes'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import { focusStyle } from '@/styles/focus'
@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 interface Props
-  extends HeaderLink,
+  extends Route,
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
 
 export default function Component({

@@ -1,13 +1,13 @@
 'use client'
 
-import type { FooterLink } from '@/data/footerLinks'
+import type { Route } from '@/data/routes'
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { focusStyle } from '@/styles/focus'
 import clsx from 'clsx'
 import Link from 'next/link'
 
 interface Props
-  extends FooterLink,
+  extends Route,
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
 
 export default function Component({
