@@ -1,5 +1,5 @@
 export interface HeaderLink {
-  href: string
+  href: Href
   label: string
 }
 
