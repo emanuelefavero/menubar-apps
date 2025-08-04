@@ -24,11 +24,13 @@ export default function Component() {
           </Link>
         ))}
 
+        {/* Support Link */}
         <Link
           href='mailto:info@emanuelefavero.com'
           label='Support'
           className='rounded-full xs:rounded-none xs:rounded-r-full'
         >
+          <span className='hidden sm:inline-block'>Contact&nbsp;</span>
           Support
         </Link>
       </Row>
