@@ -8,14 +8,17 @@ import Row from './Row'
 
 export default function Component() {
   return (
-    <footer className='flex w-full flex-col items-center justify-center bg-(--background) px-4 py-6 text-(--foreground) 5xs:px-6'>
+    <footer className='flex w-full flex-col items-center justify-center gap-4 bg-(--background) px-4 py-6 text-(--foreground) 5xs:px-6'>
       <Row>
         {footerLinks.map((link, index) => (
           <Link
             key={`footer-link-${link.href}`}
             href={link.href}
             label={link.label}
-            className={clsx(index === 0 ? 'rounded-l-full' : '')}
+            className={clsx(
+              'rounded-full xs:rounded-none',
+              index === 0 ? 'xs:rounded-l-full' : '',
+            )}
           >
             {link.label}
           </Link>
@@ -24,7 +27,7 @@ export default function Component() {
         <Link
           href='mailto:info@emanuelefavero.com'
           label='Support'
-          className='rounded-r-full'
+          className='rounded-full xs:rounded-none xs:rounded-r-full'
         >
           Support
         </Link>
