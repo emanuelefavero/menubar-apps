@@ -11,7 +11,7 @@ test.describe('Header Navigation', () => {
       page,
     }) => {
       await page.goto('/')
-      const navLink = page.getByRole('link', {
+      const navLink = page.getByTestId('header').getByRole('link', {
         name: new RegExp(`^${link.label}$`, 'i'),
       })
       await expect(navLink).toBeVisible()
@@ -31,8 +31,8 @@ test.describe('Header Navigation', () => {
       await hamburger.click()
       await page.waitForTimeout(300) // Wait for animation to finish
 
-      // Click the link in the mobile menu
-      const navLink = page.getByRole('link', {
+      // Click the link in the mobile menu (scoped to mobile menu container)
+      const navLink = page.getByTestId('header').getByRole('link', {
         name: new RegExp(`^${link.label}$`, 'i'),
       })
       await expect(navLink).toBeVisible()
