@@ -1,3 +1,4 @@
+import type { ClickHandler } from '@/types/handlers'
 import type { RefsArray } from '@/types/refs'
 import { useEffect } from 'react'
 

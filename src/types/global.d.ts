@@ -1,6 +1,3 @@
-// Handler types
-type ClickHandler = (event: MouseEvent | TouchEvent) => void
-
 // Href types
 type RelativeHref = `/${Lowercase<string>}`
 type AbsoluteHref = `https://${string}` | `http://${string}`
