@@ -1,3 +1,4 @@
+import type { Route } from '@/types/route'
 import { footerLinks } from './footerLinks'
 import { headerLinks } from './headerLinks'
 

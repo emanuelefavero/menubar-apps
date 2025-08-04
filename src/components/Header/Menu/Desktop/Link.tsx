@@ -3,6 +3,7 @@
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
 import { focusStyle } from '@/styles/focus'
+import type { Route } from '@/types/route'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

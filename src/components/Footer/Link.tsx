@@ -2,6 +2,7 @@
 
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { focusStyle } from '@/styles/focus'
+import type { Route } from '@/types/route'
 import clsx from 'clsx'
 import Link from 'next/link'
 
