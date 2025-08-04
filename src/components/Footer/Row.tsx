@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-interface RowProps {
+interface Props {
   children: React.ReactNode
   variant?: 'top' | 'bottom'
   className?: string
@@ -10,7 +10,7 @@ export default function Component({
   children,
   variant = 'top',
   className,
-}: RowProps) {
+}: Props) {
   return (
     <div
       className={clsx(
