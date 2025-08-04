@@ -1,9 +1,10 @@
 import { focusStyle } from '@/styles/focus'
+import type { Href } from '@/types/href'
 import clsx from 'clsx'
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   name: string
-  href: string
+  href: Href
   label?: string
   className?: string
 }

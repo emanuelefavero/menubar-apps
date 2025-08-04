@@ -1,8 +1,9 @@
 import { title } from '@/config/metadata'
 import { headerLinks } from '@/data/headerLinks'
+import type { Route } from '@/types/route'
 import { expect, test } from '@playwright/test'
 
-const desktopLinks = [{ label: title, href: '/' }, ...headerLinks]
+const desktopLinks: Route[] = [{ label: title, href: '/' }, ...headerLinks]
 
 test.describe('Header Navigation', () => {
   for (const link of desktopLinks) {

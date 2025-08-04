@@ -1,3 +1,4 @@
+import type { Href } from '@/types/href'
 import { usePathname } from 'next/navigation'
 
 /**
@@ -14,7 +15,7 @@ import { usePathname } from 'next/navigation'
  *
  */
 
-export function useIsActiveLink(href: string): boolean {
+export function useIsActiveLink(href: Href): boolean {
   const pathname = usePathname()
   return pathname === href
 }
