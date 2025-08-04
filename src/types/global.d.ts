@@ -1,5 +1,4 @@
-type HTMLElementRef = React.RefObject<HTMLElement>
-type RefsArray = Array<HTMLElementRef>
+// Handler types
 type ClickHandler = (event: MouseEvent | TouchEvent) => void
 
 // Href types
@@ -10,6 +9,7 @@ type QueryHref = `?${string}`
 type MailHref = `mailto:${string}`
 type Href = RelativeHref | AbsoluteHref | HashHref | QueryHref | MailHref
 
+// Route type
 interface Route {
   href: Href
   label: string

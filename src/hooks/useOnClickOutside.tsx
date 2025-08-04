@@ -1,3 +1,4 @@
+import type { RefsArray } from '@/types/refs'
 import { useEffect } from 'react'
 
 /**
@@ -13,8 +14,6 @@ import { useEffect } from 'react'
  *  console.log('Clicked outside the element!')
  * })
  * ```
- *
- * @see `globals.d.ts` for `RefsArray` and `ClickHandler` types
  */
 
 export function useOnClickOutside(refs: RefsArray, handler: ClickHandler) {

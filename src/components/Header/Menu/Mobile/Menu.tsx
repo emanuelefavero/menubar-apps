@@ -1,6 +1,7 @@
 'use client'
 
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import type { HTMLElementRef } from '@/types/refs'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import HamburgerButton from './HamburgerButton'
 import HamburgerMenu from './HamburgerMenu'
