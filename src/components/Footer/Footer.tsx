@@ -15,14 +15,19 @@ export default function Component() {
             key={`footer-link-${link.href}`}
             href={link.href}
             label={link.label}
-            className={clsx(
-              index === 0 ? 'rounded-l-full' : '',
-              index === footerLinks.length - 1 ? 'rounded-r-full' : '',
-            )}
+            className={clsx(index === 0 ? 'rounded-l-full' : '')}
           >
             {link.label}
           </Link>
         ))}
+
+        <Link
+          href='mailto:info@emanuelefavero.com'
+          label='Support'
+          className='rounded-r-full'
+        >
+          Support
+        </Link>
       </Row>
       <Row variant='bottom'>
         <Logo />

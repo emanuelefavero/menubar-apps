@@ -31,6 +31,9 @@ export default function Component({
     'hover:backdrop-blur-[6px] hover:bg-white/50 dark:hover:bg-white/5',
   )
 
+  // Check if the href is a mailto link
+  const isContactLink = typeof href === 'string' && href.startsWith('mailto:')
+
   return (
     <Link
       href={href}
@@ -42,7 +45,7 @@ export default function Component({
         className,
       )}
       aria-label={label}
-      title={`Go to ${label}`}
+      title={isContactLink ? `Contact ${label}` : `Go to ${label}`}
       data-active={isActive ? 'true' : undefined}
       {...props}
     >
