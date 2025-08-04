@@ -9,6 +9,14 @@ const testLink: Route = {
   label: 'Test Link',
 }
 
+// * Utils
+function expectLinkAttributes(item: HTMLElement, link: Route) {
+  expect(item.getAttribute('href')).toBe(link.href)
+  expect(item.getAttribute('aria-label')).toBe(link.label)
+  expect(item.getAttribute('title')).toBe(`Go to ${link.label}`)
+}
+
+// * Tests
 describe('Footer/Link', () => {
   afterEach(() => {
     cleanup()
@@ -21,10 +29,8 @@ describe('Footer/Link', () => {
       </Component>,
     )
 
-    const link = screen.getByRole('link', { name: /test link/i })
-    expect(link.getAttribute('href')).toBe(testLink.href)
-    expect(link.getAttribute('aria-label')).toBe(testLink.label)
-    expect(link.getAttribute('title')).toBe(`Go to ${testLink.label}`)
+    const item = screen.getByRole('link', { name: testLink.label })
+    expectLinkAttributes(item, testLink)
   })
 
   footerLinks.forEach((link) => {
@@ -32,10 +38,7 @@ describe('Footer/Link', () => {
       render(<Component href={link.href} label={link.label} />)
 
       const item = screen.getByRole('link', { name: link.label })
-      expect(item).toBeDefined()
-      expect(item.getAttribute('href')).toBe(link.href)
-      expect(item.getAttribute('aria-label')).toBe(link.label)
-      expect(item.getAttribute('title')).toBe(`Go to ${link.label}`)
+      expectLinkAttributes(item, link)
     })
   })
 })
