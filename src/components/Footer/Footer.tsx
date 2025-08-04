@@ -8,7 +8,7 @@ import Row from './Row'
 
 export default function Component() {
   return (
-    <footer className='flex w-full flex-col items-center justify-center gap-4 bg-(--background) px-4 py-6 text-(--foreground) 5xs:px-6'>
+    <footer className='flex w-full flex-col items-center justify-center gap-2 bg-(--background) px-4 py-6 text-(--foreground) 5xs:px-6'>
       <Row>
         {footerLinks.map((link, index) => (
           <Link
