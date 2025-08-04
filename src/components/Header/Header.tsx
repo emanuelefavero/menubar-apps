@@ -34,7 +34,6 @@ export default function Component() {
 
   return (
     <motion.header
-      data-testid='header'
       initial={{ scaleX: 0 }}
       animate={{ scaleX: show ? 1 : 0 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}

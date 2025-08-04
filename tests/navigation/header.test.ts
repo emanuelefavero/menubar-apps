@@ -11,9 +11,13 @@ test.describe('Header Navigation', () => {
       page,
     }) => {
       await page.goto('/')
-      const navLink = page.getByTestId('header').getByRole('link', {
+
+      // Get the header link by its role and label
+      const navLink = page.locator('header').getByRole('link', {
         name: new RegExp(`^${link.label}$`, 'i'),
       })
+
+      // Verify link visibility and click
       await expect(navLink).toBeVisible()
       await navLink.click()
       await expect(page).toHaveURL(link.href)
@@ -31,8 +35,8 @@ test.describe('Header Navigation', () => {
       await hamburger.click()
       await page.waitForTimeout(300) // Wait for animation to finish
 
-      // Click the link in the mobile menu (scoped to mobile menu container)
-      const navLink = page.getByTestId('header').getByRole('link', {
+      // Click the link in the mobile menu (scoped to header container)
+      const navLink = page.locator('header').getByRole('link', {
         name: new RegExp(`^${link.label}$`, 'i'),
       })
       await expect(navLink).toBeVisible()
