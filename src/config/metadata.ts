@@ -6,3 +6,6 @@ export const description =
 // * Developer Info
 export const devName = 'Emanuele Favero'
 export const devUrl = 'https://emanuelefavero.com'
+
+// * Support Email
+export const supportEmail = 'info@emanuelefavero.com'

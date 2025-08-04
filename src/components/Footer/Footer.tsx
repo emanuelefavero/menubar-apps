@@ -1,4 +1,5 @@
 import { footerLinks } from '@/data/footerLinks'
+import { supportLink } from '@/data/supportLink'
 import clsx from 'clsx'
 import DeveloperLink from './DeveloperLink'
 import Divider from './Divider'
@@ -26,12 +27,12 @@ export default function Component() {
 
         {/* Support Link */}
         <Link
-          href='mailto:info@emanuelefavero.com'
-          label='Support'
+          href={supportLink.href}
+          label={supportLink.label}
           className='rounded-full xs:rounded-none xs:rounded-r-full'
         >
           <span className='hidden sm:inline-block'>Contact&nbsp;</span>
-          Support
+          {supportLink.label}
         </Link>
       </Row>
       <Row variant='bottom'>
