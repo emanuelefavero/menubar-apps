@@ -5,7 +5,7 @@ import Component from './Logo'
 
 const text = `MenuBar Apps ← Go Home`
 
-describe('Logo', () => {
+describe('Header/Logo', () => {
   afterEach(() => {
     cleanup()
   })

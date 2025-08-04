@@ -3,7 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import Component from './Logo'
 
-describe('Logo', () => {
+describe('Footer/Logo', () => {
   it('renders the correct year', () => {
     render(<Component />)
     const year = new Date().getFullYear().toString()

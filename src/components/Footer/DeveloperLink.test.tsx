@@ -3,7 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import Component from './DeveloperLink'
 
-describe('DeveloperLink', () => {
+describe('Footer/DeveloperLink', () => {
   afterEach(() => {
     cleanup()
   })
