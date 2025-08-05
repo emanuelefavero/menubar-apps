@@ -1,9 +1,13 @@
 import { heroAppName } from '@/config/hero'
-import { render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { cleanup, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, it } from 'vitest'
 import Page from './page'
 
 describe('Homepage', () => {
+  afterEach(() => {
+    cleanup()
+  })
+
   it('renders a heading', () => {
     render(<Page />)
 
