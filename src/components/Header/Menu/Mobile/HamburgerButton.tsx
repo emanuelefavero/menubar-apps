@@ -1,8 +1,8 @@
 'use client'
 
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
-import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import { Ref } from 'react'
 
@@ -34,7 +34,7 @@ export default function Component({ open, onClick, ref }: Props) {
   return (
     <button
       ref={ref}
-      className={clsx(
+      className={cn(
         'block cursor-pointer rounded rounded-r-full p-1 py-2 pr-3 pl-1.5 xs:hidden',
         focusStyle,
       )}
@@ -43,20 +43,20 @@ export default function Component({ open, onClick, ref }: Props) {
       onClick={onClick}
     >
       <span
-        className={clsx(
+        className={cn(
           'mb-1 block h-0.5 w-6 rounded-full transition-transform duration-300',
           open && 'translate-y-1.5 rotate-45',
           barColor,
         )}
       />
       <span
-        className={clsx(
+        className={cn(
           'mb-1 block h-0.5 w-6 rounded-full transition-opacity duration-150',
           open ? 'opacity-0' : barColor,
         )}
       />
       <span
-        className={clsx(
+        className={cn(
           'block h-0.5 w-6 rounded-full transition-transform duration-300',
           open && '-translate-y-1.5 -rotate-45',
           barColor,

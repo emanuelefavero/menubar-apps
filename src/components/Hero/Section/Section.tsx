@@ -2,7 +2,7 @@ import BackgroundGradientBottom from '@/components/Hero/Section/BackgroundGradie
 import BackgroundGradientTop from '@/components/Hero/Section/BackgroundGradientTop'
 import LinkAttribution from '@/components/Hero/Section/LinkAttribution'
 import BackgroundImage from '@/components/shared/BackgroundImage'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface Props {
   className?: string
@@ -12,7 +12,7 @@ interface Props {
 export default function Component({ className, children }: Props) {
   return (
     <section
-      className={clsx(
+      className={cn(
         'relative flex min-h-screen w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 py-14',
         className,
       )}

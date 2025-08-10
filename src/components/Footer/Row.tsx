@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface Props {
   children: React.ReactNode
@@ -13,7 +13,7 @@ export default function Component({
 }: Props) {
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex w-full flex-wrap items-center justify-center',
         variant === 'bottom' && 'gap-4 py-2',
         variant === 'top' && 'gap-2 xs:gap-0',

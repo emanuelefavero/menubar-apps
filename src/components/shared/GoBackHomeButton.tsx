@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import LinkButton from './LinkButton'
 
 interface Props {
@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function GoHomeButton({ className = '' }: Props) {
-  return <LinkButton className={clsx(className)}>← Go Back Home</LinkButton>
+  return <LinkButton className={cn(className)}>← Go Back Home</LinkButton>
 }

@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   url: string
@@ -14,7 +14,7 @@ export default function Component({
 }: Props) {
   return (
     <div
-      className={clsx(
+      className={cn(
         zIndex,
         'pointer-events-none fixed inset-0 bg-auto bg-repeat opacity-15 select-none dark:opacity-15',
         className,

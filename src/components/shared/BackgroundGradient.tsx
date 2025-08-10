@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   zIndex?: string
@@ -10,8 +10,8 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
-  const baseStyles = clsx('pointer-events-none fixed inset-0 select-none')
-  const gradientStyles = clsx(
+  const baseStyles = cn('pointer-events-none fixed inset-0 select-none')
+  const gradientStyles = cn(
     'bg-radial-[at_50%_53%] from-transparent via-blue-800/20 to-sky-400 to-100%',
     'opacity-10',
     'mix-blend-multiply dark:mix-blend-screen',
@@ -19,7 +19,7 @@ export default function Component({
 
   return (
     <div
-      className={clsx(baseStyles, gradientStyles, zIndex, className)}
+      className={cn(baseStyles, gradientStyles, zIndex, className)}
       aria-hidden='true'
       {...props}
     />

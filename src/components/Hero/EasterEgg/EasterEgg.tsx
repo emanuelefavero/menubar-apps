@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { useDragStore } from '../store/useDragStore'
 import AsciiArt from './AsciiArt'
 
@@ -13,9 +13,9 @@ export default function Component({ className = '', children }: Props) {
   const { isDragging } = useDragStore()
 
   return (
-    <div className={clsx('relative w-full max-w-[400px]', className)}>
+    <div className={cn('relative w-full max-w-[400px]', className)}>
       <div
-        className={clsx(
+        className={cn(
           'pointer-events-none absolute inset-0 flex items-center justify-center text-gray-200 transition-opacity duration-500 select-none text-shadow-(--text-shadow-sm)',
           isDragging ? 'opacity-100' : 'opacity-0',
         )}

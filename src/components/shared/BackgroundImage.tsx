@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -15,7 +15,7 @@ export default function BackgroundImage({
 }: Props) {
   return (
     <div
-      className={clsx(
+      className={cn(
         'pointer-events-none absolute inset-0 h-full w-full bg-(--bg-image-bottom-lighter) select-none',
         className,
       )}

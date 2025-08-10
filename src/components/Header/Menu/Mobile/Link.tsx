@@ -2,9 +2,9 @@
 
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
 import type { Route } from '@/types/route'
-import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -23,12 +23,12 @@ export default function Component({
   const scrollStageFromHook = useScrollStage()
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
-  const baseStyles = clsx(
+  const baseStyles = cn(
     'text-lg rounded px-1 py-0.5 no-underline transition-all duration-250 select-none',
     focusStyle,
   )
 
-  const linkColor = clsx(
+  const linkColor = cn(
     scrollStage === 'top'
       ? 'text-gray-700 hover:text-black'
       : scrollStage === 'halfway'
@@ -36,7 +36,7 @@ export default function Component({
         : 'text-(--foreground) hover:text-black dark:hover:text-white',
   )
 
-  const activeLinkColor = clsx(
+  const activeLinkColor = cn(
     scrollStage === 'top'
       ? 'text-black'
       : scrollStage === 'halfway'
@@ -47,7 +47,7 @@ export default function Component({
   return (
     <Link
       href={href}
-      className={clsx(
+      className={cn(
         baseStyles,
         isActive ? 'font-bold' : 'font-medium',
         isActive ? activeLinkColor : linkColor,

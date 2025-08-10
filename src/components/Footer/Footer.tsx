@@ -1,6 +1,6 @@
 import { footerLinks } from '@/data/footerLinks'
 import { supportLink } from '@/data/supportLink'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import DeveloperLink from './DeveloperLink'
 import Divider from './Divider'
 import Link from './Link'
@@ -16,7 +16,7 @@ export default function Component() {
             key={`footer-link-${link.href}`}
             href={link.href}
             label={link.label}
-            className={clsx(
+            className={cn(
               'rounded-full xs:rounded-none',
               index === 0 ? 'xs:rounded-l-full' : '',
             )}

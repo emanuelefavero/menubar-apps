@@ -3,7 +3,7 @@
 import { headerLinks } from '@/data/headerLinks'
 import { useIsHome } from '@/hooks/useIsHome'
 import { useScrollStage } from '@/hooks/useScrollStage'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import { Ref } from 'react'
 import './HamburgerMenu.css'
@@ -32,7 +32,7 @@ export default function Component({ open, onClick, ref }: Props) {
     <nav
       data-testid='mobile-menu'
       ref={ref}
-      className={clsx(
+      className={cn(
         'hamburger-menu',
         open && 'block',
         !open && 'hidden',

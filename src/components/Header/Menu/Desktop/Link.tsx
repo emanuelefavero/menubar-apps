@@ -2,9 +2,9 @@
 
 import { useIsActiveLink } from '@/hooks/useIsActiveLink'
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
 import type { Route } from '@/types/route'
-import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -23,7 +23,7 @@ export default function Component({
   const scrollStageFromHook = useScrollStage()
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
-  const baseStyles = clsx(
+  const baseStyles = cn(
     scrollStage === 'top'
       ? 'text-gray-700 hover:bg-white/25'
       : scrollStage === 'halfway'
@@ -35,7 +35,7 @@ export default function Component({
     focusStyle,
   )
 
-  const groupStyles = clsx(
+  const groupStyles = cn(
     scrollStage === 'top'
       ? 'group-has-[:hover]:text-gray-700!'
       : scrollStage === 'halfway'
@@ -44,18 +44,18 @@ export default function Component({
     'group-has-[:hover]:border-transparent! group-has-[:hover]:bg-transparent group-has-[:hover]:shadow-none group-has-[:hover]:inset-shadow-none',
   )
 
-  const activeStyles = clsx(
+  const activeStyles = cn(
     'border-b-2 border-black/15! bg-white/80 text-gray-700! shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:border-black/15! hover:bg-white/80 hover:text-gray-700!',
   )
 
-  const activeGroupStyles = clsx(
+  const activeGroupStyles = cn(
     'group-has-[:hover]:hover:border-black/15 group-has-[:hover]:hover:bg-white/80 group-has-[:hover]:hover:shadow-2xs group-has-[:hover]:hover:inset-shadow-xs',
   )
 
   return (
     <Link
       href={href}
-      className={clsx(
+      className={cn(
         baseStyles,
         groupStyles,
         isActive && activeStyles,

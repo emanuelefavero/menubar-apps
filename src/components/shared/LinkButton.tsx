@@ -1,5 +1,5 @@
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
-import clsx from 'clsx'
 import Link from 'next/link'
 import { AnchorHTMLAttributes } from 'react'
 
@@ -25,7 +25,7 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
-  const baseStyles = clsx(
+  const baseStyles = cn(
     'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-md',
     focusStyle,
   )
@@ -39,7 +39,7 @@ export default function Component({
 
   const variantStyles = {
     // Primary variant
-    primary: clsx('border-b-2 shadow-2xs inset-shadow-sm', {
+    primary: cn('border-b-2 shadow-2xs inset-shadow-sm', {
       // Light theme
       'bg-white/80 text-gray-800 border-black/15 inset-shadow-white shadow-black/25 hover:bg-white':
         theme === 'light',
@@ -54,7 +54,7 @@ export default function Component({
     }),
 
     // Secondary variant
-    secondary: clsx('border-b', {
+    secondary: cn('border-b', {
       // Light theme
       'border-black/20 bg-gray-300/10 text-gray-800 shadow-white/60 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10':
         theme === 'light',
@@ -72,7 +72,7 @@ export default function Component({
   return (
     <Link
       href={href}
-      className={clsx(
+      className={cn(
         baseStyles,
         sizeStyles[size],
         variantStyles[variant],

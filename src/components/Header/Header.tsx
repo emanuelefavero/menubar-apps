@@ -3,7 +3,7 @@
 import BackgroundShadow from '@/components/shared/BackgroundShadow'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { useScrollStage } from '@/hooks/useScrollStage'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 import BackdropBlur from './BackdropBlur'
@@ -37,14 +37,14 @@ export default function Component() {
       initial={{ scaleX: 0 }}
       animate={{ scaleX: show ? 1 : 0 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
-      className={clsx(
+      className={cn(
         'fixed top-0 z-50 flex w-full items-center justify-center rounded-full p-2',
         // Performance optimization
         'origin-center translate-z-0 will-change-transform backface-hidden',
       )}
     >
       <div
-        className={clsx(
+        className={cn(
           'header',
           'w-full max-w-screen-3xl', // header max width
           bgColor,

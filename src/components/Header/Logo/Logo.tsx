@@ -3,8 +3,8 @@
 import { title } from '@/config/metadata'
 import { useIsHome } from '@/hooks/useIsHome'
 import { useScrollStage } from '@/hooks/useScrollStage'
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
-import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, type AnchorHTMLAttributes } from 'react'
@@ -34,7 +34,7 @@ export default function Component({ className, ...props }: Props) {
     }
   }, [pathname])
 
-  const baseStyles = clsx(
+  const baseStyles = cn(
     // Default styles
     'relative rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
     focusStyle,
@@ -49,7 +49,7 @@ export default function Component({ className, ...props }: Props) {
   const homeStyles =
     'border-b-2 border-black/15! bg-white/80 text-gray-700! shadow-2xs inset-shadow-xs shadow-black/25 inset-shadow-white hover:bg-white/80'
 
-  const nonHomeStyles = clsx(
+  const nonHomeStyles = cn(
     scrollStage === 'top'
       ? 'hover:bg-white/25'
       : scrollStage === 'halfway'
@@ -60,11 +60,7 @@ export default function Component({ className, ...props }: Props) {
   return (
     <Link
       href='/'
-      className={clsx(
-        baseStyles,
-        isHome ? homeStyles : nonHomeStyles,
-        className,
-      )}
+      className={cn(baseStyles, isHome ? homeStyles : nonHomeStyles, className)}
       {...props}
       onMouseEnter={() => {
         if (!hasHovered.current && !isHome) {

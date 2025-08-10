@@ -1,7 +1,7 @@
 'use client'
 
 import type { ScrollStage } from '@/hooks/useScrollStage'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { useEffect } from 'react'
 
 interface Props {
@@ -21,7 +21,7 @@ export default function Component({
   setShowHint,
   hasLogoHoveredNonHome = false,
 }: Props) {
-  const baseStyles = clsx(
+  const baseStyles = cn(
     // Default styles
     'absolute hidden top-1/2 left-full -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
 
@@ -56,13 +56,13 @@ export default function Component({
   return (
     <span
       // Transition effect for showing/hiding the hint
-      className={clsx(
+      className={cn(
         'transition-opacity duration-500',
         showHint ? 'opacity-100' : 'opacity-0',
       )}
     >
       <span
-        className={clsx(
+        className={cn(
           baseStyles,
           className,
 

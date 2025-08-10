@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import './Card.css'
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 export default function Component({ className = '', children }: Props) {
   return (
     <div
-      className={clsx(
+      className={cn(
         'card',
         'relative flex w-full max-w-[400px] flex-col items-center justify-center rounded-[1.75rem] bg-(--card-background) px-4 pt-18 pb-3.5 text-center text-white shadow-(--card-shadow) backdrop-blur-[6px]',
         className,

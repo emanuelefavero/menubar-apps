@@ -1,6 +1,6 @@
+import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
 import type { Href } from '@/types/href'
-import clsx from 'clsx'
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: Href
@@ -14,7 +14,7 @@ export default function Component({
   className = '',
   ...props
 }: Props) {
-  const baseStyles = clsx(
+  const baseStyles = cn(
     'font-medium underline underline-offset-4 rounded-full px-1 py-0.5 transition duration-250 hover:text-(--foreground-secondary) active:scale-[0.97]',
     `focus-visible:no-underline ${focusStyle}`,
   )
@@ -22,7 +22,7 @@ export default function Component({
   return (
     <a
       href={href}
-      className={clsx(baseStyles, className)}
+      className={cn(baseStyles, className)}
       target='_blank'
       rel='noopener noreferrer'
       {...props}
