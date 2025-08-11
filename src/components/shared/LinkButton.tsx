@@ -3,6 +3,11 @@ import { focusStyle } from '@/styles/focus'
 import { cva, type VariantProps } from 'class-variance-authority'
 import Link from 'next/link'
 
+// TIP: Only needed for unit tests
+export type Variant = 'primary' | 'secondary'
+export type Size = 'none' | 'sm' | 'base' | 'lg'
+export type Theme = 'light' | 'dark' | 'default'
+
 const variants = cva(
   // Base styles
   [
