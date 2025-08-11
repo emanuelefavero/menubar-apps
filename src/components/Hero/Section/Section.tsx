@@ -4,10 +4,7 @@ import LinkAttribution from '@/components/Hero/Section/LinkAttribution'
 import BackgroundImage from '@/components/shared/BackgroundImage'
 import { cn } from '@/lib/utils'
 
-interface Props {
-  className?: string
-  children?: React.ReactNode
-}
+type Props = React.ComponentPropsWithRef<'section'>
 
 export default function Component({ className, children }: Props) {
   return (
