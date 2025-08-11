@@ -1,6 +1,10 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import Component, { type Size, type Theme, type Variant } from './LinkButton'
+import Component from './LinkButton'
+
+type Variant = 'primary' | 'secondary'
+type Size = 'none' | 'sm' | 'base' | 'lg'
+type Theme = 'light' | 'dark' | 'default'
 
 describe('LinkButton', () => {
   afterEach(() => {
