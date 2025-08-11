@@ -8,16 +8,9 @@ import type { Route } from '@/types/route'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-interface Props
-  extends Route,
-    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
+type Props = React.ComponentPropsWithRef<typeof Link> & Route
 
-export default function Component({
-  href,
-  label,
-  className = '',
-  ...props
-}: Props) {
+export default function Component({ href, label, className, ...props }: Props) {
   const isActive = useIsActiveLink(href)
   const pathname = usePathname()
   const scrollStageFromHook = useScrollStage()
