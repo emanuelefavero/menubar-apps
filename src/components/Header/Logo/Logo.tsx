@@ -7,12 +7,10 @@ import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState, type AnchorHTMLAttributes } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Hint from './Hint'
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  className?: string
-}
+type Props = Omit<React.ComponentPropsWithRef<typeof Link>, 'href'>
 
 export default function Component({ className, ...props }: Props) {
   const isHome = useIsHome()
