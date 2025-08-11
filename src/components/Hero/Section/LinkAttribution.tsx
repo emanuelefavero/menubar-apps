@@ -13,7 +13,7 @@ export default function Component({
   name,
   href,
   label = 'Photo by',
-  className = '',
+  className,
   ...props
 }: Props) {
   return (

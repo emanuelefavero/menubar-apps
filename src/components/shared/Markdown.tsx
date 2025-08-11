@@ -8,7 +8,7 @@ interface Props {
   className?: string
 }
 
-export default async function Component({ file, className = '' }: Props) {
+export default async function Component({ file, className }: Props) {
   let html = await getMarkdownAsHtml(file)
 
   // Hide <hr> from screen readers

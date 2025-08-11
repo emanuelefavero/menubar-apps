@@ -12,7 +12,7 @@ export default function Component({
   href,
   label,
   children,
-  className = '',
+  className,
   ...props
 }: Props) {
   const isActive = useIsActiveLink(href)

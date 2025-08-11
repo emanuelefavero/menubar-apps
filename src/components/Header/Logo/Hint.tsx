@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function Component({
-  className = '',
+  className,
   scrollStage = 'full',
   pathname = '/',
   showHint,

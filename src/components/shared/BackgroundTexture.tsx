@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 export default function Component({
   url,
   zIndex = 'z-0',
-  className = '',
+  className,
   ...props
 }: Props) {
   return (

@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function Component({
   zIndex = 'z-0',
-  className = '',
+  className,
   ...props
 }: Props) {
   const baseStyles = cn('pointer-events-none fixed inset-0 select-none')

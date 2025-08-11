@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 export default function BackgroundImage({
   src,
   alt,
-  className = '',
+  className,
   ...props
 }: Props) {
   return (

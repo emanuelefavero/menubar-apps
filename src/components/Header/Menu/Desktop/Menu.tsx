@@ -1,15 +1,16 @@
 import { headerLinks } from '@/data/headerLinks'
+import { cn } from '@/lib/utils'
 import DesktopLink from './Link'
 
 interface Props {
   className?: string
 }
 
-export default function Component({ className = '' }: Props) {
+export default function Component({ className }: Props) {
   return (
     <nav
       data-testid='desktop-menu'
-      className={`group hidden -space-x-2 select-none xs:flex ${className}`}
+      className={cn('group hidden -space-x-2 select-none xs:flex', className)}
     >
       {headerLinks.map((link) => (
         <DesktopLink

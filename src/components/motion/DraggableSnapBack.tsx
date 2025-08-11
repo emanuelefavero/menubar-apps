@@ -9,11 +9,7 @@ interface Props extends HTMLMotionProps<'div'> {
   children: React.ReactNode
 }
 
-export default function Component({
-  className = '',
-  children,
-  ...props
-}: Props) {
+export default function Component({ className, children, ...props }: Props) {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
