@@ -21,12 +21,15 @@ const variants = cva(
         base: 'px-3 py-1.5 text-base',
         lg: 'w-full px-4 py-2 text-lg',
       },
-
       // Initialize theme variants to empty (only used in compound variants)
       theme: {
         light: '',
         dark: '',
         default: '',
+      },
+      disabled: {
+        true: 'opacity-50 pointer-events-none cursor-not-allowed',
+        false: '',
       },
     },
 
@@ -76,13 +79,16 @@ const variants = cva(
       variant: 'primary',
       size: 'none',
       theme: 'default',
+      disabled: false,
     },
   },
 )
 
 interface Props
   extends React.ComponentPropsWithRef<'a'>,
-    VariantProps<typeof variants> {}
+    VariantProps<typeof variants> {
+  disabled?: boolean
+}
 
 export default function Component({
   href = '/',
@@ -91,12 +97,15 @@ export default function Component({
   theme,
   className,
   children,
+  disabled = false,
   ...props
 }: Props) {
   return (
     <Link
       href={href}
-      className={cn(variants({ variant, size, theme, className }))}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : undefined}
+      className={cn(variants({ variant, size, theme, disabled, className }))}
       {...props}
     >
       {children}
