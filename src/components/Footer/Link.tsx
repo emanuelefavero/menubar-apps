@@ -6,9 +6,7 @@ import { focusStyle } from '@/styles/focus'
 import type { Route } from '@/types/route'
 import Link from 'next/link'
 
-interface Props
-  extends Route,
-    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {}
+type Props = React.ComponentPropsWithRef<typeof Link> & Route & {}
 
 export default function Component({
   href,
