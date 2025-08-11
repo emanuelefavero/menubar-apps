@@ -1,4 +1,4 @@
-import GoBackHomeButton from '@/components/shared/GoBackHomeButton'
+import LinkButton from '@/components/shared/LinkButton'
 import Markdown from '@/components/shared/Markdown'
 import MarkdownPageHeader from '@/components/shared/MarkdownPageHeader'
 import { getMarkdownPage } from '@/config/markdownPages'
@@ -68,7 +68,7 @@ export default async function Page({ params }: Props) {
 
       {/* Go back home button */}
       <div className='mt-12 flex w-full items-center justify-center'>
-        <GoBackHomeButton className='text-sm' />
+        <LinkButton className='text-sm'>← Go Back Home</LinkButton>
       </div>
     </>
   )
