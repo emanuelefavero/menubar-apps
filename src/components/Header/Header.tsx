@@ -54,7 +54,7 @@ export default function Component() {
         {/* TIP: This component is needed because CSS does not support nested backdrop-blur effects  */}
         <BackdropBlur />
 
-        <BackgroundShadow bgColor={shadowBgColor} blur='blur-xl' />
+        <BackgroundShadow className={cn(shadowBgColor, 'blur-xl')} />
         <Logo />
         <div>
           <DesktopMenu />
