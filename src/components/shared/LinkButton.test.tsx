@@ -99,4 +99,15 @@ describe('LinkButton', () => {
     const item = screen.getByRole('link', { name: 'Link Attribute Link' })
     expect(item.getAttribute('target')).toBe('_blank')
   })
+
+  it('renders with disabled props', () => {
+    render(<Component disabled>Disabled Link</Component>)
+
+    const item = screen.getByRole('link', { name: 'Disabled Link' })
+    expect(item.getAttribute('aria-disabled')).toBe('true')
+    expect(item.getAttribute('tabIndex')).toBe('-1')
+    expect(item.getAttribute('class')).toContain(
+      'opacity-50 pointer-events-none cursor-not-allowed',
+    )
+  })
 })
