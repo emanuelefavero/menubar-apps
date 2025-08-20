@@ -64,7 +64,6 @@ export default async function Page({ params }: Props) {
 
       {/* Markdown content */}
       <Markdown file={`${slug}.md`} />
-      {/* <Markdown file={`${slug}.md`} /> */}
 
       {/* Go back home button */}
       <div className='mt-12 flex w-full items-center justify-center'>
