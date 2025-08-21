@@ -11,7 +11,7 @@ export type Theme = 'light' | 'dark' | 'default'
 const variants = cva(
   // Base styles
   [
-    'inline-block rounded-full font-medium no-underline transition duration-250 active:scale-[0.97] select-none backdrop-blur-md',
+    'inline-block rounded-full font-medium no-underline backdrop-blur-md transition duration-250 select-none active:scale-[0.97]',
     focusStyle,
   ],
   {
@@ -33,7 +33,7 @@ const variants = cva(
         default: '',
       },
       disabled: {
-        true: 'opacity-50 pointer-events-none cursor-not-allowed',
+        true: 'pointer-events-none cursor-not-allowed opacity-50',
         false: '',
       },
     },
@@ -45,19 +45,19 @@ const variants = cva(
         variant: 'primary',
         theme: 'light',
         class:
-          'bg-white/80 text-gray-800 border-black/15 inset-shadow-white shadow-black/25 hover:bg-white',
+          'border-black/15 bg-white/80 text-gray-800 shadow-black/25 inset-shadow-white hover:bg-white',
       },
       {
         variant: 'primary',
         theme: 'dark',
         class:
-          'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700',
+          'border-black/50 bg-gray-800 text-white shadow-black/15 inset-shadow-gray-500 hover:bg-gray-700',
       },
       {
         variant: 'primary',
         theme: 'default',
         class:
-          'bg-gray-800 text-white border-black/50 inset-shadow-gray-500 shadow-black/15 hover:bg-gray-700 dark:bg-white/80 dark:text-gray-800 dark:border-black/15 dark:inset-shadow-white dark:shadow-black/25 hover:dark:bg-white',
+          'border-black/50 bg-gray-800 text-white shadow-black/15 inset-shadow-gray-500 hover:bg-gray-700 dark:border-black/15 dark:bg-white/80 dark:text-gray-800 dark:shadow-black/25 dark:inset-shadow-white hover:dark:bg-white',
       },
 
       // Secondary
@@ -65,7 +65,7 @@ const variants = cva(
         variant: 'secondary',
         theme: 'light',
         class:
-          'border-black/20 bg-gray-300/10 text-gray-800 shadow-white/60 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] hover:bg-gray-400/10',
+          'border-black/20 bg-gray-300/10 text-gray-800 inset-shadow-[0_2px_2px_0_rgba(0,0,0,0.2)] shadow-white/60 hover:bg-gray-400/10',
       },
       {
         variant: 'secondary',

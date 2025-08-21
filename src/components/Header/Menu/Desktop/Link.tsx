@@ -24,7 +24,7 @@ export default function Component({ href, label, className, ...props }: Props) {
         : 'text-(--foreground) hover:bg-white/50 dark:hover:bg-white/10',
 
     // Default styles
-    'rounded-full px-3 py-0.5 border-b-2 border-transparent no-underline select-none transition duration-200 active:scale-[0.97]',
+    'rounded-full border-b-2 border-transparent px-3 py-0.5 no-underline transition duration-200 select-none active:scale-[0.97]',
     focusStyle,
   )
 

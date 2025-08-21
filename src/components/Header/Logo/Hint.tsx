@@ -23,7 +23,7 @@ export default function Component({
 }: Props) {
   const baseStyles = cn(
     // Default styles
-    'absolute hidden top-1/2 left-full -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
+    'absolute top-1/2 left-full hidden -translate-y-1/2 animate-bounce-x px-0.5 py-0.5 text-xs whitespace-nowrap',
 
     // Color based on scroll stage
     scrollStage === 'top'

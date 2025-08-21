@@ -34,7 +34,7 @@ export default function Component({ className, ...props }: Props) {
 
   const baseStyles = cn(
     // Default styles
-    'relative rounded-full px-3 py-0.5 font-semibold border-b-2 border-transparent no-underline select-none transition duration-250 active:scale-[0.97]',
+    'relative rounded-full border-b-2 border-transparent px-3 py-0.5 font-semibold no-underline transition duration-250 select-none active:scale-[0.97]',
     focusStyle,
 
     scrollStage === 'top'

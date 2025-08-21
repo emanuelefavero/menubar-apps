@@ -18,15 +18,15 @@ export default function Component({
   const isActive = useIsActiveLink(href)
 
   const baseStyles = cn(
-    'h-full px-3 py-2 text-sm font-medium select-none uppercase no-underline transition duration-250 border border-transparent active:scale-[0.97]',
+    'h-full border border-transparent px-3 py-2 text-sm font-medium uppercase no-underline transition duration-250 select-none active:scale-[0.97]',
   )
 
   const activeStyles = cn(
-    'backdrop-blur-[6px] border-dotted border-white bg-white/20 dark:border-white/15 dark:bg-white/[0.025]',
+    'border-dotted border-white bg-white/20 backdrop-blur-[6px] dark:border-white/15 dark:bg-white/[0.025]',
   )
 
   const hoverStyles = cn(
-    'hover:backdrop-blur-[6px] hover:bg-white/50 dark:hover:bg-white/5',
+    'hover:bg-white/50 hover:backdrop-blur-[6px] dark:hover:bg-white/5',
   )
 
   return (

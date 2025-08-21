@@ -17,7 +17,7 @@ export default function Component({ href, label, className, ...props }: Props) {
   const scrollStage = pathname === '/' ? scrollStageFromHook : 'full'
 
   const baseStyles = cn(
-    'text-lg rounded px-1 py-0.5 no-underline transition-all duration-250 select-none',
+    'rounded px-1 py-0.5 text-lg no-underline transition-all duration-250 select-none',
     focusStyle,
   )
 
