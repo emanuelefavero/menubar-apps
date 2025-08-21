@@ -19,7 +19,7 @@ export default async function Component({ file, className }: Props) {
   const baseStyles = cn('prose max-w-screen-lg lg:prose-lg dark:prose-invert')
 
   const headingsStyles = cn(
-    'prose-headings:mb-3 prose-headings:uppercase prose-headings:font-medium',
+    'prose-headings:mb-3 prose-headings:font-medium prose-headings:uppercase',
     // Make headings smaller
     'prose-h1:text-3xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base prose-h5:text-sm prose-h6:text-xs',
   )
@@ -28,13 +28,13 @@ export default async function Component({ file, className }: Props) {
   const pStyles = cn('prose-p:relative')
 
   const linkStyles = cn(
-    'prose-a:underline-offset-4 prose-a:rounded-md prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
+    'prose-a:rounded-md prose-a:underline-offset-4 prose-a:transition prose-a:duration-250 prose-a:hover:text-(--foreground-secondary)',
     // Focus styles for links
-    'prose-a:px-0.5 prose-a:focus-visible:no-underline prose-a:outline-none prose-a:ring-0 prose-a:focus-visible:ring-2 prose-a:focus-visible:ring-(--primary)',
+    'prose-a:px-0.5 prose-a:ring-0 prose-a:outline-none prose-a:focus-visible:no-underline prose-a:focus-visible:ring-2 prose-a:focus-visible:ring-(--primary)',
   )
 
   const lineStyles = cn(
-    'prose-hr:p-0 prose-hr:m-0 prose-hr:mb-5 prose-hr:border-gray-300 dark:prose-hr:border-gray-700',
+    'prose-hr:m-0 prose-hr:mb-5 prose-hr:border-gray-300 prose-hr:p-0 dark:prose-hr:border-gray-700',
   )
 
   return (
