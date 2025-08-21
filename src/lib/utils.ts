@@ -16,3 +16,7 @@ export function cx(...inputs: CxClassValue[]) {
     .join(' ')
     .trim()
 }
+
+// * clsx/lite
+// TIP: An alternative to `cx` from 'clsx' that only supports string patterns: `clsx('text-base', props.active && 'text-primary', props.className);`
+// import { clsx } from 'clsx/lite'
