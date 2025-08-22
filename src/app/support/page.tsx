@@ -1,5 +1,13 @@
 import CenteredMessage from '@/components/shared/CenteredMessage'
+import { title } from '@/config/metadata'
 import { supportLink } from '@/data/supportLink'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: `${title} - Support`,
+  description:
+    'Contact us for assistance on any issues you may have with our apps.',
+}
 
 export default function Page() {
   return (
