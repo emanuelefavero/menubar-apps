@@ -33,7 +33,20 @@ export const markdownPages: MarkdownPage = {
     imageAlt: 'Privacy Policy Icon',
     description: (
       <>
-        Your <strong>privacy</strong> matters to us. Read below to learn more
+        Your <strong className='font-medium'>privacy</strong> matters to us.
+        Read below to learn more
+      </>
+    ),
+  },
+  'about-us': {
+    titleMetadata: `${title} - About Us`,
+    descriptionMetadata: `Learn more about ${title} and its mission.`,
+    imageSrc: '/images/about-us-icon.png',
+    imageAlt: 'About Us Icon',
+    description: (
+      <>
+        A little info about who we are and what we do at{' '}
+        <strong className='font-medium'>{title}</strong>
       </>
     ),
   },

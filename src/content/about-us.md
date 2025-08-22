@@ -1,4 +1,4 @@
-# About MenuBar Apps
+# About Us
 
 ---
 
