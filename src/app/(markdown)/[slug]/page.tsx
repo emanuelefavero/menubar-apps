@@ -41,6 +41,9 @@ export async function generateStaticParams() {
     }))
 }
 
+// * Force static generation (optional but explicit)
+export const dynamic = 'force-static'
+
 /*
 NOTE: This is a dynamic route segment. To add new markdown pages:
   1. Create a new markdown file in the `src/content` directory (the file name should match the slug).
