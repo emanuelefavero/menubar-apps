@@ -107,4 +107,53 @@ describe('LinkButton', () => {
       'pointer-events-none cursor-not-allowed opacity-50',
     )
   })
+
+  it('renders as <a> tag for external links', () => {
+    render(<Component href='https://example.com'>External Link</Component>)
+
+    const item = screen.getByRole('link', { name: 'External Link' })
+    expect(item.tagName).toBe('A')
+    expect(item.getAttribute('href')).toBe('https://example.com')
+  })
+
+  it('renders as <a> tag for protocol-relative links', () => {
+    render(<Component href='//example.com'>Protocol Relative</Component>)
+
+    const item = screen.getByRole('link', { name: 'Protocol Relative' })
+    expect(item.tagName).toBe('A')
+    expect(item.getAttribute('href')).toBe('//example.com')
+  })
+
+  it('renders as <a> tag with download attribute', () => {
+    render(
+      <Component href='/file.txt' download>
+        Download File
+      </Component>,
+    )
+
+    const item = screen.getByRole('link', { name: 'Download File' })
+    expect(item.tagName).toBe('A')
+    expect(item.getAttribute('download')).toBe('')
+  })
+
+  it('renders as <a> tag with download filename', () => {
+    render(
+      <Component href='/file.txt' download='custom-name.txt'>
+        Download File
+      </Component>,
+    )
+
+    const item = screen.getByRole('link', { name: 'Download File' })
+    expect(item.tagName).toBe('A')
+    expect(item.getAttribute('download')).toBe('custom-name.txt')
+  })
+
+  it('renders as Link component for internal routes', () => {
+    render(<Component href='/about'>Internal Link</Component>)
+
+    const item = screen.getByRole('link', { name: 'Internal Link' })
+    expect(item.getAttribute('href')).toBe('/about')
+    // Link component wraps content, so we verify href is preserved
+    expect(item).toBeDefined()
+  })
 })

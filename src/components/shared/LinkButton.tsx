@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import { focusStyle } from '@/styles/focus'
+import { isNavigationHref } from '@/utils/href'
 import { cva, type VariantProps } from 'class-variance-authority'
 import Link from 'next/link'
 
@@ -93,6 +94,7 @@ interface Props
   extends React.ComponentPropsWithRef<'a'>,
     VariantProps<typeof variants> {
   disabled?: boolean
+  download?: boolean | string
 }
 
 export default function Component({
@@ -103,17 +105,27 @@ export default function Component({
   className,
   children,
   disabled = false,
+  download = false,
   ...props
 }: Props) {
+  const baseProps = {
+    href,
+    'aria-disabled': disabled,
+    tabIndex: disabled ? -1 : undefined,
+    className: cn(variants({ variant, size, theme, disabled, className })),
+  }
+
+  // Determine if we should use a native <a> tag or Next.js Link
+  const isNavigation = isNavigationHref(href)
+  const useAnchorTag = !isNavigation || download
+  const Comp = useAnchorTag ? 'a' : Link
+
+  // Only include download prop when using anchor tag and download is set
+  const anchorProps = useAnchorTag && download ? { download } : {}
+
   return (
-    <Link
-      href={href}
-      aria-disabled={disabled}
-      tabIndex={disabled ? -1 : undefined}
-      className={cn(variants({ variant, size, theme, disabled, className }))}
-      {...props}
-    >
+    <Comp {...baseProps} {...props} {...anchorProps}>
       {children}
-    </Link>
+    </Comp>
   )
 }
