@@ -2,6 +2,12 @@
 
 This is the repository for the MenuBar Apps website, which delivers lightweight Mac OS applications that run in the menu bar.
 
+### Website
+
+> Note: The website is still under development
+
+- [https://menubar-apps.vercel.app/](https://menubar-apps.vercel.app/)
+
 ## Getting Started
 
 - Clone the repository
