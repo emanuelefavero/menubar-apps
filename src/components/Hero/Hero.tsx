@@ -47,7 +47,7 @@ export default function Component() {
             <LinkButton
               theme='light'
               size='lg'
-              href='/images/menubar-tasks.png'
+              href='/menubar-tasks.txt'
               className='mt-4'
               download
               aria-label='Download Menubar Tasks App'
