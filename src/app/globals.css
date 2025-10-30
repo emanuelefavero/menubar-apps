@@ -181,6 +181,9 @@
     --success-light: #00c950; /* green-500 */
     --success-dark: #026630; /* green-800 */
     --success: var(--success-dark);
+    --warning-light: #facc15;
+    --warning-dark: #ca8a04;
+    --warning: var(--warning-dark);
     --text-shadow-lg: 2px 2px 0.5px rgba(0, 0, 0, 0.25);
     --text-shadow-sm: 1px 1px 0.5px rgba(0, 0, 0, 0.25);
     --card-background: rgba(104, 115, 128, 0.2);
@@ -206,6 +209,7 @@
       --primary: var(--primary-light);
       --selection: rgba(44, 143, 200, 0.35);
       --success: var(--success-light);
+      --warning: var(--warning-light);
     }
   }
 
